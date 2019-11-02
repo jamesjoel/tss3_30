@@ -1,0 +1,31 @@
+p{
+    color : red;
+    font-size: 25px;
+}
+h2{
+    color: blue;
+    background-color: green;
+}
+#first-head{
+    background-color: gray;
+    color: yellow;
+}
+#second-head{
+    background-color: blue;
+    color: red;
+}
+.my-class{
+    background-color: green;
+    color: white;
+}
+#myid span{
+    background-color: blue;
+}
+
+
+#box span .my-class p{
+    
+}
+h1, p, #box{
+  font-size: 20px;  
+}

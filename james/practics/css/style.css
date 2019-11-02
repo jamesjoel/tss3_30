@@ -1,0 +1,45 @@
+body{
+    background-color: #1245AC;
+    font-family: Helvetica;
+}
+p{
+    color: #FFF;
+    background-color: #000;
+    background-image: url("../4.jpeg");
+    /* background-size: 100% 100%; */
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    font-weight: bold;
+    font-style: italic;
+    
+    text-align: justify;
+    /* text-decoration: line-through; */
+    text-indent: 50%;
+    text-transform: uppercase;
+
+
+
+
+    padding: 10px;
+
+    
+
+
+
+    font-size: 19px;
+    width: 500px;
+    height: 400px;
+
+    box-shadow: 15px 15px 10px #FFF;
+    border-top:10px solid red;
+
+
+
+}
+
+h2{
+    color: #1245AC;
+    font-size: 50px;
+    text-shadow: 2px 2px 2px #FFF;
+}
