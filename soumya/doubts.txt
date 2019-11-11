@@ -1,0 +1,21 @@
+1. Next Paragraph (text.indient).
+
+2. Display Properties.
+
+3. Favicon.
+
+4. ul or ol Center.
+
+5. if i want to give more margin from the mt-4 so how it is possible?
+
+6. any more color in button? 
+
+7. When i include js file even so not run reset button properly?
+
+8. when i click any <select> option so there is defalut some text so how should i  change it?
+
+9.when i enter any detail in the form page so if i press enter key for purpose of sumit detail so how it should be possible?***
+
+10. when i click checkbox or radio button so clickable on text?
+
+11. What is Meta Tag?
