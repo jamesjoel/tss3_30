@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form In Modal</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <style type="text/css">
+		.mt-12{
+    		    margin-top:  6.5rem !important;
+    	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 offset-lg-5 mt-12">
+			<button class="btn btn-info" data-target="#modal" data-toggle="modal">Show Form</button>
+		</div>
+	</div>
+</div>
+
+		  <div class="modal fade "  id="modal" role="dialog">
+    <div class="modal-dialog ">
+    
+      <!-- Modal content-->
+   
+
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h4 class="modal-title"> <b> <em> ADD NEW USER </em> </b> </h4>
+        </div>
+         
+        <div class="modal-body">
+          
+          <form action="#" method="post">
+               <div class="form-group">
+               <label><b> <em>Username:</em> </b></label>
+  <input type="text" class="form-control" name="Username1"  placeholder="Enter Username">
+              </div>
+
+              <div class="form-group">
+           <label> <b> <em>Password:</em> </b></label>
+  <input type="Password" class="form-control" name="Password1"  placeholder="Enter Password">
+                </div>
+
+                  <div class="form-group">
+                <label >  <b> <em>Firstname:</em> </b> </label>
+  <input type="text" name="Firstname1" class="form-control" placeholder="Enter Firstname">
+                </div>
+
+                <div class="form-group">
+            <label><b> <em>Lastname:</em> </b> </label>
+  <input type="text" name="Lastname1" class="form-control" placeholder="Enter Lastname"> 
+               </div>
+
+<button type="submit" class="btn btn-info" style="text-align: center;" name="Add1">Add User </button>
+
+          </form>
+    
+        </div>
+    
+ 
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    
+
+</body>
+</html>
