@@ -1,0 +1,36 @@
+body{
+	/*background-color: #857400;*/
+	margin: 0;
+	padding: 0;
+}
+.header{
+	height: 85px;
+	width: 100%;
+	background-color: #45619D;
+}
+.header:hover{
+	background-color: red;
+}
+.content{
+	height: 600px;
+	width: 100%;
+	background-color: #D8DDEB;
+}
+.footer{
+	height: 200px;
+	width: 100%;
+	background-color: #FFF;
+}
+a{
+	background-color: #000;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 10px;
+	padding: 10px;
+	font-size: 20px;
+	text-decoration: none;
+	color: #FFF;
+}
+a:hover{
+	background-color: #598ACE;
+}

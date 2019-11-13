@@ -1,0 +1,24 @@
+1. Next Paragraph (text.indient in bootstrap)?
+
+2. Display Properties?
+
+3. Apply Favicon?
+
+4. ul or ol Center?
+
+5. Width: fit-content;?
+
+6. What is Meta Tag?
+
+7.Nested Dropdown [class="dropdown-submenu"]?
+
+8. if i want to give more margin from the mt-4 so how it is possible?
+Answer[8]: make coustom class like mt-5 then apply. [ok i make class, but its non-responsive?]
+
+9. any more color in button? 
+Answer[9]: Also Make a Coustom Class Like btn-red,btn-white.... 
+
+
+10. when i click checkbox or radio button so clickable on text?
+Answer[10]: <lable for=radio>Click The Radio Button...</lable>  
+			<input type="radio" name="radio">
