@@ -1,0 +1,19 @@
+.nav-colo{
+	color:#1E5F8D;
+}
+
+.nav-color  a.navbar-brand{
+
+	color: #FFF !important;
+	font-weight: bolder;
+}
+.jumbotron{
+	background-image: url("wall.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+
+
+
+
