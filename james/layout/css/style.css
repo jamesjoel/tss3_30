@@ -2,7 +2,7 @@
 	background-color: #3C7EAA;
 }
 .navbar-text-light ul li a{
-	color: #FFF !important;
+	color: blue !important;
 }
 .navbar-text-light a.navbar-brand{
 
@@ -17,3 +17,5 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+
+
