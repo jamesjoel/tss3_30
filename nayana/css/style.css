@@ -1,0 +1,44 @@
+.nav-bg
+{
+	background-color: #EDEDEF;
+}
+
+.text-nav 
+{
+  color: #B87F6C !important;
+}
+a.text-nav:hover, a.text-nav:focus {
+  color: #CEC5C3 !important;
+}
+
+.img-nav
+{
+	height: 30px;
+	width: 	30px;
+}
+
+.img
+{
+	height: 650px;
+	width: 100%;
+}
+
+.text-carousel
+{
+	color: #000000 !important;
+}
+a.text-carousel:hover, a.text-carousel:focus {
+  color: #CEC5C3 !important;
+}
+
+.button
+{
+	height: 50%;
+	width: 50%;
+}
+
+.figure
+{
+	margin-right: 32px;
+	text-align: center;
+}
