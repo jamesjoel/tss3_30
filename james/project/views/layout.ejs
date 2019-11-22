@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <link type='text/css' rel="stylesheet" href="/css/bootstrap.css" />
+        <link type='text/css' rel="stylesheet" href="/css/font-awesome.css" />
+        <link type='text/css' rel="stylesheet" href="/css/style.css" />
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <title><%= title %></title>
+
+
+    </head>
+    <body>
+        <div class="container-fluid bg-orange">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">Signup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+            <a href="/" class="navbar-brand">
+                MyShopping.com
+                <!-- <p>best shopping destination</p> -->
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="mainMenu" class="collapse navbar-collapse">
+                <ul class="navbar-nav nav">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid bg-gray">
+            <div class="container">
+                <h1>Best Shopping Site</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+
+
+
+        <%- include(pagename); %>
+
+
+        <div class="container-fluid bg-dark p-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="/" class="nav-link text-light">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/about" class="nav-link text-light">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/contact" class="nav-link text-light">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link text-light">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+        
+        
+        </body>
+        
+        </html>
