@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>Leep year</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/jquery.js">
+    <link rel="stylesheet" href="js/bootstrap.bundle.js">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-6 offset-lg-3">
+                <table class="table table-hover" >
+                    <thead>
+                        <th>S.NO</th>
+                        <th>Years</th>
+                        <th>Leep Year</th>
+                    </thead>
+                    <tbody>
+
+
+                        <% var i=1
+                        for (var year = 2020; year <= 2050; year++) {
+                            if (year % 4 == 0) {%>
+                        <tr>
+                            <td><%=i++%></td>
+                            <td><%=year%></td>
+                            <td>Yes Leep Year</td>
+                        </tr>
+                        <% } else {%>
+                        <tr>
+                            <td><%=i++%></td>
+                            <td><%= year %></td>
+                            <td>No</td>
+                        </tr>
+
+                        <%}}%>
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+
+</html>
