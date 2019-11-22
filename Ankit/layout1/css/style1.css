@@ -1,0 +1,68 @@
+.top-nav li a{
+
+       color: beige !important;
+       font-size: 12px;
+}
+.navbar-brand{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        /* font-family: fantasy; */
+        font-style: italic;
+        font-weight: bolder;
+        font-size: 20px;
+
+
+}
+
+
+.navbar-brand p{
+
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 10px;
+        
+
+}
+
+.text-color a{
+
+        font-weight: 500;
+    font-size: 12;
+   
+}
+.nav-padding{
+        padding-right: 118px;
+}
+.bg-color{
+
+        background-color: rgb(30, 182, 241);
+
+}
+.heading-feature h6{
+        font-weight: 700;
+    font-size: 13px;
+    text-align: left;
+    color: white;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+ 
+.image-height{
+        width: 90%;
+        margin-top: 48px;
+        margin-bottom: 20px;
+
+}
+.text-right{
+
+       text-align: center;
+}
+.text-light {
+        color: #f8f9fa !important;
+        text-align: left;
+    }
+
+.text-ko-center h5{
+
+        text-align: centers;
+
+}
