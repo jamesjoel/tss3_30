@@ -1,0 +1,46 @@
+<div class="modal fade " id="modal" role="dialog">
+    <div class="modal-dialog ">
+
+        <!-- Modal content-->
+
+
+        <div class="modal-content ">
+            <div class="modal-header">
+                <h4 class="modal-title mx-auto"> <b> <em> Calender-2020 </em> </b> </h4>
+            </div>
+
+            <div class="modal-body">
+                <table class="table table-hover" id="table">
+                    <thead>
+                        <th>Month</th>
+                        <th>Days</th>
+                        <th>Years</th>
+                    </thead>
+                    <tbody>
+
+
+                        <%
+                        data.forEach(function(x){
+                           %>
+                            <tr>
+                                <td>
+                                    <%= x.month %>
+                                </td>
+                                <td>
+                                    <%= x.days %>
+                                </td>
+                                <td>2020</td>
+                            </tr>
+                            <% });
+                        %>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
