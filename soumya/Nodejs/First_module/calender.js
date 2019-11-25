@@ -3,12 +3,12 @@ var exp = mod_express();
 
 exp.set("view engine", "ejs");
 
+exp.use(mod_express.static(__dirname + "/public"));
 
 
-exp.get("/", function (req, res) {
+exp.get("/", function(req, res) {
 
-    var data = [
-        {
+    var data = [{
             month: "January",
             days: 31,
             city: "indore"
@@ -69,34 +69,25 @@ exp.get("/", function (req, res) {
             city: "indore"
         }
     ];
-
-    // var func = function () {
-    //     for (var year = 2020; year <= 2030; year++) {
-    //         if (year % 4 == 0) {
-    //             console.log(year+" Leep Year");
-    //         } else {
-    //             console.log(year);
-
-    //         }
-
-
-    //     }
-    // }; var Years = func();
-
-
     var object = {
-        data: data,
-        // Years: Years
-    }
-    res.render("home", object);
-});
-
-exp.get("/FindLeepYear",function(req,res){
-    res.render("find_leep_year");
+        pagename: "home/index",
+        title: "Home",
+        data: data
+    };
+    res.render("layout", object);
 });
 
 
-exp.listen(3000, function () {
+
+exp.get("/FindLeepYear", function(req, res) {
+    var object = {
+        pagename: "find_leep_year/index",
+        title: "Find Leep Year"
+    };
+    res.render("layout", object);
+});
+
+
+exp.listen(3000, function() {
     console.log("Your Server is running");
 });
-
