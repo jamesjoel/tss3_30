@@ -33,3 +33,7 @@
 	background-color: #FF6600 !important;
 	color: #FFF !important;
 }
+.banner{
+	background-image: url("../image/banner1.gif");
+	background-size: 100% 100%;
+}

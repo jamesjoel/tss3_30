@@ -43,11 +43,13 @@
                     <li class="nav-item">
                         <a href="/about" class="nav-link">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/contact" class="nav-link">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Help</a>
+                    <li class="nav-item dropdown">
+                    
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
+                        <div class="dropdown-menu">
+                            <a href="/contact/info" class="dropdown-item">Info</a>
+                            
+                        </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav nav ml-auto">
@@ -57,17 +59,16 @@
                 </ul>
             </div>
         </nav>
-        <div class="jumbotron jumbotron-fluid bg-gray">
+        <div class="jumbotron jumbotron-fluid bg-gray banner">
             <div class="container">
                 <h1>Best Shopping Site</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
         </div>
 
-
-
-        <%- include(pagename); %>
-
+        <div class="container-fluid" style="min-height: 600px">
+            <%- include(pagename); %>
+        </div>
 
         <div class="container-fluid bg-dark p-4">
             <div class="container">
