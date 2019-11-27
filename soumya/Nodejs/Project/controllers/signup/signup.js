@@ -8,6 +8,9 @@ routes.get("/", function(req, res) {
     }
     res.render("layout", pagedata);
 });
+routes.post("/save",function(req,res){
+	console.log(req.body);
+});
 
 
 
