@@ -7,4 +7,11 @@ routes.use("/contact", require("../controllers/contact"));
 routes.use("/login", require("../controllers/login"));
 routes.use("/signup", require("../controllers/signup"));
 
+
+routes.get("*", function(req, res){
+    res.render("notfound/index", { title : "Not Found"});
+});
+
+
+
 module.exports=routes;
