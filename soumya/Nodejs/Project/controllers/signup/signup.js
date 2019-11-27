@@ -4,7 +4,7 @@ var routes = express.Router();
 routes.get("/", function(req, res) {
     var pagedata = {
         pagename: "signup/index",
-        title: "Login Page",
+        title: "Signup",
     }
     res.render("layout", pagedata);
 });
