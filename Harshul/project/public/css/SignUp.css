@@ -1,0 +1,17 @@
+body{
+    background-image: url('../image/rox1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+.super {
+
+    border:2px solid #b09a9a;
+    padding:50px 60px;
+    /* margin-top: 20%; */
+    -webkit-box-shadow: -1px 5px 21px 10px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 5px 21px 10px rgba(0,0,0,0.75);
+box-shadow: -1px 5px 21px 10px rgba(0,0,0,0.75);
+
+}

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title> <%= title  %> </title>
+    <link type='text/css' rel="stylesheet" href="/css/bootstrap.css" />
+    <link type='text/css' rel="stylesheet" href="/css/font-awesome.css" />
+    <link type='text/css' rel="stylesheet" href="/css/style.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container-fluid" style="background-color:#BFBFBF">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a href="/SignUp" class="nav-link">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="background-color: #5c6b7a;">
+        <a href="/" class="navbar-brand">FASHION CENTRAL</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#menubar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="menubar" class="collapse navbar-collapse p-2">
+            <ul class="navbar-nav nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link"> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About us</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="/OfferAndSales" class="nav-link">Offers and Sales</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Contact us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Suggestion Box</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid " style="height:0px; ">
+        <div class="container">
+            <div style="position:relative; bottom: 46px;">
+                <h1 class="text-center font-weight-Normal">Collections</h1>
+                <h2 class="text-center font-weight-light">Discovers Our Lattest Campaign Shoots And Shops The Look's
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include(pagename); %>
+
+
+
+
+
+
+    <div class="container-fluid bg-dark">
+        <div class="container">
+            <p class="text-center text-light m-0 p-0">
+                This is My Footer
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
