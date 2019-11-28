@@ -1,0 +1,22 @@
+li.list-group-item:hover{
+    background-color:#F6DBAE;
+    color: blanchedalmond;
+}
+
+.container .list-group li{
+    padding: 14px;
+    width: 296px;
+
+}
+a.navbar-brand:hover{
+    color: #FFEEBB !important;
+    font-size: 19px;
+
+}
+
+
+
+
+
+
+

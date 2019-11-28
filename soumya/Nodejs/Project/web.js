@@ -1,7 +1,8 @@
 var express = require("express");
-var web = express();
-
+var parser = require("body-parser");
 var routes = require("./config/routes");
+var web = express();
+web.use(parser());
 web.use(routes);
 
 web.set("view engine", "ejs");
