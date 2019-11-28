@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
        <div class="col-md-6 offset-md-3">
+           <form action="/signup/save" method="post">
            <div class="card my-4">
                <div class="card-header">
                    <h4>User Registration</h4>
@@ -11,33 +12,33 @@
                <div class="card-body">
                    <div class="form-group">
                        <label>Full Name</label>
-                       <input type="text" class="form-control" />
+                       <input type="text" class="form-control" name="f_name"/>
                    </div>
                    <div class="form-group">
                        <label>Username/Email</label>
-                       <input type="text" class="form-control" />
+                       <input type="text" class="form-control" name="email"/>
                    </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" />
+                        <input type="password" class="form-control" name="password"/>
                     </div>
                     <div class="form-group">
                         <label>Re-Password</label>
-                        <input type="password" class="form-control" />
+                        <input type="password" class="form-control" name="re_password"/>
                     </div>
                     <div class="form-group">
                         <label>Gender</label>
                         <Br />
-                        Male&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" />
-                        Female&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" />
+                        Male&nbsp;&nbsp;&nbsp;<input type="radio" value="male" name="gender" />
+                        Female&nbsp;&nbsp;&nbsp;<input type="radio" value="female" name="gender" />
                     </div>
                     <div class="form-group">
                         <label>Address</label>
-                        <textarea class="form-control"></textarea>
+                        <textarea class="form-control" name="address"></textarea>
                     </div>
                     <div class="form-group">
                         <label>City</label>
-                        <select class="form-control">
+                        <select class="form-control" name="city">
                             <option>Select</option>
                             <option>Indore</option>
                             <option>Mumbai</option>
@@ -48,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label>Contact</label>
-                        <input type="text" class="form-control" />
+                        <input type="text" class="form-control" name="contact"/>
                     </div>
 
                </div>
@@ -56,6 +57,7 @@
                    <input type="submit" value="Registration" class="btn btn-primary" />
                </div>
            </div>
+           </form>
        </div>
     </div>
 </div>

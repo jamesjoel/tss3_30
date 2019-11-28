@@ -103,3 +103,12 @@ li.list-group-item:hover {
     color: #fff !important;
     background-color: #bad0c0;
 }
+
+a.nav-link.px-4:hover {
+    font-weight: bold;
+}
+
+a#cart:hover {
+    color: #FF6600 !important;
+    font-weight: bold !important;
+}
