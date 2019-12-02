@@ -1,7 +1,8 @@
 var express = require("express");
 var routes = express.Router();
 var MongoClient = require("mongodb").MongoClient;
-var url = "mongodb://localhost:27017";
+// var url = "mongodb://localhost:27017";
+var database = require("../config/database");
 
 var sha1 = require("sha1");
 
@@ -14,12 +15,12 @@ routes.post("/", function(req, res){
     // var obj = { full_name : req.body.f_name, email : req.body.email};
 
     req.body.password = sha1(req.body.password);
-    MongoClient.connect(url, function(err, client){
+    MongoClient.connect(database.dbUrl, function(err, client){
         if(err){
             console.log(err);
             return;
         }
-        var db = client.db("tss3");
+        var db = client.db(database.dbName);
         db.collection("user").insert(req.body, function(err, result){
             if(err){
                 console.log(err);
