@@ -1,7 +1,8 @@
 var express = require("express");
 var routes = express.Router();
-var MongoClient = require("mongodb").MongoClient;
-var database = require("../../config/database");
+
+var Product = require("../../models/product");
+
 
 routes.get("/", function (req, res) {
     var pagedata = { title: "Product", pagename: "admin/product/index" };
@@ -10,16 +11,25 @@ routes.get("/", function (req, res) {
 routes.post("/", function(req, res){
     req.body.product_price = parseInt(req.body.product_price);
     req.body.product_discount = parseInt(req.body.product_discount);
-    
-    MongoClient.connect(database.dbUrl, function(err, client){
-        var db = client.db(database.dbName);
-        db.collection("product").insert(req.body, function(err, result){
-            res.redirect("/admin/product");
-        });
+    Product.insert(req.body, function(err, result){
+        console.log(result.ops[0]._id);
+
+        /*
+        result = {
+            result : { ok : 1, n : 1},
+            ops : [
+                {
+
+                }
+            ]
+        }
+
+
+
+
+        */
+        res.redirect("/admin/product");
     });
-
-
-
 });
 
 
