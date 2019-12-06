@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
-
+var flash = require("express-flash");
 
 var routes = require("./config/routes");
 
@@ -13,6 +13,7 @@ app.use(express.static(__dirname+"/public"));
 app.use(bodyParser());
 app.use(cookieParser());
 app.use(session({ secret : "TSS3" }));
+app.use(flash());
 
 // req.session
 
