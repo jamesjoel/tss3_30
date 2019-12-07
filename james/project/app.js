@@ -4,6 +4,8 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
+var cache = require("nocache");
+
 
 var routes = require("./config/routes");
 
@@ -11,9 +13,21 @@ var routes = require("./config/routes");
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(bodyParser());
+
 app.use(cookieParser());
 app.use(session({ secret : "TSS3" }));
 app.use(flash());
+app.use(cache());
+
+app.use(function(req, res, next){
+    // console.log(typeof(res.locals));
+    res.locals.logo="Flipkart.com";
+    res.locals.session = req.session;
+    next();
+    
+});
+
+
 
 // req.session
 
