@@ -19,25 +19,30 @@
             <button class="navbar-toggler" data-toggle="collapse" data-target="#mainMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <div id="mainMenu" class="collapse navbar-collapse">
+            <% if(session.is_admin_logged_in)
+            { %>
+
+            
+            <div id="mainMenu" class="collapse navbar-collapse">
                 <ul class="navbar-nav nav mr-auto">
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Home</a>
+                        <a href="/admin/dashboard" class="nav-link">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/about" class="nav-link">About</a>
+                        <a href="/admin/product" class="nav-link">Product</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a href="/admin/category" class="nav-link">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/logout" class="nav-link">Logout</a>
+                    </li>
                     
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
-                        <div class="dropdown-menu">
-                            <a href="/contact/info" class="dropdown-item">Info</a>
-                            
-                        </div>
-                    </li>
                 </ul>
                 
-            </div> -->
+            </div>
+            
+            <% } %>
         </nav>
         
 

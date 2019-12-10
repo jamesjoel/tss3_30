@@ -5,7 +5,7 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
-
+// var sha1 = require("sha1");
 
 var routes = require("./config/routes");
 
@@ -23,9 +23,12 @@ app.use(function(req, res, next){
     // console.log(typeof(res.locals));
     res.locals.logo="Flipkart.com";
     res.locals.session = req.session;
+
+    // console.log(sha1("admin"));
     next();
     
 });
+
 
 
 
