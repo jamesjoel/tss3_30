@@ -19,41 +19,38 @@
 
         <div class="container">
             <a href="/" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true" style="font-size: 15px;"></i>Admin Panel</a>
+
             <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu" data-toggle="collapse">
                     <span>Menu</span>
                     <span class="navbar-toggler-icon" ></span>
                 </button>
-            <!-- 
-            <div id="navmenu" class="collapse navbar-collapse">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a href="/" class="nav-link px-4 active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/About" id="a" class="nav-link px-4 ">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Contact" class="nav-link  px-4">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/Help" class="nav-link px-4">Help</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" id="cart" class="nav-link px-4"><i class="fa fa-shopping-cart text-success mr-2" aria-hidden="true"></i>Cart</a>
-                    </li>
-                </ul>
-            </div> -->
 
+            <% if(session.is_admin_logged_in){ %>
+
+
+
+                <div id="navmenu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="/admin/dashboard" class="nav-link px-4 active">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/product" id="a" class="nav-link px-4 ">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/category" class="nav-link  px-4">Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/admin/logout" class="nav-link px-4">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                <% } %>
         </div>
 
     </nav>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <%- include(pagename); %>
-            </div>
-        </div>
-    </div>
+
+    <%- include(pagename); %>
 
 </body>
 
