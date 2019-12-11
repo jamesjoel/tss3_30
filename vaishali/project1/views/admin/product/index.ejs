@@ -1,0 +1,47 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4 class="text-center">Add New Product</h4>
+            <form action="/admin/product" method="post">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Add New Product Here</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label>Product Title</label>
+                            <input type="text" class="form-control" name="product_title"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Price</label>
+                            <input type="text" class="form-group" name="product_price"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Detail</label>
+                            <textarea type="text" class="form-group" name="product_detail"></textarea>
+                        </div>
+                        <div class="from-group">
+                            <label>Product Category</label>
+                            <select class="form-control" name="Product_category">
+                            <option>Select Catogory</option>
+                            <option value="mobile">Mobile</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="home appliance">Home Appliance</option>
+                            <option value="mens fashion">Mens Fashion</option>
+                            <option value="womens fashion">Womens Fashion</option>
+                            <option value="kids">Kids</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Product Discount</label>
+                            <input type="text" class="form-control" name="product_discount" />
+                        </div>
+
+                        <div class="card-footer">
+                            <input type="submit" value="Add" class="btn btn-success" />
+                        </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

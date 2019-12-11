@@ -1,0 +1,11 @@
+.container-fluid{
+    background-color: rgb(80, 170, 170);
+}
+
+
+
+.top-nav li a{
+    color: rgb(8, 19, 19);
+    font-size: 14px;
+
+}

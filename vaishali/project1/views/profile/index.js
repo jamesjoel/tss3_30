@@ -1,0 +1,1 @@
+<h3>Welcome to profile page <%= session.name %></h3>
