@@ -20,6 +20,9 @@ routes.post("/", function(req, res) {
         if (result.length == 1) {
 
             if (result[0].password == sha1(pass)) {
+                req.session.name = result[0].f_name;
+                req.session._id = result[0]._id;
+                req.session.is_user_logged_in = true;
                 res.redirect("/");
             } else {
                 req.flash("error", "This Password is Incorrect");

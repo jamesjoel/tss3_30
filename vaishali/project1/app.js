@@ -1,0 +1,31 @@
+var express = require("express");
+var app = express();
+var bodyparser = require("body-parser");
+var cookieparser = require("cookie-parser");
+var session = require("express-session");
+var flash = require("express-flash");
+var cache = require("nocache");
+
+var routes = require("./config/routes");
+
+app.set("view engine", "ejs");
+app.use(express.static(__dirname+"/public"));
+app.use(bodyparser());
+app.use(cookieparser());
+app.use(session({secret: "cantypemsghere"}));
+app.use(flash());
+app.use(cache());
+
+app.use(function(req,res,next){
+    res.locals.logo="v-shop.com";
+    res.locals.session="req.session";
+});
+
+
+app.use(routes);
+
+
+
+app.listen(3000, function(){
+    console.log("Server Running");
+});

@@ -1,0 +1,38 @@
+.bg-orange{
+    background-color: rgb(48, 110, 134);
+}
+.bg-orange ul li a{
+    color: rgb(250, 249, 253);
+}
+.bg-orange ul li a:hover{
+    background-color: rgb(11, 179, 179);
+}
+.bg-gray{
+    background-color: rgb(84, 190, 84);
+}
+.navbar {
+    padding: 0;
+    border-bottom: 3px solid rgb(255, 254, 253);
+}
+.navbar ul li a{
+    padding: 15px 20px ;
+    font-weight: bold;
+}
+.navbar ul li a:hover{
+    background-color: rgb(236, 74, 19);
+    color: rgb(73, 104, 73);
+}
+.left-menu li a{
+    color: rgb(48, 5, 5);
+    font-size: 14px;
+    border-bottom: 1px solid #814f4f ;
+    padding: 10px 15px ;
+}
+.left-menu li a:hover{
+    background-color: rgb(172, 166, 166);
+    color: rgb(131, 90, 160);
+}
+.banner{
+    background-image: url("../image/banner3.jpg");
+    background-size: 100% 100%;
+}

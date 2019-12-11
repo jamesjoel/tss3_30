@@ -1,0 +1,120 @@
+<html>
+<head>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="/font/font-awesome.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container-fluid bg-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <ul class="nav justify-content-end">
+                        <% if(session.is_user_logged_in)
+                        { %>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link"><%= session.name %></li>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/profile" class="nav-link">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="logout" class="nav-link">Logout</a>
+                        </li>
+                        <% }
+                        else
+                        { %>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link"><i class="fa fa-lock"></i> Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/signup" class="nav-link"><i class="fa fa-user"></i> Singnup</a>
+                        </li>
+                        <%
+                        }
+                        %>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a href="/" class="navbar-brand">
+            <%= logo %>
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mainmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="mainmenu" class="collapse navbar-collapse">
+            <ul class="navbar-nav nav mr-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
+                    <div class="dropdown-menu">
+                        <a href="/contact/info" class="dropdown-item">Info</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">My Cart <span class="badge badge-pill badge-light">0</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid bg-orange banner">
+        <div class="container">
+            <h1>Online Shopping Site</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi omnis doloremque veniam porro deleniti exercitationem delectus, tenetur consequuntur veritatis doloribus. Similique consequatur distinctio eum velit ipsa sed sunt error tempore.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="min-height:600px">
+    <%- include(pagename); %>
+    </div>
+
+    <div class="container-fluid bg-dark p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link text-light">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/about" class="nav-link text-light">About</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="/contact" class="nav-link text-light">Contact</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-light">Help</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

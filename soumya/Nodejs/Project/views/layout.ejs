@@ -24,11 +24,20 @@
                     <p class="text-gray px-4 m-0 float-left"><i class="fa fa-envelope-o mr-1 text-success" style="font-size: 0.9rem;" aria-hidden="true"></i> <span class="font-size-8 d-none d-md-inline"> Example123@gmail.com </span></p>
                     <p class="text-gray  m-0 float-left"><i class="fa fa-phone mr-1 text-success" style="font-size: 0.9rem;" aria-hidden="true"></i> <span class="font-size-8 d-none d-md-inline">020 123-456-789 </span></p>
                 </div>
+                <% if(session.is_user_logged_in){ %>
+                    <div class="py-2 ">
+                        <a class="btn btn-outline-light float-left text-gray" href="#"><i class="fa fa-user mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline"><%= session.name %></span>  </a>
+                        <a class="btn btn-outline-light float-left text-gray" href="/profile"><i class="fa fa-user mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">My Profile</span>  </a>
+                        <a class="btn btn-outline-light float-left text-gray" href="/Logout"><i class="fa fa-sign-in mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Logout</span>  </a>
+                    </div>
 
-                <div class="py-2 ">
-                    <a class="btn btn-outline-light float-left text-gray" href="/login#login"><i class="fa fa-sign-in mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Login</span>  </a>
-                    <a class="btn btn-outline-light float-right text-gray" href="/Signup#signup"><i class="fa fa-user-plus mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Sign Up</span>  </a>
-                </div>
+                    <% } else { %>
+                        <div class="py-2 ">
+                            <a class="btn btn-outline-light float-left text-gray" href="/login#login"><i class="fa fa-sign-in mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Login</span>  </a>
+                            <a class="btn btn-outline-light float-right text-gray" href="/Signup#signup"><i class="fa fa-user-plus mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Sign Up</span>  </a>
+                        </div>
+
+                        <% } %>
 
             </div>
         </div>
@@ -36,7 +45,7 @@
     <nav class="navbar bg-white navbar-expand-md navbar-light  sticky-top py-4">
 
         <div class="container">
-            <a href="/" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true" style="font-size: 15px;"></i>ShoppingMall.com</a>
+            <a href="/" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true" style="font-size: 15px;"></i><%= logo %></a>
             <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu" data-toggle="collapse">
                     <span>Menu</span>
                     <span class="navbar-toggler-icon" ></span>
