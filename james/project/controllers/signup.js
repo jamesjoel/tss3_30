@@ -4,7 +4,7 @@ var User =  require("../models/user");
 var sha1 = require("sha1");
 
 routes.get("/", function (req, res) {
-    var pagedata = { pagename: "signup/index", title: "Signup" };
+    var pagedata = { pagename: "signup/index", title: "Signup", categoryNotShow: true };
     res.render("layout", pagedata);
 });
 routes.post("/", function(req, res){

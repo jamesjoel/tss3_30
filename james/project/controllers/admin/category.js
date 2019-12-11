@@ -11,8 +11,19 @@ routes.get("/", function (req, res) {
 routes.post("/", function(req, res){
     // console.log(req.body);
     Category.save(req.body, function(err, result){
-        res.redirect("/admin/category");
+        res.redirect("/admin/category/view");
     });
 });
+
+
+routes.get("/view", function(req, res){
+    Category.search({}, function(err, result){
+        var pagedata = { title: "View Category", pagename: "admin/category/view", category : result };
+        res.render("admin_layout", pagedata);
+    });
+    
+    
+});
+
 
 module.exports = routes;

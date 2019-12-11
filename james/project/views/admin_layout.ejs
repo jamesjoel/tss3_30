@@ -28,11 +28,22 @@
                     <li class="nav-item">
                         <a href="/admin/dashboard" class="nav-link">Dashboard</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/admin/product" class="nav-link">Product</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle">Product</a>
+                        <div class="dropdown-menu">
+
+                            <div class="dropdown-header">Products</div>
+                            <a href="/admin/product" class="dropdown-item">Add</a>
+                            <a href="/admin/product/view" class="dropdown-item">View</a>
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a href="/admin/category" class="nav-link">Category</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Category</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-header">Categories</div>
+                                <a href="/admin/category" class="dropdown-item">Add</a>
+                                <a href="/admin/category/view" class="dropdown-item">View</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="/admin/logout" class="nav-link">Logout</a>
