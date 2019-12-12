@@ -4,6 +4,9 @@ var routes = express.Router();
 var Product = require("../../models/product");
 var Category = require("../../models/category");
 
+var mongodb = require("mongodb");
+
+
 routes.get("/", function (req, res) {
     Category.search({}, function(err, result){
         var pagedata = { title: "Product", pagename: "admin/product/index", category : result };
@@ -30,6 +33,13 @@ routes.get("/view", function(req, res){
         var pagedata = { title: "View Product", pagename: "admin/product/view", product : result };
         res.render("admin_layout", pagedata); 
 
+    });
+});
+routes.get("/delete", function(req, res){
+    // console.log(req.query);
+    var a = req.query.id;
+    Product.delete({ _id : mongodb.ObjectId(a) }, function(err, result){
+        res.redirect("/admin/product/view");
     });
 });
 
