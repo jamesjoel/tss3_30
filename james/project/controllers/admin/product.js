@@ -35,14 +35,14 @@ routes.get("/view", function(req, res){
 
     });
 });
-routes.get("/delete", function(req, res){
+routes.get("/delete/:id", function(req, res){
     // console.log(req.query);
-    var a = req.query.id;
+    var a = req.params.id;
     Product.delete({ _id : mongodb.ObjectId(a) }, function(err, result){
         res.redirect("/admin/product/view");
     });
 });
-
+ 
 
 
 module.exports = routes;

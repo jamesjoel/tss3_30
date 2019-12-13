@@ -19,3 +19,6 @@ module.exports.delete=function(where, cb){
         db.collection("category").remove(where, cb);
     });
 }
+module.exports
+
+
