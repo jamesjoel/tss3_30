@@ -3,16 +3,17 @@ var database = require("../config/database");
 
 module.exports.save = function(req_body, func) {
     connect(function(err, client) {
-        if (err) {
-            console.log(err);
-        }
+
         var db = client.db(database.dbName);
-        db.collection("product").insert(req_body, func);
+        db.collection("category").insert(req_body, func);
     });
 }
+
 module.exports.check = function(where, cb) {
     connect(function(err, client) {
         var db = client.db(database.dbName);
-        db.collection("product").find(where).toArray(cb);
+        db.collection("category").find(where).toArray(cb);
     });
 }
+
+module.exports.Delete = function

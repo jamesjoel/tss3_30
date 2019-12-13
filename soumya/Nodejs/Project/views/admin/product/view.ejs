@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-hover">
+                <thead>
+                    <th>S.no</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <%  Product.forEach(function(x,n){ %>
+                        <tr>
+                            <td>
+                                <%= n+1 %>
+                            </td>
+                            <td>
+                                <%= x.product_title %>
+                            </td>
+                            <td>
+                                <%= x.product_price %>
+                            </td>
+                            <td>
+                                <%= x.product_discount %>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-info">Edit</a>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+
+                        </tr>
+                        <% }); %>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
