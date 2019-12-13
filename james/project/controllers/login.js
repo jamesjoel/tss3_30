@@ -4,7 +4,8 @@ var User = require("../models/user");
 var sha1 = require("sha1");
 
 routes.get("/", function (req, res) {
-    var pagedata = { pagename: "login/index", title: "Login", errorMsg : req.flash("error") };
+    
+    var pagedata = { pagename: "login/index", title: "Login", errorMsg: req.flash("error"), categoryNotShow : true };
     res.render("layout", pagedata);
 });
 

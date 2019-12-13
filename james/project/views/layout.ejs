@@ -88,7 +88,34 @@
         </div>
 
         <div class="container-fluid" style="min-height: 600px">
+            <div class="container-fluid">
+                <h1 class="text-center">Welcome</h1>
+            </div>
+            <% if(locals.categoryNotShow){ %>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+            <% }else{ %>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5>Categories</h5>
+                                <ul class="nav flex-column border left-menu">
+                                    <% allCategory.forEach(function(x){ %>
+                    
+                                    <li class="nav-item">
+                                        <a href="#" class="nav-link"><%= x.category_name %></a>
+                                    </li>
+                                    <% }) %>
+                    
+                                </ul>
+                            </div>
+            <% } %>
+
             <%- include(pagename); %>
+                    </div>
+                </div>
+
         </div>
 
         <div class="container-fluid bg-dark p-4">
