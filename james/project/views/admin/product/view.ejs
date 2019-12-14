@@ -18,7 +18,8 @@
                     <td><%= x.product_price %></td>
                     <td><%= x.product_discount %></td>
                     <td><a href="#" class="btn btn-sm btn-info">Edit</a></td>
-                    <td><a href="#" class="btn btn-sm btn-danger">Delete</a></td>
+                    <!-- <td><a href="/admin/product/delete?id=<%= x._id %>" class="btn btn-sm btn-danger">Delete</a></td> -->
+                    <td><a href="/admin/product/delete/<%= x._id %>" class="btn btn-sm btn-danger">Delete</a></td>
                 </tr>
                <% }) %>
             </table>
