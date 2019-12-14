@@ -1,7 +1,7 @@
 var express = require("express");
 var routes = express.Router();
 var Category = require("../../models/category");
-
+var mongodb = require("mongodb");
 
 routes.get("/", function (req, res) {
     var pagedata = { title: "Category", pagename: "admin/category/index" };
@@ -25,5 +25,17 @@ routes.get("/view", function(req, res){
     
 });
 
+routes.get("/edit/:id", function(req, res){
+    // console.log(req.params);
+    var id = req.params.id;
+    Category.search({ _id : mongodb.ObjectId(id)}, function(err, result){
+        // console.log(result);
+        var pagedata = { title: "Edit Category", pagename: "admin/category/edit", category: result[0] };
+        res.render("admin_layout", pagedata);
+    });
+});
 
+routes.post("/update", function(req, res){
+    console.log(req.body);
+});
 module.exports = routes;
