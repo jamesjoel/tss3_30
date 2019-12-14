@@ -8,6 +8,8 @@ var cache = require("nocache");
 
 var routes = require("./config/routes");
 
+var Category = require("./models/category");
+
 app.set("view engine", "ejs");
 app.use(express.static(__dirname+"/public"));
 app.use(bodyparser());
@@ -17,8 +19,14 @@ app.use(flash());
 app.use(cache());
 
 app.use(function(req,res,next){
-    res.locals.logo="v-shop.com";
-    res.locals.session="req.session";
+    Category.search({}, function(err, result){
+        
+        res.locals.logo="v-shop.com";
+        res.locals.session= req.session ;
+        res.locals.allCategory = result;
+        next();
+    });
+    
 });
 
 

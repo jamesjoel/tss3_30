@@ -4,10 +4,10 @@ var routes = express.Router();
 var url = ["/profile"];
 
 //backdoor protection code
-routes.use(url, function(req,res,next){
+routes.use(url, function(req, res, next){
     if(! req.session.is_user_logged_in)
     {
-        req.redirect("/login");
+        res.redirect("/login");
         return;
     }
     next();
@@ -20,11 +20,13 @@ routes.use("/contact", require("../controllers/contact"));
 routes.use("/login", require("../controllers/login"));
 routes.use("/signup", require("../controllers/signup"));
 
+routes.use("/profile", require("../controllers/profile"));
+
 routes.use("/admin", require("./adminroutes"));
 
-routes.get("/logout", function(req,res){
+routes.get("/logout", function(req, res){
     req.session.destroy();
-    req.redirect("/login");
+    res.redirect("/login");
 });
 
 routes.get("*", function(req, res){
