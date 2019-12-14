@@ -16,4 +16,9 @@ module.exports.check = function(where, cb) {
     });
 }
 
-module.exports.Delete = function
+module.exports.Delete = function(where, cb) {
+    connect(function(err, client) {
+        var db = client.db(database.dbName);
+        db.collection("category").remove(where, cb);
+    });
+}

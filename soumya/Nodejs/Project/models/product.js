@@ -16,3 +16,10 @@ module.exports.check = function(where, cb) {
         db.collection("product").find(where).toArray(cb);
     });
 }
+
+module.exports.Delete = function(where, cb) {
+    connect(function(err, client) {
+        var db = client.db(database.dbName);
+        db.collection("product").remove(where, cb);
+    });
+}
