@@ -26,10 +26,10 @@
                                 <%= x.product_discount %>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-info">Edit</a>
+                                <a href="/admin/product/edit/<%= x._id %>" class="btn btn-info">Edit</a>
                             </td>
                             <td>
-                                <a href="/admin/product/view?id=<%= x._id %>" class="btn btn-danger">Delete</a>
+                                <a href="/admin/product/delete/<%= x._id %>" class="btn btn-danger">Delete</a>
                             </td>
 
                         </tr>

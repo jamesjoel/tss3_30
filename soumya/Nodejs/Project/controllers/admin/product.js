@@ -17,12 +17,25 @@ routes.get("/view", function(req, res) {
     });
 });
 
-routes.get("/delete", function(req, res) {
-    var id = req.query.id;
-    Product.Delete({ _id = mongodb.ObjectId(id) }, function(err, result) {
+routes.get("/delete/:id", function(req, res) {
+    //req.query also can be use but this function is not help SEO 
+    var id = req.params.id; //is use Function Because help SEO  
+    Product.Delete({ _id: mongodb.ObjectId(id) }, function(err, result) {
         res.redirect("/admin/product/view");
     });
 });
+
+routes.get("/edit/:id", function(req, res) {
+    // console.log(req.params);
+    var id = req.params.id;
+    Product.check({ _id: mongodb.ObjectId(id) }, function(err, result) {
+        // console.log(result);
+        var pagedata = { title: "Edit Category", pagename: "admin/product/edit", product: result[0] };
+        res.render("admin_layout", pagedata);
+    });
+});
+
+
 
 routes.get("/", function(req, res) {
     Category.check({}, function(err, result) {

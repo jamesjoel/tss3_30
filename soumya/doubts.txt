@@ -1,24 +1,17 @@
-1. Next Paragraph (text.indient in bootstrap)?
+1. Apply Favicon?
 
-2. Display Properties?
+2. ul or ol Center?
 
-3. Apply Favicon?
+3. Width: fit-content;?
 
-4. ul or ol Center?
+4. What is Meta Tag?
 
-5. Width: fit-content;?
+5. Nested Dropdown [class="dropdown-submenu"]?
 
-6. What is Meta Tag?
+6. If client do double click on submit button by mistake ,so insert double data of form in database?
 
-7.Nested Dropdown [class="dropdown-submenu"]?
+7. If id is not same in product Add page and category view page  ,so What i will do?
 
-8. if i want to give more margin from the mt-4 so how it is possible?
-Answer[8]: make coustom class like mt-5 then apply. [ok i make class, but its non-responsive?]
-
-9. any more color in button? 
-Answer[9]: Also Make a Coustom Class Like btn-red,btn-white.... 
-
-
-10. when i click checkbox or radio button so clickable on text?
+8. when i click checkbox or radio button so clickable on text?
 Answer[10]: <lable for=radio>Click The Radio Button...</lable>  
 			<input type="radio" name="radio">
