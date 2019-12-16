@@ -28,4 +28,5 @@ routes.get("*", function(req, res) {
     res.render("notfound/index", { title: "Error 404 (Not Found)!" })
 });
 
+// console.log(routes);
 module.exports = routes;

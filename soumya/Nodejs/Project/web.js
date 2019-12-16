@@ -6,7 +6,8 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
-
+var Category = require("./models/category");
+// var Product = require("./models/product");
 // d033e22ae348aeb5660fc2140aec35850c4da997
 web.set("view engine", "ejs");
 web.use(express.static(__dirname + "/public"));
@@ -20,9 +21,15 @@ web.use(function(req, res, returns) {
 
     res.locals.logo = "ShoppingMall.com";
     res.locals.session = req.session;
-    console.log("--------------", req.session);
+
     returns();
 });
+// web.use(function(req, res, next) {
+//     Product.check({}, function(err, result) {
+//         res.locals.allproduct = result;
+//         next();
+//     });
+// });
 
 
 web.use(routes);
