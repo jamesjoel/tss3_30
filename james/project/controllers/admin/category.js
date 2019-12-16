@@ -36,6 +36,11 @@ routes.get("/edit/:id", function(req, res){
 });
 
 routes.post("/update", function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
+    var id = req.body.id;
+    delete req.body.id;
+    Category.update({ _id : mongodb.ObjectId(id)}, req.body, function(err, result){
+        res.redirect("/admin/category/view");
+    });
 });
 module.exports = routes;
