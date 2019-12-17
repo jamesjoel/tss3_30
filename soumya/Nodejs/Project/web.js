@@ -18,18 +18,15 @@ web.use(session({ secret: "soumya3000" }));
 web.use(flash());
 web.use(cache());
 web.use(function(req, res, returns) {
+    Category.check({}, function(err, result) {
 
-    res.locals.logo = "ShoppingMall.com";
-    res.locals.session = req.session;
-
-    returns();
+        res.locals.logo = "ShoppingMall.com";
+        res.locals.session = req.session;
+        res.locals.allcategory = result;
+        returns();
+    });
 });
-// web.use(function(req, res, next) {
-//     Product.check({}, function(err, result) {
-//         res.locals.allproduct = result;
-//         next();
-//     });
-// });
+
 
 
 web.use(routes);
