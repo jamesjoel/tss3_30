@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
+var upload = require("express-fileupload");
 // var sha1 = require("sha1");
 
 
@@ -22,6 +23,8 @@ app.use(cookieParser());
 app.use(session({ secret : "TSS3" }));
 app.use(flash());
 app.use(cache());
+app.use(upload());
+
 
 app.use(function(req, res, next){
     // console.log(typeof(res.locals));
