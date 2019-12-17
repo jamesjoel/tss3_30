@@ -26,7 +26,7 @@ routes.post("/", function(req, res) {
                 req.session.a_id = result[0]._id;
                 req.session.a_name = result[0].name;
                 req.session.is_admin_logged_in = true;
-                console.log(req.session);
+                // console.log(req.session);
                 res.redirect("/admin/dashboard");
             } else {
                 req.flash("error", "This Password Is Incorrect");
