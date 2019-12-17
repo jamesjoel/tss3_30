@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title> <%= title  %> </title>
+
     <link type='text/css' rel="stylesheet" href="/css/bootstrap.css" />
     <link type='text/css' rel="stylesheet" href="/css/font-awesome.css" />
     <link type='text/css' rel="stylesheet" href="/css/style.css" />
@@ -17,77 +17,134 @@
                 <div class="col-md-6"></div>
                 <div class="col-md-6">
                     <ul class="nav justify-content-end">
+                        <% if(session.is_user_logged_in)
+                        { %>
                         <li class="nav-item">
-                            <a href="/SignUp" class="nav-link">Sign up</a>
+                            <a href="#" class="nav-link"><%= session.name %></a>
                         </li>
                         <li class="nav-item">
-                            <a href="/login" class="nav-link">Login</a>
+                            <a href="/profile" class="nav-link">Profile</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="/logout" class="nav-link">Logout</a>
+                        </li>
+                        <% }
+                        else
+                        { %>
+
+                        <li class="nav-item">
+                            <a href="/SignUp" class="nav-link"><i class="fa fa-user-plus" aria-hidden="true"></i>Sign
+                                up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/login" class="nav-link"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</a>
+                        </li>
+                        <%
+                        }
+                        %>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="background-color: #5c6b7a;">
-        <a href="/" class="navbar-brand">FASHION CENTRAL</a>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top " style="background-color: #5c6b7a;">
+        <a href="/" class="navbar-brand"><i class="fa fa-shopping-bag" aria-hidden="true"></i><%= logo%></a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menubar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="menubar" class="collapse navbar-collapse p-2">
             <ul class="navbar-nav nav">
                 <li class="nav-item">
-                    <a href="/" class="nav-link"> Home</a>
+                    <a href="/" class="nav-link px-4 "> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/about" class="nav-link">About us</a>
+                    <a href="/about" class="nav-link px-4">About us</a>
                 </li>
 
 
                 <li class="nav-item">
-                    <a href="/OfferAndSales" class="nav-link">Offers and Sales</a>
+                    <a href="/OfferAndSales" class="nav-link px-4">Offers and Sales</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/" class="nav-link">Contact us</a>
+                    <a href="/" class="nav-link px-4">Contact us</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/" class="nav-link">Suggestion Box</a>
+                    <a href="/" class="nav-link px-4">Suggestion Box</a>
                 </li>
-
             </ul>
+            <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">My Cart <span class="badge badge-pill badge-light">0</span></a>
+                </li>
         </div>
     </nav>
 
-    <div class="jumbotron jumbotron-fluid " style="height:0px; ">
-        <div class="container">
-            <div style="position:relative; bottom: 46px;">
-                <h1 class="text-center font-weight-Normal">Collections</h1>
-                <h2 class="text-center font-weight-light">Discovers Our Lattest Campaign Shoots And Shops The Look's
-                </h2>
-            </div>
-        </div>
-    </div>
-
-
+    
 
     <%- include(pagename); %>
 
 
 
-
-
-
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid p-0 bg-dark ">
         <div class="container">
-            <p class="text-center text-light m-0 p-0">
-                This is My Footer
-            </p>
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4 text-light mt-4">
+                            <h3>ABOUT US</h3>
+                            <p>Be live your own style</p>
+
+                            <h6><i class="fa fa-map-marker text-primary" aria-hidden="true"></i>Address</h6>
+                            <p>120,super street sillion valley (USA)</p>
+
+                            <h6><i class="fa fa-envelope text-info" aria-hidden="true"></i>Have Any
+                                Questions?</h6>
+                            <p>support@fashioncentral.com</p>
+
+                            <h6><i class="fa fa-phone text-info" aria-hidden="true"></i>Contact</h6>
+                            <p>91+45609375739</p>
+                        </div>
+
+                        <div class="col-md-4  text-light mt-4">
+                            <h3><i class="fa fa-twitter text-info" aria-hidden="true"></i>FRESH
+                                TWEETS</h3>
+                            <p><i class="fa fa-twitter text-info" aria-hidden="true"></i>@userthemesrel HTML Version Out
+                                Now</p>
+                            <p>10min ago</p>
+                            <p><i class="fa fa-twitter text-info" aria-hidden="true"></i>@userthemesrel HTML Version Out
+                                Now</p>
+                            <p>15min ago</p>
+                            <p><i class="fa fa-twitter text-info" aria-hidden="true"></i>@userthemesrel HTML Version Out
+                                Now</p>
+                            <p>20min ago</p>
+                        </div>
+
+                        <div class="col-md-4  text-light mt-4">
+                            <h3>LAST UPDATE</h3>
+                            <p>Rendomised words which dont look eveable.</p>
+                            <p>Rendomised words which dont look eveable.</p>
+                            <p>Rendomised words which dont look eveable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-light mt-4">
+                    <h3>CONNECT WITH US</h3>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                    <small id="emailHelp" class="form-text  text-light">We'll never share your email
+                        with anyone
+                        else.</small>
+                    <i class="fa fa-facebook-square text-primary mt-2 fa-2x ml-2" aria-hidden="true"></i>
+                    <i class="fa fa-twitter text-info fa-2x ml-2" aria-hidden="true"></i>
+                    <i class="fa fa-google-plus-official text-danger fa-2x ml-2" aria-hidden="true"></i>
+                    <i class="fa fa-camera-retro text-primary fa-2x ml-2" aria-hidden="true"></i>
+                </div>
+            </div>
         </div>
-    </div>
-
-
-
-
-
+        <div class="copyrights text-center" style=" width: 100%; background-color: #111111;">
+            <p class="text-light mb-0 " style=" width: 100%;">©2019 Fashion Central. All Rights
+                Reserved.</p>
+        </div>
 </body>
 
 </html>

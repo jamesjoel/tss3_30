@@ -42,7 +42,26 @@ routes.get("/delete/:id", function(req, res){
         res.redirect("/admin/product/view");
     });
 });
- 
+routes.get("/edit/:id", function(req, res){
+    var a = req.params.id;
+    Category.search({}, function(err, result1){
+
+        Product.search({ _id : mongodb.ObjectId(a)}, function(err, result2){
+            // console.log(result);
+            var pagedata = { title: "Edit Product", pagename: "admin/product/edit", product: result2[0], category : result1 };
+            res.render("admin_layout", pagedata); 
+        });
+    });
+});
+
+routes.post("/update", function(req, res){
+    var id = req.body.id;
+    delete req.body.id;
+    Product.update({ _id : mongodb.ObjectId(id)}, req.body, function(err, result){
+        res.redirect("/admin/product/view");
+    });
+});
+
 
 
 module.exports = routes;

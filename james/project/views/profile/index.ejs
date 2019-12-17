@@ -1,3 +1,33 @@
 <div class="col-md-9">
     <h3>Welcome to Profile Page <%= session.name %></h3>
+    <table class="table table-dark table-bordered table-hover">
+        <tr>
+            <td>Full Name</td>
+            <td><%= user.f_name %></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><%= user.email %></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><%= user.gender %></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td><%= user.city %></td>
+        </tr>
+        <tr>
+            <td>Contact</td>
+            <td><%= user.contact %></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><%= user.address %></td>
+        </tr>
+
+    </table>
+    <Hr />
+    <a href="#" class="btn btn-info">Edit</a>
+    <a href="#" class="btn btn-info">Change Password</a>
 </div>
