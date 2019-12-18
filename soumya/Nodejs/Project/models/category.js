@@ -22,3 +22,10 @@ module.exports.Delete = function(where, cb) {
         db.collection("category").remove(where, cb);
     });
 }
+
+module.exports.update = function(where, obj, cb) {
+    connect(function(err, client) {
+        var db = client.db(database.dbName);
+        db.collection("category").update(where, { $set: obj }, cb);
+    });
+}

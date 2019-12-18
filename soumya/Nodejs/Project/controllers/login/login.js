@@ -12,11 +12,11 @@ routes.get("/", function(req, res) {
 });
 
 routes.post("/", function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     var username = req.body.email;
     var pass = req.body.password;
     User.check({ email: username }, function(err, result) {
-        console.log(result);
+        // console.log(result);
         if (result.length == 1) {
 
             if (result[0].password == sha1(pass)) {

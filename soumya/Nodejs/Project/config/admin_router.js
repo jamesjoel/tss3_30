@@ -1,6 +1,6 @@
 var express = require("express");
 var routes = express.Router();
-var url = ["/dashboard", "/product", "/category"];
+var url = ["/dashboard", "/product", "/category", "/user"];
 
 routes.use(url, function(req, res, next) {
 
@@ -16,6 +16,7 @@ routes.use("/product", require("../controllers/admin/product"));
 routes.use("/", require("../controllers/admin/login"));
 routes.use("/category", require("../controllers/admin/category"));
 routes.use("/dashboard", require("../controllers/admin/dashboard"));
+routes.use("/user", require("../controllers/admin/user"));
 
 
 routes.get("/logout", function(req, res) {

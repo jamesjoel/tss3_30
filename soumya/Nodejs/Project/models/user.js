@@ -15,3 +15,10 @@ module.exports.check = function(where, cb) {
         db.collection("user").find(where).toArray(cb);
     });
 }
+
+module.exports.update = function(where, obj, cb) {
+    connect(function(req, client) {
+        var db = client.db(database.dbName);
+        db.collection("user").update(where, { $set: obj }, cb);
+    });
+}
