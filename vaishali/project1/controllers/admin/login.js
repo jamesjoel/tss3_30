@@ -11,7 +11,10 @@ routes.get("/", function(req, res){
 routes.post("/", function(req,res){
     var u = req.body.username;
     var p = req.body.password;
+    //console.log(u);
+    //console.log(p);
     Admin.search({ username : u}, function(err, result){
+        console.log(result);
         if(result.length==1)
         {
             if(result[0].password == sha1(p))
@@ -23,7 +26,7 @@ routes.post("/", function(req,res){
             }
             else
             {
-                req.flash("error", "This Password is incoreect");
+                req.flash("error", "This Password is incorrect");
                 res.redirect("/admin");
             }
         }

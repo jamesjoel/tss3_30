@@ -6,6 +6,7 @@ routes.use(url, function(req, res, next) {
         res.redirect("/login#login");
         return;
     }
+    // req.session.is_user_logged_in = true;
     next();
 });
 

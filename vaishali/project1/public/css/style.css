@@ -1,11 +1,15 @@
+.input-group{
+    margin-top:20px;
+}
+
 .bg-orange{
-    background-color: rgb(48, 110, 134);
+    background-color: rgb(61, 81, 192);
 }
 .bg-orange ul li a{
     color: rgb(250, 249, 253);
 }
 .bg-orange ul li a:hover{
-    background-color: rgb(11, 179, 179);
+    background-color: rgb(250, 19, 19);
 }
 .bg-gray{
     background-color: rgb(84, 190, 84);
@@ -32,7 +36,9 @@
     background-color: rgb(172, 166, 166);
     color: rgb(131, 90, 160);
 }
+
 .banner{
-    background-image: url("../image/banner3.jpg");
-    background-size: 100% 100%;
+    background-image: url("../images/banner4.jpg");
+    background-size: 100% 200%;
+    
 }

@@ -10,7 +10,12 @@ module.exports.insert=function(obj, cb){
 
 module.exports.update= function() {}
 
-module.exports.delete = function() {}
+module.exports.delete = function(where, cb){
+    connect(function(err, client){
+        var db = client.db(database.dbName);
+        db.collection("product").remove(where, cb);
+    });
+}
 
 module.exports.search = function(where, cb) {
     connect(function(err, client){

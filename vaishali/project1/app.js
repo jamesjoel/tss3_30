@@ -5,6 +5,7 @@ var cookieparser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
 var cache = require("nocache");
+// var sha1 = require("sha1");
 
 var routes = require("./config/routes");
 
@@ -18,7 +19,9 @@ app.use(session({secret: "cantypemsghere"}));
 app.use(flash());
 app.use(cache());
 
-app.use(function(req,res,next){
+app.use(function(req, res, next){
+    // console.log(typeof(res.locals));
+    
     Category.search({}, function(err, result){
         
         res.locals.logo="v-shop.com";

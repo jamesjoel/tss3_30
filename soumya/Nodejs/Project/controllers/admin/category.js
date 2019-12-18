@@ -1,7 +1,5 @@
 var express = require("express");
 var routes = express.Router();
-var database = require("../../config/database");
-var MongoClient = require("mongodb").MongoClient;
 var Category = require("../../models/category");
 var mongodb = require("mongodb");
 var Product = require("../../models/product");
@@ -38,9 +36,11 @@ routes.get("/edit/:id", function(req, res) {
 routes.get("/delete/:id", function(req, res) {
     // console.log(req.query);
     var a = req.params.id;
-    Product.Delete({ product_category: a });
     Category.Delete({ _id: mongodb.ObjectId(a) }, function(err, result) {
-        res.redirect("/admin/category/view");
+        Product.Delete({ product_category: a }, function(req, res) {
+
+            res.redirect("/admin/category/view");
+        });
     });
 
 });
@@ -48,6 +48,15 @@ routes.get("/delete/:id", function(req, res) {
 
 routes.post("/", function(req, res) {
     Category.save(req.body, function(err, client) {
+        res.redirect("/admin/category/view");
+    });
+});
+
+routes.post("/update", function(req, res) {
+    // console.log(req.body);
+    var id = req.body.id
+    delete req.body.id
+    Category.update({ _id: mongodb.ObjectId(id) }, req.body, function(err, result) {
         res.redirect("/admin/category/view");
     });
 });

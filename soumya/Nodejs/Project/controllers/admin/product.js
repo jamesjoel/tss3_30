@@ -28,13 +28,24 @@ routes.get("/delete/:id", function(req, res) {
 routes.get("/edit/:id", function(req, res) {
     // console.log(req.params);
     var id = req.params.id;
-    Product.check({ _id: mongodb.ObjectId(id) }, function(err, result) {
-        // console.log(result);
-        var pagedata = { title: "Edit Category", pagename: "admin/product/edit", product: result[0] };
-        res.render("admin_layout", pagedata);
+    Category.check({}, function(err, result1) {
+        console.log(result1);
+        Product.check({ _id: mongodb.ObjectId(id) }, function(err, result2) {
+            console.log(result2);
+            var pagedata = { title: "Edit Category", pagename: "admin/product/edit", product: result2[0], category: result1 };
+            res.render("admin_layout", pagedata);
+        });
     });
 });
 
+routes.post("/update", function(req, res) {
+    // console.log(req.body);
+    var id = req.body.product_id;
+    delete req.body.product_id;
+    Product.update({ _id: mongodb.ObjectId(id) }, req.body, function(err, result) {
+        res.redirect("/admin/product/view");
+    });
+});
 
 
 routes.get("/", function(req, res) {

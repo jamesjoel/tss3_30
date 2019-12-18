@@ -6,7 +6,7 @@ module.exports.save = function(obj, cb) {
     var db = client.db(database.dbName);
     db.collection("admin").insert(obj, cb);
     });
-};
+}
 
 module.exports.search = function(where, cb){
     connect(function(err, client){
