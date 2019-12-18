@@ -5,11 +5,14 @@ var Product = require("../../models/product");
 var Category = require("../../models/category");
 
 var mongodb = require("mongodb");
+var path = require("path");
+var random = require("randomstring");
+
 
 
 routes.get("/", function (req, res) {
     Category.search({}, function(err, result){
-        var pagedata = { title: "Product", pagename: "admin/product/index", category : result };
+        var pagedata = { title: "Product", pagename: "admin/product/index", category : result, errorMsg : req.flash("msg") };
         res.render("admin_layout", pagedata);
 
     });
@@ -19,13 +22,52 @@ routes.get("/", function (req, res) {
 
 
 routes.post("/", function(req, res){
-    req.body.product_price = parseInt(req.body.product_price);
-    req.body.product_discount = parseInt(req.body.product_discount);
-    Product.insert(req.body, function(err, result){
-        
+    // console.log(req.files);
+    var a = random.generate(25);
+    var image = req.files.image;
+    var size = image.size;
+    var filename = image.name;
+    var arr = filename.split(".");
+    var ext = arr[arr.length - 1];
+    var newName = a+"."+ext;
+    var uploadPath = path.resolve()+"/public/upload/"+newName;
 
-        res.redirect("/admin/product/view");
-    });
+    if(ext =="jpg" || ext == "gif" || ext == "png" || ext == "jpeg")
+    {
+        if(size <= (1024*1024))
+        {
+            image.mv(uploadPath, function(err){
+            req.body.product_price = parseInt(req.body.product_price);
+            req.body.product_discount = parseInt(req.body.product_discount);
+            req.body.image = newName;
+
+            Product.insert(req.body, function(err, result){
+                    res.redirect("/admin/product/view");
+                });
+            });
+        }
+        else
+        {
+            req.flash("msg", "This File is Too large");
+            res.redirect("/admin/product");
+        }
+    }
+    else
+    {
+        req.flash("msg", "This File Type Not Allowed");
+        res.redirect("/admin/product");
+    }
+    
+
+
+
+
+    // image.mv(uploadPath, function(err){
+    //     console.log("uploaeded .....");
+    // });
+
+
+    
 });
 
 routes.get("/view", function(req, res){
