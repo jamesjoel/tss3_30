@@ -34,6 +34,17 @@ app.use(function(req, res, next){
         res.locals.logo="Flipkart.com";
         res.locals.session = req.session;
         res.locals.allCategory = result;
+        if(req.cookies.cart)
+        {
+            var ids = req.cookies.cart;
+            var arr = ids.split("#");
+            res.locals.totalItem=arr.length;
+        }
+        else
+        {
+            res.locals.totalItem=0;
+        }
+
         next();
     });
 
