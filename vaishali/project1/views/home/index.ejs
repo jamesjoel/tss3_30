@@ -1,110 +1,20 @@
-<div class="container-fluid">
-    <h1 class="text-center">Contact Us<h1>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <h5>Categories</h5>
-            <ul class="nav flex-column border left-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Mobile</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Electronics</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Fashion</a>
-                </li>
-            </ul>
-        </div>
         <div class="col-md-9">
             <h5>Products</h5>
             <div class="row">
+                <% product.forEach(function(x){ %>
+
                 <div class="col-md-4 col-6 col-sm-6">
                     <div class="card mb-4">
                         <img class="card-img-top" src="images/9.jpg"/>
                         <div class="card-body">
-                            <p class="card-title float-left font-weight-bold">I-Phone</p>
-                            <p class="card-title float-right">&#8377; 50000.00</p>
+                            <p class="card-title float-left font-weight-bold"><%= x.product_title %></p>
+                            <p class="card-title float-right">&#8377; <%= x.product_price %></p>
                         </div>
                         <div class="card-footer">
                             <a href="#" class="btn btn-sm btn-info">More</a>
                         </div>    
                     </div>
                 </div>
-
-                <div class="col-md-4 col-6 col-sm-6">
-                        <div class="card mb-4">
-                            <img class="card-img-top" src="images/10.jpg"/>
-                            <div class="card-body">
-                                <p class="card-title float-left font-weight-bold">Clothing</p>
-                                <p class="card-title float-right">&#8377; 5000.00</p>
-                            </div>
-                            <div class="card-footer">
-                                <a href="#" class="btn btn-sm btn-info">More</a>
-                            </div>    
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-6 col-sm-6">
-                            <div class="card mb-4">
-                                <img class="card-img-top" src="images/11.jpg"/>
-                                <div class="card-body">
-                                    <p class="card-title float-left font-weight-bold">Kids</p>
-                                    <p class="card-title float-right">&#8377; 500.00</p>
-                                </div>
-                                <div class="card-footer">
-                                    <a href="#" class="btn btn-sm btn-info">More</a>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="col-md-4 col-6 col-sm-6">
-                                <div class="card mb-4">
-                                    <img class="card-img-top" src="images/12.png"/>
-                                    <div class="card-body">
-                                        <p class="card-title float-left font-weight-bold">Electronics</p>
-                                        <p class="card-title float-right">&#8377; 5000.00</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="#" class="btn btn-sm btn-info">More</a>
-                                    </div>    
-                                </div>
-                            </div>
-
-                            <div class="col-md-4 col-6 col-sm-6">
-                                    <div class="card mb-4">
-                                        <img class="card-img-top" src="images/13.png"/>
-                                        <div class="card-body">
-                                            <p class="card-title float-left font-weight-bold">I-Phone</p>
-                                            <p class="card-title float-right">&#8377; 60000.00</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="#" class="btn btn-sm btn-info">More</a>
-                                        </div>    
-                                    </div>
-                                </div>
-
-
-                                <div class="col-md-4 col-6 col-sm-6">
-                                        <div class="card mb-4">
-                                            <img class="card-img-top" src="images/14.png"/>
-                                            <div class="card-body">
-                                                <p class="card-title float-left font-weight-bold">I-Phone</p>
-                                                <p class="card-title float-right">&#8377; 45000.00</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="#" class="btn btn-sm btn-info">More</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                    
-                
-            
-        
-    
-                
+                <% }) %>
             </div>
         </div>
-    </div>
-</div>
