@@ -24,12 +24,13 @@ routes.get("/add/:id", function (req, res) {
 });
 
 routes.get("/mycart", function(req, res){
-    var ids = req.cookies.cart;
-    var arr = ids.split("#");
+    var ids = req.cookies.cart; // 7#4#12#8
+    var arr = ids.split("#"); // [7, 4, 12, 8]
     var where_arr = [];
     arr.forEach(function(x){
         where_arr.push({ _id : mongodb.ObjectId(x) });
     });
+    // console.log(where_arr);
     
     Product.search({ $or : where_arr }, function(err, result){
         // console.log(result);
@@ -43,5 +44,22 @@ routes.get("/clear", function(req, res){
     res.clearCookie("cart");
     res.redirect("/");
 });
+routes.get("/remove/:id", function(req, res){
+    var id = req.params.id;
+    // console.log(id);
+    var ids = req.cookies.cart;
+    var arr = ids.split("#");
+    // console.log(arr);
+    var i = arr.indexOf(id);
+    // console.log(i);
+    arr.splice(i, 1);
+    var newids = arr.join("#");
+    res.cookie("cart", newids, { maxAge: 2 * 60 * 60 * 1000, httpOnly: true });
+    res.redirect("/cart/mycart");
+
+
+})
+
+
 
 module.exports=routes;

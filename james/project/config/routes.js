@@ -9,7 +9,7 @@ var url = ["/profile"];
 routes.use(url, function(req, res, next){
     if(! req.session.is_user_logged_in)
     {
-        req.redirect("/login");
+        res.redirect("/login");
         return;
     }
     next();
