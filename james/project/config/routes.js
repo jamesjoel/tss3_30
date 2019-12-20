@@ -23,8 +23,11 @@ routes.use("/about", require("../controllers/about"));
 routes.use("/contact", require("../controllers/contact"));
 routes.use("/login", require("../controllers/login"));
 routes.use("/signup", require("../controllers/signup"));
+routes.use("/cart", require("../controllers/cart"));
 
 routes.use("/profile", require("../controllers/profile"));
+
+
 
 
 routes.use("/admin", require("./adminroutes"));
