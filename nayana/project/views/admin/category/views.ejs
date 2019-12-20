@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2" >
+           <h2>Views All Categories</h2>
+           <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                  <th>S.No.</th>
+                  <th>Category Name</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+            </thead>
+              <% category.forEach(function(x, n){ %>
+            <tbody>
+                 <tr>
+                   <td><%= n+1 %></td>
+                   <td><%= x.category_name %></td>
+                   <td> <a href="/admin/category/edit/<%= x._id %>"  class="btn btn-sm btn-primary">Update</a>  </td>
+                   <td> <a href="#" class="btn btn-sm btn-danger">Delete</a>  </td>
+                   </tr>
+      
+    </tbody>
+                      <% }); %>
+           </table>
+
+        </div>
+    </div>
+</div>
