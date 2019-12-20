@@ -6,7 +6,10 @@
 .bg-black {
     background-color: #222222;
 }
-
+.badge-orange{
+    color: white;
+background-color: #d4550b;
+}
 .container a {
     border: 0;
 }
