@@ -10,7 +10,7 @@ routes.get("/view", function(req, res) {
     Product.check({}, function(err, result) {
         var pagedata = {
             pagename: "admin/product/view",
-            title: "Product View",
+            title: "Show Product",
             Product: result
         }
         res.render("admin_layout", pagedata);
@@ -32,7 +32,7 @@ routes.get("/edit/:id", function(req, res) {
         console.log(result1);
         Product.check({ _id: mongodb.ObjectId(id) }, function(err, result2) {
             console.log(result2);
-            var pagedata = { title: "Edit Category", pagename: "admin/product/edit", product: result2[0], category: result1 };
+            var pagedata = { title: "Edit Product", pagename: "admin/product/edit", product: result2[0], category: result1 };
             res.render("admin_layout", pagedata);
         });
     });
@@ -52,7 +52,7 @@ routes.get("/", function(req, res) {
     Category.check({}, function(err, result) {
         var pagedata = {
             pagename: "admin/product/index",
-            title: "Products",
+            title: "Add Product",
             categories: result
         }
         res.render("admin_layout", pagedata);

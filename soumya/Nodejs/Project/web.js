@@ -27,6 +27,13 @@ web.use(function(req, res, returns) {
         res.locals.logo = "ShoppingMall.com";
         res.locals.session = req.session;
         res.locals.allcategory = result;
+        if(req.cookies.cart){
+            var ids = req.cookies.cart;
+            var arr = ids.split("#");
+            res.locals.totalitem = arr.length;
+        }else{
+            res.locals.totalitem = 0;
+        }
         returns();
     });
 });

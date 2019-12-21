@@ -16,7 +16,8 @@ routes.get("/add/:id",function(req,res){
 });
 
 routes.get("/mycart",function(req,res){
-   
+    if(req.cookies.cart){
+    
     var ids = req.cookies.cart;
     var arr = ids.split("#");  
     var where_arr = [];
@@ -32,10 +33,25 @@ routes.get("/mycart",function(req,res){
         }
         res.render("layout",pagedata);
     });
+}else{
+    res.redirect("/");
+}
 });
 
 routes.get("/clear",function(req,res){
     res.clearCookie("cart");
     res.redirect("/");
+});
+
+routes.get("/remove/:id",function(req,res){
+    var id = req.params.id;
+    var ids = req.cookies.cart;
+    var arr = ids.split("#");
+    var i = arr.indexOf(id);
+    arr.splice(i,1);
+    var newids = arr.join("#");
+    res.cookie("cart",newids,{ maxAge: 2 * 60 * 60 * 1000, httpOnly: true });
+    res.redirect("/cart/mycart");
+
 });
 module.exports=routes;
