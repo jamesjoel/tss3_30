@@ -6,7 +6,8 @@ var Category = require("../../models/category");
 
 var mongodb = require("mongodb");
 var path = require("path");
-var random = require("randomstring");
+var changename = require("../../helpers/changename");
+var fs = require("fs");
 
 
 
@@ -23,13 +24,16 @@ routes.get("/", function (req, res) {
 
 routes.post("/", function(req, res){
     // console.log(req.files);
-    var a = random.generate(25);
     var image = req.files.image;
     var size = image.size;
-    var filename = image.name;
-    var arr = filename.split(".");
-    var ext = arr[arr.length - 1];
-    var newName = a+"."+ext;
+
+
+    var imgData = changename(image.name);
+
+    var ext = imgData[1];
+    var newName = imgData[0];
+
+
     var uploadPath = path.resolve()+"/public/upload/"+newName;
 
     if(ext =="jpg" || ext == "gif" || ext == "png" || ext == "jpeg")
@@ -72,7 +76,7 @@ routes.post("/", function(req, res){
 
 routes.get("/view", function(req, res){
     Product.search({}, function(err, result){
-        var pagedata = { title: "View Product", pagename: "admin/product/view", product : result };
+        var pagedata = { title: "View Product", pagename: "admin/product/view", product : result, errorMsg : req.flash("msg") };
         res.render("admin_layout", pagedata); 
 
     });
@@ -80,9 +84,22 @@ routes.get("/view", function(req, res){
 routes.get("/delete/:id", function(req, res){
     // console.log(req.query);
     var a = req.params.id;
-    Product.delete({ _id : mongodb.ObjectId(a) }, function(err, result){
-        res.redirect("/admin/product/view");
+
+    // fs.unlink();
+    Product.search({ _id : mongodb.ObjectId(a)}, function(err, result){
+        // console.log(result);
+        var imgname = result[0].image;
+        var delPath = path.resolve() + "/public/upload/" +imgname;
+        fs.unlink(delPath, function(err){
+            Product.delete({ _id: mongodb.ObjectId(a) }, function (err, result) {
+                
+                res.redirect("/admin/product/view");
+            });
+        });
     });
+
+
+    
 });
 routes.get("/edit/:id", function(req, res){
     var a = req.params.id;
@@ -103,6 +120,39 @@ routes.post("/update", function(req, res){
         res.redirect("/admin/product/view");
     });
 });
+
+
+routes.post("/upload", function(req, res){
+    var id = req.body.id;
+    var image = req.files.image;
+    var size = image.size;
+    var imgData = changename(image.name);
+    var uploadPath = path.resolve() + "/public/upload/" + imgData[0];
+
+    if(imgData[1]=="jpg" || imgData[1]=="jpeg" || imgData[1]=="png" || imgData[1]=="gif")
+    {
+        if(size <= (1024*1024))
+        {
+            image.mv(uploadPath, function(err){
+                Product.update({ _id : mongodb.ObjectId(id) }, { image : imgData[0] }, function(err, result){
+                    res.redirect("/admin/product/view");
+                });
+            });
+        }
+        else
+        {
+            req.flash("msg", "This File is Too large");
+            res.redirect("/admin/product/view");
+        }
+    }
+    else
+    {
+        req.flash("msg", "This File Type not allowed");
+        res.redirect("/admin/product/view");
+    }
+
+});
+
 
 
 
