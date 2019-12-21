@@ -34,7 +34,7 @@ routes.use("/admin", require("./adminroutes"));
 
 routes.get("/logout", function(req, res){
     req.session.destroy();
-    req.redirect("/login");
+    res.redirect("/login");
     
 });
 
