@@ -16,6 +16,7 @@
         "express-fileupload": "^1.1.6",
         "express-flash": "0.0.2",
         "express-session": "^1.17.0",
+        "fs": "0.0.1-security",
         "mongodb": "^3.3.5",
         "nocache": "^2.1.0",
         "randomstring": "^1.1.5",

@@ -7,6 +7,7 @@
                     <th>Product Name</th>
                     <th>Price</th>
                     <th>Discount</th>
+                    <th>Image</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </thead>
@@ -25,6 +26,10 @@
                             <td>
                                 <%= x.product_discount %>
                             </td>
+                            <td align="center"><img src="/uploads/<%= x.image %>" height="70" width="70" />
+                                <Br />
+                                <a class="text-dark" onclick="setId('<%= x._id %>')" style="font-size: 12px;" href="#" data-target="#uploadImage" data-toggle="modal">Change</a>
+                            </td>
                             <td>
                                 <a href="/admin/product/edit/<%= x._id %>" class="btn btn-info">Edit</a>
                             </td>
@@ -40,3 +45,43 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="uploadImage">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload Your Image</h3>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/product/upload" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" id="pid" value="" />
+                <div class="form-group">
+                    <label>Select New File</label>
+                    <input type="file" name="image" class="form-control"/>
+                    <p class="text-danger">
+                        <%= errorMsg %>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Upload" class="btn btn-success" />
+                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setId(id){
+        document.getElementById("pid").value=id;
+    }
+    </script>
+    <% if(errorMsg != ""){ %>
+
+        <script type="text/javascript">
+            $(window).on('load', function () {
+                $('#uploadImage').modal('show');
+            });
+        </script>
+        <% } %>
+        
