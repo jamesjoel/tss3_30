@@ -25,6 +25,23 @@
                         </td>
                     </tr>
                     <tr>
+                        <th>Profile Picture</th>
+                        <td>
+                            <%
+                            if(user.image){ %>
+                                <img class="rounded-circle" src="/profilePicture/<%= user.image %>" height="60" width="60" >
+                                <br>
+                                <a href="#" class="text-light " data-target="#uploadProfile" data-toggle="modal"  style="text-decoration: none; font-size: smaller;">Change Profile Picture</a>
+                           <% }else{ %>
+                                <img class="rounded-circle" src="/image/user.png" height="60" width="60" >
+                                <br>
+                                <a href="#" class="text-light " data-target="#uploadProfile" data-toggle="modal"  style="text-decoration: none; font-size: smaller;">Change Profile Picture</a>
+
+                          <%  }
+                            %>
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Gender</th>
                         <td>
                             <%= user.gender %>
@@ -58,3 +75,38 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="uploadProfile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Profile Picture</h3>
+            </div>
+            <div class="modal-body">
+                <form action="/profile/edit_profile_pic" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Select Profile Picture</label>
+                    <input type="file" name="image" class="form-control"/>
+                    <p class="text-danger">
+                        <%= msg %>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Upload" class="btn btn-success" />
+                    <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<% if(msg != ""){ %>
+
+<script type="text/javascript">
+    $(window).on('load', function () {
+        $('#uploadProfile').modal('show');
+    });
+</script>
+<% } %>
+
