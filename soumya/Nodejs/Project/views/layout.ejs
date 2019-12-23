@@ -4,6 +4,7 @@
     <title>
         <%= title   %>
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon/3.png">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -66,7 +67,7 @@
                         <a href="/Help" class="nav-link px-4">Help</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" id="cart" class="nav-link px-4"><i class="fa fa-shopping-cart text-success mr-2" aria-hidden="true"></i>Cart</a>
+                        <a href="/cart/mycart" id="cart" class="nav-link px-4"><i class="fa fa-shopping-cart text-success mr-2" aria-hidden="true"></i>Cart <span class="badge badge-pill badge-orange"><%= totalitem %></span></a>
                     </li>
                 </ul>
             </div>

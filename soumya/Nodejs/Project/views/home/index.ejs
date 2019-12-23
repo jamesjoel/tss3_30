@@ -28,7 +28,7 @@
                         <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-6">
-                                    <img src="image/1.png " height="100%" class=" bg-danger card-img" alt="...">
+                                    <img src="/uploads/<%= x.image %>" height="100%" class=" bg-danger card-img" alt="...">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-body">
@@ -41,7 +41,8 @@
                                         <p class="card-text ">
                                             <%= x.product_detail %>
                                         </p>
-                                        <button class="btn btn-outline-success btn-sm m-2">Buy Now</button>
+                                        <a class="btn btn-success btn-sm m-2 d-block" href="#">Buy Now</a>
+                                        <a href="/cart/add/<%= x._id %>" class="btn btn-sm btn-dark d-block"><i class="fa fa-shopping-cart text-light mr-2" aria-hidden="true"></i>Add to Cart</a>
                                         <p class="card-text  text-muted">
                                             <span class="fa fa-star text-warning "></span>
                                             <span class="fa fa-star text-warning"></span>

@@ -7,7 +7,7 @@ var Product = require("../../models/product");
 routes.get("/", function(req, res) {
     var pagedata = {
         pagename: "admin/category/index",
-        title: "Categories"
+        title: "Add Category"
     }
     res.render("admin_layout", pagedata);
 });
@@ -16,7 +16,7 @@ routes.get("/view", function(req, res) {
     Category.check({}, function(err, result) {
         var pagedata = {
             pagename: "admin/category/view",
-            title: "Category View",
+            title: "Show Category",
             Category: result
         }
         res.render("admin_layout", pagedata);
