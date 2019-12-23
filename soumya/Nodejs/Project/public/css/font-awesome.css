@@ -2335,3 +2335,8 @@
   overflow: visible;
   clip: auto;
 }
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900; }
+.fa-arrow-down:before {
+  content: "\f063"; }
