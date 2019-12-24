@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script>
+            function demo()
+            {
+                var a =parseInt(document.getElementById("num1").value);
+                var b =parseInt(document.getElementById("num2").value);
+                
+                var c = a+b;
+                document.getElementById("msg").innerHTML=c;
+                var d = a-b;
+                document.getElementById("err").innerHTML=d;
+                var f = a/b;
+                document.getElementById("pnb").innerHTML=f;
+                var e = a*b;
+                document.getElementById("jpg").innerHTML=e;
+
+             
+         }   
+            
+            </script>
+    </head>
+    <body>
+        <input type="text" id="num1"/>
+        <br/>
+        <br/>
+        <input type="text" id="num2"/>
+        <hr/>
+
+        <button onclick="demo()">+</button>
+        <h1 id="msg"></h1>
+        <button onclick="demo()">-</button>
+        <h1 id="err"></h1>
+        <button onclick="demo()">/</button>
+        <h1 id="pnb"></h1>
+        <button onclick="demo()">*</button>
+        <h1 id="jpg"></h1>
+
+
+
+    </body>
+</html>

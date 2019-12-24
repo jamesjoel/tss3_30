@@ -65,57 +65,68 @@
           <form action="/signup" method="post" class="super">
             <h1>Create Your Account</h1>
             <div class="custom-control custom-radio">
-              <input type="radio" value="male" class="custom-control-input" id="defaultUnchecked" name="defaultExampleRadios">
+              <input type="radio" value="male" class="custom-control-input" id="defaultUnchecked"
+                name="defaultExampleRadios">
               <label class="custom-control-label" for="defaultUnchecked">Male</label>
             </div>
 
             <!-- Default checked -->
             <div class="custom-control custom-radio">
-              <input type="radio" value="female" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked>
+              <input type="radio" value="female" class="custom-control-input" id="defaultChecked"
+                name="defaultExampleRadios" checked>
               <label class="custom-control-label" for="defaultChecked">Female</label>
             </div>
 
             <div class="form-group">
-              <label for="exampleInputPassword1"  class="text-light" >Name</label>
+              <label for="exampleInputPassword1" class="text-light">Name</label>
               <input type="text" name="f_name" class="form-control" id="exampleInputPassword1" placeholder="User Name">
             </div>
-            <div class="form-group class" >
-              <label for="exampleInputEmail1" class="text-light" >Email address</label>
+            <div class="form-group class">
+              <label for="exampleInputEmail1" class="text-light">Email address</label>
               <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                 placeholder="Enter email">
               <small id="emailHelp" class="form-text text-light">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1"  class="text-light" >Password</label>
-              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="exampleInputPassword1" class="text-light">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                placeholder="Password">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1" style=" text-decoration-color:#7fb5eb;"  class="text-light" > Repeat Password</label>
-              <input type="password" name="re_password" class="form-control" id="exampleInputPassword1" placeholder="Re-Type Password">
+              <label for="exampleInputPassword1" style=" text-decoration-color:#7fb5eb;" class="text-light"> Repeat
+                Password</label>
+              <input type="password" name="re_password" class="form-control" id="exampleInputPassword1"
+                placeholder="Re-Type Password">
             </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1" style=" text-decoration-color:#7fb5eb;"  class="text-light" >Contact</label>
-                  <input type="text" name="contact" class="form-control" id="exampleInputPassword1" placeholder="Conatct Number">
-                </div>
-                <div class="form-group" >
-                    <label  class="text-light" >City</label>
-                    <select class="form-control" name="city">
-                        <option>Select</option>
-                        <option>Indore</option>
-                        <option>Mumbai</option>
-                        <option>Pune</option>
-                        <option>Delhi</option>
-                    </select>
-                  <br>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label text-light" for="exampleCheck1">Check me out</label>
+            <div class="form-group">
+              <label for="exampleInputPassword1" style=" text-decoration-color:#7fb5eb;"
+                class="text-light">Contact</label>
+              <input type="text" name="contact" class="form-control" id="exampleInputPassword1"
+                placeholder="Conatct Number">
             </div>
-            
-            
+            <div class="form-group">
+              <label class="text-light">Address</label>
+              <textarea class="form-control" name="address" placeholder="Address"></textarea>
+            </div>
+            <div class="form-group">
+              <label class="text-light">City</label>
+              <select class="form-control" name="city">
+                <option>Select</option>
+                <option>Indore</option>
+                <option>Mumbai</option>
+                <option>Pune</option>
+                <option>Delhi</option>
+              </select>
+              <br>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label text-light" for="exampleCheck1">Check me out</label>
+              </div>
 
-            <button type="submit" class="btn btn-success">Submit</button>
-            <button type="submit" class="btn btn-success float-right">Reset</button>
+
+
+              <button type="submit" class="btn btn-success">Submit</button>
+              <button type="submit" class="btn btn-success float-right">Reset</button>
           </form>
 
 

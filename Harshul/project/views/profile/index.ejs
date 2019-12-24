@@ -1,1 +1,45 @@
-<h3>Welcome to Profile Page <%= session.name %></h3>
+<div class="col-md-9">
+    <h3>Welcome to Profile Page <%= session.name %></h3>
+
+ <%   if(msg!="")
+    { %>
+        <div class="alert alert-info">
+            <%= msg %>
+        </div>
+    <% }
+    %>
+
+    <table class="table table-white table-bordered table-hover">
+        <tr>
+            <td>Full Name</td>
+            <td><%= user.f_name %></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><%= user.email %></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><%= user.gender %></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td><%= user.city %></td>
+        </tr>
+        <tr>
+            <td>Contact</td>
+            <td><%= user.contact %></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><%= user.address %></td>
+        </tr>
+
+    </table>
+    <Hr />
+    <a href="/profile/edit" class="btn btn-info mt-4">Edit</a>
+    <a href="profile/changepwd" class="btn btn-info mt-4">Change Password</a>
+    <div class="col-md-3">
+    </div>
+
+</div>

@@ -20,28 +20,32 @@
         </div>
         <div class="col-md-9 mb-4">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="image/rux5.jpg" alt="Nature" class="card-img-top">
+                
+                <% 
+                product.forEach(function(x){ %>
+                    
+                    <div class="col-md-4">
+                        
+                        <div class="card">
+                        <img src="/upload/<%= x.image %>" alt="Nature" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Portfolio</h5>
+                            <h5 class="card-title"> <%=  x.product_title %></h5>
                             <p class="card-text">
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a
-                                page when looking at its layout.
+                                <%= x.product_detail %>
                             </p>
-                            <p class="price">$19.99</p>
-                            <a href="#" class="btn btn-primary">Add TO Cart</a>
-                        </div>
-
-                    </div>
-
+                            <p class="price"><%= x.product_price %></p>
+                            <a href="/cart/add/<%= x._id  %>" class="btn btn-primary">Add TO Cart</a>
                 </div>
-            </div>
-
-
-
+            
         </div>
+    </div>
+       <% });
+        %>
 
+</div>
+
+
+
+</div>
     </div>
 </div>

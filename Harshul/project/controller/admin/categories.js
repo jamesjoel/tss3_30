@@ -35,8 +35,21 @@ routes.get("/edit/:id", function (req, res) {
     });
 });
 
+
+routes.get("/delete/:id",function(req,res){
+     var a = req.params.id;
+     categories.delete({_id : mongodb.ObjectId(a)},function(err,result){
+         res.redirect("/admin/categories/views");
+     });
+});
+
 routes.post("/update", function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
+    var id = req.body.id;
+    delete req.body.id;
+    categories.update({_id:mongodb.ObjectId(id)},req.body,function(err,result){
+        res.redirect("/admin/categories/views");
+    });
 });
 
 
