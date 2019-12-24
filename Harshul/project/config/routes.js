@@ -23,6 +23,8 @@ routes.use("/login", require("../controller/login"));
 routes.use("/OfferAndSales", require("../controller/offer"));
 routes.use("/admin", require("./adminroutes"));
 routes.use("/profile", require("../controller/profile"));
+routes.use("/edit", require("../controller/edit"));
+routes.use("/cart", require("../controller/cart"));
 
 // routes.use("/profile",require("../controllers/profile"));
 // routes.use("/admin", require("./adminroutes"));

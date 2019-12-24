@@ -22,7 +22,7 @@ routes.post("/" , function(req,res){
                 if(result[0].password == sha1(p))
                 {
                     req.session.name = result[0].f_name;
-                    req.session._id = result[0].id;
+                    req.session._id = result[0]._id;
                     req.session.is_user_logged_in=true;
                     res.redirect("/");
                 }

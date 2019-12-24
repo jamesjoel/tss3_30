@@ -22,6 +22,7 @@ routes.use("/", require("../controller/admin/login"));
 routes.use("/product",require("../controller/admin/product"));
 routes.use("/dashboard",require("../controller/admin/dashboard"));
 routes.use("/categories",require("../controller/admin/categories"));
+routes.use("/users",require("../controller/admin/users"));
 
 routes.get("/logout",function(req,res){
     req.session.destroy();
