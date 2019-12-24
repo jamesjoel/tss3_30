@@ -24,10 +24,12 @@ routes.get("/add/:id", function (req, res) {
 });
 
 routes.get("/mycart", function(req, res){
+    
     var ids = req.cookies.cart; // 7#4#12#8
     var arr = ids.split("#"); // [7, 4, 12, 8]
     var where_arr = [];
     arr.forEach(function(x){
+            // { _id : mongodb.OjbectId(4)}
         where_arr.push({ _id : mongodb.ObjectId(x) });
     });
     // console.log(where_arr);

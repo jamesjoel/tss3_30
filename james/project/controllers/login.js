@@ -19,10 +19,18 @@ routes.post("/", function(req, res){
         {
             if(result[0].password == sha1(p))
             {
-                req.session.name=result[0].f_name;
-                req.session._id = result[0]._id;
-                req.session.is_user_logged_in=true;
-                res.redirect("/");
+                if(result[0].status==1)
+                {
+
+                    req.session.name=result[0].f_name;
+                    req.session._id = result[0]._id;
+                    req.session.is_user_logged_in=true;
+                    res.redirect("/");
+                }
+                else{
+                    req.flash("error", "You are Deactive now....");
+                    res.redirect("/login") 
+                }
             }
             else
             {
