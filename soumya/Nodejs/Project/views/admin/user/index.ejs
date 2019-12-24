@@ -17,7 +17,7 @@
                     <%  user.forEach(function(x,n){ 
                         if(x.status == 1){
                             var status = "Active"
-                        }else(x.status == 0){
+                        }else{
                             var status = "Deactive"
                         }
                         
@@ -42,7 +42,7 @@
                               <%= status %>
                             </td>
                             <td>
-                                <a href="/admin/slider/change_status/<%= x._id %>/<%= x.status %>" class="btn btn-secondary">Change</a>
+                                <a href="/admin/user/change_status/<%= x._id %>/<%= x.status %>" class="btn btn-secondary">Change</a>
                             </td>
                             
 
