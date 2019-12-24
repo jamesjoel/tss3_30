@@ -7,7 +7,7 @@ var Admin = require("../../models/admin");
 routes.get("/", function(req, res) {
     var pagedata = {
         pagename: "admin/login/index",
-        title: "Admin Panel",
+        title: "Login Admin",
         msg: req.flash("error")
     }
     res.render("admin_layout", pagedata);

@@ -6,7 +6,7 @@ var MongoClient = require("mongodb").MongoClient;
 routes.get("/", function(req, res) {
     var pagedata = {
         pagename: "admin/dashboard/index",
-        title: "Products"
+        title: "Dashboard"
     }
     res.render("admin_layout", pagedata);
 });

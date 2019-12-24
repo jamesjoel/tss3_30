@@ -6,7 +6,10 @@
 .bg-black {
     background-color: #222222;
 }
-
+.badge-orange{
+    color: white;
+background-color: #d4550b;
+}
 .container a {
     border: 0;
 }
@@ -112,3 +115,15 @@ a#cart:hover {
     color: #FF6600 !important;
     font-weight: bold !important;
 }
+.btn-square{
+text-decoration: none !important;
+border-radius: 0;
+}
+
+.Product-Detail {
+    display: block;
+    width: 165px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
