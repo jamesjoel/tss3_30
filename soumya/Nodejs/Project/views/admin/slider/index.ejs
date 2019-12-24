@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mb-4">
+            <div class="card">
+                <div class="card-header">Select Slider Image</div>
+                <div class="card-body">
+
+                    <form action="/admin/slider" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Select Slider Image</label>
+                        <input type="file" name="image" class="form-control"/>
+                        <p class="text-danger">  
+                            <%= errMsg %>               
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Upload" class="btn btn-success" />
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-hover table-dark table-bordered table-stripped">
+                <thead>
+                    <th>S.No</th>
+                    <th>Slider Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                    <td>1</td>
+                    
+                    <td><img src="/image/hero-bg.jpg" height="60" width="200" alt="SLider"></td>
+                    
+                    <td>
+                        <a href="#" class="btn btn-info">Edit</a>
+                    </td>
+                               
+                    <td>
+                        <a href="#" class="btn btn-danger">Delete</a>
+                    </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

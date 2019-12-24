@@ -127,3 +127,12 @@ border-radius: 0;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+  #navbarr {
+    background-color: #333;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+  }

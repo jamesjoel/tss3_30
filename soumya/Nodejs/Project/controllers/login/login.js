@@ -23,6 +23,8 @@ routes.post("/", function(req, res) {
                 req.session.name = result[0].f_name;
                 req.session._id = result[0]._id;
                 req.session.is_user_logged_in = true;
+                req.session.image = result[0].image;
+                req.session.gender = result[0].gender;
                 res.redirect("/");
             } else {
                 req.flash("error", "This Password is Incorrect");
