@@ -1,12 +1,20 @@
 var express = require("express");
 var routes = express.Router();
+var Product = require("../../models/product");
+var mongodb = require("mongodb");
 
-routes.get("/",function(req,res){
+routes.get("/:id",function(req,res){
+    // console.log(req.params);
+    var id = req.params.id;
+Product.check({_id: mongodb.ObjectId(id)},function(err,result){
+
     var pagedata = {
         pagename: "MoreInfo/index",
-        title: "More Info"
+        title: "More Info",
+        product: result[0]
     }
     res.render("layout",pagedata);
+});
 });
 
 routes.get("/buynow",function(req,res){

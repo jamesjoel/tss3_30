@@ -1,4 +1,4 @@
-<div class="container mb-4">
+<div id="profile" class="container mb-4">
     <div class="row">
         <div class="col-md-6 offset-md-3">
 
@@ -28,16 +28,23 @@
                         <th>Profile Picture</th>
                         <td>
                             <%
-                            if(user.image){ %>
+                            if(user.image){ 
+                             %>   
                                 <img class="rounded-circle" src="/profilePicture/<%= user.image %>" height="60" width="60" >
                                 <br>
                                 <a href="#" class="text-light " data-target="#uploadProfile" data-toggle="modal"  style="text-decoration: none; font-size: smaller;">Change Profile Picture</a>
-                           <% }else{ %>
+                     <%                               
+                          }else if(user.gender == "male"){ %>
                                 <img class="rounded-circle" src="/image/user.png" height="60" width="60" >
                                 <br>
                                 <a href="#" class="text-light " data-target="#uploadProfile" data-toggle="modal"  style="text-decoration: none; font-size: smaller;">Change Profile Picture</a>
 
-                          <%  }
+                          <%  } else{ %>
+                            <img class="rounded-circle" src="/image/female.jpg" height="60" width="60" >
+                            <br>
+                            <a href="#" class="text-light " data-target="#uploadProfile" data-toggle="modal"  style="text-decoration: none; font-size: smaller;">Change Profile Picture</a>
+
+                         <% }
                             %>
                         </td>
                     </tr>
@@ -100,7 +107,6 @@
         </div>
     </div>
 </div>
-</script>
 <% if(msg != ""){ %>
 
 <script type="text/javascript">
@@ -109,4 +115,15 @@
     });
 </script>
 <% } %>
+
+<script>
+    window.onload = function(){ 
+         
+        $('html, body').animate({
+            scrollTop: $('#profile').offset().top
+        }, 'slow');
+        
+    }
+        
+        </script>
 
