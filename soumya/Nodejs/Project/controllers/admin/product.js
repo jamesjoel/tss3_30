@@ -25,7 +25,7 @@ routes.get("/delete/:id", function (req, res) {
     //req.query also can be use but this function is not help SEO 
     var id = req.params.id; //is use Function Because help SEO 
     Product.check({ _id: mongodb.ObjectId(id) }, function (err, result) {
-        console.log(result);
+        // console.log(result);
         var imagename = result[0].image;
         var delPath = path.resolve() + "/public/uploads/" + imagename;
         fs.unlink(delPath, function (err) {

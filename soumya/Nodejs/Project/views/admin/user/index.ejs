@@ -14,7 +14,14 @@
                     
                 </thead>
                 <tbody>
-                    <%  user.forEach(function(x,n){ %>
+                    <%  user.forEach(function(x,n){ 
+                        if(x.status == 1){
+                            var status = "Active"
+                        }else(x.status == 0){
+                            var status = "Deactive"
+                        }
+                        
+                        %>
                         <tr>
                             <td>
                                 <%= n+1 %>
@@ -32,10 +39,10 @@
                                 <%= x.address %>
                             </td>
                             <td>
-                                1
+                              <%= status %>
                             </td>
                             <td>
-                                <a href="/admin/product/edit/<%= x._id %>" class="btn btn-secondary">Change</a>
+                                <a href="/admin/slider/change_status/<%= x._id %>/<%= x.status %>" class="btn btn-secondary">Change</a>
                             </td>
                             
 
