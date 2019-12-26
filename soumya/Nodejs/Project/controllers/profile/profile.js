@@ -102,6 +102,7 @@ routes.post("/edit_profile_pic", function (req, res) {
                     fs.unlink(DelPath, function (err) {
                         image.mv(UploadPath, function (err) {
                             User.update({ _id: mongodb.ObjectId(id) }, { image: imageName }, function (err, result) {
+                                req.session.image = imageName;
                                 res.redirect("/profile");
                             });
                         });
