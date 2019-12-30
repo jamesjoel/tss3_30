@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script>
+            var h = 100;
+            function demo() {
+                document.getElementById("box").style.height = h+"px";
+                document.getElementById("box").style.width = h+"px";
+                h++;
+            }
+            function demo2() {
+                document.getElementById("box").style.backgroundColor="red";
+            }
+            function demo3() {
+                document.getElementById("box").style.backgroundColor="#145ABC";
+                document.getElementById("box").style.height="100px";
+                document.getElementById("box").style.width="100px";
+                h=100;
+            }
+        </script>
+        <style>
+            #box{
+                height: 100px;
+                width: 100px;
+                background-color: #145ABC;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box" onmouseover="demo2()" onmousemove="demo()" onmouseout="demo3()"></div>
+    </body>
+
+</html>
