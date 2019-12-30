@@ -28,7 +28,7 @@ routes.post("/", function (req, res) {
                     req.session.gender = result[0].gender;
                     res.redirect("/");
                 } else {
-                    req.flash("error", "Your Acoount Has Been Deactive ....");
+                    req.flash("error", "Your Account Has Been Deactive ....");
                     res.redirect("/login#login");
                 }
             } else {

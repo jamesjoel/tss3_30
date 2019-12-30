@@ -40,9 +40,9 @@ routes.get("/edit/:id", function (req, res) {
     // console.log(req.params);
     var id = req.params.id;
     Category.check({}, function (err, result1) {
-        console.log(result1);
+        // console.log(result1);
         Product.check({ _id: mongodb.ObjectId(id) }, function (err, result2) {
-            console.log(result2);
+            // console.log(result2);
             var pagedata = { title: "Edit Product", pagename: "admin/product/edit", product: result2[0], category: result1 };
             res.render("admin_layout", pagedata);
         });
