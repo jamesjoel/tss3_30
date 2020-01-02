@@ -1,3 +1,14 @@
+
+<% if(msg!=""){ %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+
+            <div class="alert alert-info m-0"><%= msg %><a href="#" class="close" data-dismiss="alert">X</a></div>
+        </div>
+    </div>
+</div>
+<% } %>
 <div id="login" class="form-wrapper">
 
     <form action="/login" method="post" class="form">

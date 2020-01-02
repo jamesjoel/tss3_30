@@ -50,7 +50,7 @@ routes.get("/buynow/:id", function (req, res) {
             });
         });
     } else {
-        req.flash("error", "If You Want To Buy This Product,You Must First Login ");
+        req.flash("error1", "If You Want To Buy This Product,You Must First Login ");
         res.redirect("/login");
     }
 
