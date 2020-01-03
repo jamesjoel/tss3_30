@@ -78,11 +78,31 @@ routes.post("/", function(req, res){
 
 routes.get("/view", function(req, res){
     // localhost:3000/admin/product/view to show all added product
-    Product.search({}, function(err, result){
-        var pagedata = { title: "View Product", pagename: "admin/product/view", product : result, errorMsg : req.flash("msg") };
+    /*Product.search({}, function(err, result){
+        // console.log(result);
+        var allProduct=[];
+        result.forEach(function(x){
+            var d = x.product_discount;
+            var p = x.product_price;
+
+            x.discounted_price = p - (p * d)/100;
+            allProduct.push(x);
+            
+        });
+
+        // console.log(allProduct);
+        var pagedata = { title: "View Product", pagename: "admin/product/view", product : allProduct, errorMsg : req.flash("msg") };
         res.render("admin_layout", pagedata); 
 
+    });*/
+
+    Product.addFieldsDiscount(function(err, result){
+        var pagedata = { title: "View Product", pagename: "admin/product/view", product: result, errorMsg: req.flash("msg") };
+        res.render("admin_layout", pagedata); 
     });
+
+
+
 });
 routes.get("/delete/:id", function(req, res){
     // localhost:3000/admin/product/delete/ID for get unique id and delete it from DB

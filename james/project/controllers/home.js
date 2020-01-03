@@ -4,7 +4,7 @@ var Product = require("../models/product");
 
 
 routes.get("/", function(req, res){
-    Product.search({}, function(err, result){
+    Product.addFieldsDiscount(function(err, result){
         var pagedata = { pagename : "home/index", title : "Home", product : result };
         res.render("layout", pagedata);
 

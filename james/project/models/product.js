@@ -28,3 +28,36 @@ module.exports.search = function (where, cb) {
         db.collection("product").find(where).toArray(cb);
     });
 }
+
+module.exports.addFieldsDiscount = function(cb){
+    connect(function(err, client){
+        var db = client.db(database.dbName);
+        db.collection("product").aggregate([
+            {
+                $addFields : {
+                    discounted_price : {
+                        $subtract: ["$product_price", {
+                                                       $divide: 
+                                                            [
+                                                                { 
+                                                                 $multiply: ["$product_price", "$product_discount"]
+                                                                }, 
+                                                                100
+                                                            ]
+                                                       }
+                                    ]
+                       }
+                }
+            }
+        ]).toArray(cb);
+
+
+
+
+
+    });
+
+
+
+
+}
