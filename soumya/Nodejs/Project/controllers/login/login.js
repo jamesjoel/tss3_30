@@ -6,7 +6,8 @@ routes.get("/", function (req, res) {
     var pagedata = {
         pagename: "login/index",
         title: "Login Page",
-        errMsg: req.flash("error")
+        errMsg: req.flash("error"),
+        msg: req.flash("error1")
     }
     res.render("layout", pagedata);
 });
@@ -21,6 +22,7 @@ routes.post("/", function (req, res) {
 
             if (result[0].password == sha1(pass)) {
                 if (result[0].status == 1) {
+
                     req.session.name = result[0].f_name;
                     req.session._id = result[0]._id;
                     req.session.is_user_logged_in = true;
@@ -28,7 +30,7 @@ routes.post("/", function (req, res) {
                     req.session.gender = result[0].gender;
                     res.redirect("/");
                 } else {
-                    req.flash("error", "Your Acoount Has Been Deactive ....");
+                    req.flash("error", "Your Account Has Been Deactive ....");
                     res.redirect("/login#login");
                 }
             } else {
