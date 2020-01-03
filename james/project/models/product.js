@@ -30,6 +30,7 @@ module.exports.search = function (where, cb) {
 }
 
 module.exports.addFieldsDiscount = function(cb){
+    // Aggregating and It's stage ($addFields in a Stage)
     connect(function(err, client){
         var db = client.db(database.dbName);
         db.collection("product").aggregate([
