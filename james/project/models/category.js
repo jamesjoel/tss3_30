@@ -26,6 +26,23 @@ module.exports.update=function(where, obj, cb){
     });
 }
 
+module.exports.lookupFind = function(cb){
+    connect(function (err, client) {
+        var db = client.db(database.dbName);
+        db.collection("category").aggregate([
+            {
+                $lookup : {
+                    from : "product",
+                    localField : "_id",
+                    foreignField : "product_category",
+                    as : "pro_info"
+                }
+            }
+        ]).toArray(cb);
+    });
+}
+
+
 
 module.exports
 

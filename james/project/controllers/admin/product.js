@@ -46,6 +46,7 @@ routes.post("/", function(req, res){
             req.body.product_price = parseInt(req.body.product_price);
             req.body.product_discount = parseInt(req.body.product_discount);
             req.body.image = newName;
+            req.body.product_category = mongodb.ObjectId(req.body.product_category);
 
             Product.insert(req.body, function(err, result){
                     res.redirect("/admin/product/view");
@@ -96,7 +97,14 @@ routes.get("/view", function(req, res){
 
     });*/
 
-    Product.addFieldsDiscount(function(err, result){
+    // addFieldsDiscount use for getting "Discounted Price" in Model
+
+    // Product.addFieldsDiscount(function(err, result){
+    //     var pagedata = { title: "View Product", pagename: "admin/product/view", product: result, errorMsg: req.flash("msg") };
+    //     res.render("admin_layout", pagedata); 
+    // });
+    Product.lookupFind(function(err, result){
+        console.log(result);
         var pagedata = { title: "View Product", pagename: "admin/product/view", product: result, errorMsg: req.flash("msg") };
         res.render("admin_layout", pagedata); 
     });

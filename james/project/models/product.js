@@ -1,5 +1,6 @@
 var connect = require("../config/connect");
 var database = require("../config/database");
+var mongodb = require("mongodb");
 
 module.exports.insert=function(obj, cb){
     connect(function(err, client){
@@ -61,4 +62,39 @@ module.exports.addFieldsDiscount = function(cb){
 
 
 
+}
+module.exports.lookupFind=function(cb){
+    connect(function (err, client) {
+    var db = client.db(database.dbName);
+    db.collection("product").aggregate([
+        {
+            $lookup : {
+                from : "category",
+                localField : "product_category",
+                foreignField : "_id",
+                as : "cate_info"
+            }
+        },
+        {
+            $addFields: {
+                discounted_price: {
+                    $subtract: ["$product_price", {
+                        $divide:
+                            [
+                                {
+                                    $multiply: ["$product_price", "$product_discount"]
+                                },
+                                100
+                            ]
+                    }
+                    ]
+                }
+            }
+        }
+
+    ]).toArray(cb);
+
+
+
+    });
 }

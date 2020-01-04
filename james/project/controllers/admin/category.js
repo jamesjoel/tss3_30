@@ -17,7 +17,8 @@ routes.post("/", function(req, res){
 
 
 routes.get("/view", function(req, res){
-    Category.search({}, function(err, result){
+    Category.lookupFind(function(err, result){
+        console.log("----------", result);
         var pagedata = { title: "View Category", pagename: "admin/category/view", category : result };
         res.render("admin_layout", pagedata);
     });
