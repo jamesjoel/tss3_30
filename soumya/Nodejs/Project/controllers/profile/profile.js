@@ -8,16 +8,17 @@ var path = require("path");
 var fs = require("fs");
 routes.get("/", function (req, res) {
     var id = req.session._id;
-    console.log(req.session);
+    // console.log(req.session);
 
     User.check({ _id: mongodb.ObjectId(id) }, function (err, result) {
-        console.log(result);
+        // console.log(result);
 
         var pagedata = {
             pagename: "profile/index",
             title: "My Profile",
             user: result[0],
-            msg: req.flash("msg")
+            msg: req.flash("msg"),
+            cpmsg: req.flash("cpmsg")
         }
         res.render("layout", pagedata);
     });
@@ -27,7 +28,7 @@ routes.get("/edit", function (req, res) {
     var id = req.session._id;
 
     User.check({ _id: mongodb.ObjectId(id) }, function (err, result) {
-        console.log(result);
+        // console.log(result);
         var pagedata = {
             pagename: "profile/edit",
             title: "Edit Profile",
@@ -69,7 +70,7 @@ routes.post("/changepwd", function (req, res) {
         if (result[0].password == sha1(a)) {
             if (b == c) {
                 User.update({ _id: mongodb.ObjectId(id) }, { password: sha1(b) }, function (err, result) {
-                    req.flash("msg", "Your Password has been changed");
+                    req.flash("cpmsg", "Your Password has been changed");
                     res.redirect("/profile");
                 });
             } else {
