@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/css/bootstrap.css" />
+        <script src="/js/jquery.js"></script>
+        <script src="/js/bootstrap.bundle.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            var socket = io.connect();
+            function send(){
+                var msg = document.getElementById("message").value;
+                var name = document.getElementById("name").value;
+                var obj = { msg : msg, name : name};
+                socket.emit("send", obj);
+                document.getElementById("message").value="";
+            }
+            socket.on("sendToClient", function(data){
+                document.getElementById("show_msg").innerHTML+="<p><b>"+data.name+"</b> : "+data.msg+"</p>";
+            });
+
+
+
+        </script>
+        <style>
+
+            #show_msg p{
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    
+                    <input type="text" class="form-control" id="name" placeholder="name"/>
+                    <br />
+                    <input type="text" class="form-control" id="message" placeholder="Message"/>
+                    <br />
+                    <button class="btn btn-success" onclick="send()">Send</button>
+                </div>
+                <div class="col-md-8">
+                    <h3>All Messages</h3>
+                    <div id="show_msg" style="overflow: overflow-y; min-height: 300px;" class="bg-dark text-light p-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
