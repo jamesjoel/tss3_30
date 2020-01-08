@@ -9,7 +9,7 @@ var url = ["/profile"];
 routes.use(url, function(req, res, next){
     if(! req.session.is_user_logged_in)
     {
-        req.redirect("/login");
+        res.redirect("/login");
         return;
     }
     next();
@@ -34,7 +34,7 @@ routes.use("/admin", require("./adminroutes"));
 
 routes.get("/logout", function(req, res){
     req.session.destroy();
-    req.redirect("/login");
+    res.redirect("/login");
     
 });
 

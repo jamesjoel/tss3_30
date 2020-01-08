@@ -15,9 +15,12 @@ routes.use("/about", require("../controllers/about/about"));
 routes.use("/contact", require("../controllers/contact/contact"));
 routes.use("/help", require("../controllers/help/help"));
 routes.use("/Signup", require("../controllers/signup/signup"));
+routes.use("/cart",require("../controllers/cart/cart"));
 routes.use("/login", require("../controllers/login/login"));
 routes.use("/profile", require("../controllers/profile/profile"));
 routes.use("/admin", require("./admin_router"));
+routes.use("/moreinfo",require("../controllers/MoreInfo/moreinfo"));
+routes.use("/myorders",require("../controllers/Myorders/myorders"));
 
 routes.get("/logout", function(req, res) {
     req.session.destroy();

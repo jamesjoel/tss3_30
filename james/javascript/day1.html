@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script>
+            function demo()
+            {
+                var a = parseInt(document.getElementById("num1").value);
+                var b = parseInt(document.getElementById("num2").value);
+              
+                
+                
+
+                var c = a+b;
+                document.getElementById("msg").innerHTML=c;
+                // document.getElementById("msg").outerHTML="<h2>"+c+"</h2>";
+
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="num1"/>
+        <br />
+        <br />
+        <input type="text" id="num2"/>
+        <hr />
+        <button onclick="demo()">+</button>
+        <button onclick="demo()">-</button>
+        <button onclick="demo()">x</button>
+        <button onclick="demo()">/</button>
+        <h1 id="msg"></h1>
+
+    </body>
+
+</html>

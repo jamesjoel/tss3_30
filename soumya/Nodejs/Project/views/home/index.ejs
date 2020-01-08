@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div  class="container-fluid">
     <h2 class="text-center text-muted">New Arrival</h2>
 </div>
 <hr>
@@ -28,7 +28,7 @@
                         <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-6">
-                                    <img src="image/1.png " height="100%" class=" bg-danger card-img" alt="...">
+                                    <img src="/uploads/<%= x.image %>" height="100%" class=" bg-danger card-img" alt="...">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="card-body">
@@ -38,10 +38,14 @@
                                         <p class="text-muted ">&#8377;
                                             <%=x.product_price %>
                                         </p>
-                                        <p class="card-text ">
+                                        <p class="card-text Product-Detail" maxlength="20">
                                             <%= x.product_detail %>
                                         </p>
-                                        <button class="btn btn-outline-success btn-sm m-2">Buy Now</button>
+                                        <p class="m-0 p-0 text-center">
+                                           <b><i> Buy Now Click Here</i></b>  <i class="fa fa-arrow-down " aria-hidden="true"></i>
+                                        </p>
+                                        <a class="btn btn-primary btn-sm m-2 d-block" href="/moreinfo/<%= x._id %>" >More Info</a>
+                                        <a href="/cart/add/<%= x._id %>" class="btn btn-sm btn-dark d-block"><i class="fa fa-shopping-cart text-light mr-2" aria-hidden="true"></i>Add to Cart</a>
                                         <p class="card-text  text-muted">
                                             <span class="fa fa-star text-warning "></span>
                                             <span class="fa fa-star text-warning"></span>

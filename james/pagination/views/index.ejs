@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+        
+    </head>
+    <body>
+    <div class="container">
+        <h2 class="text-center">
+            Pagination
+
+        </h2>
+        
+        <ul class="pagination justify-content-center">
+            <li class="page-item <% if(currentPage==1){ %>disabled<%} %>">
+                <a class="page-link" href="/<%= currentPage-1 %>">Previous</a>
+            </li>
+            <% for(var i=1; i<= totalPages; i++){ 
+                
+                if(currentPage == i){ %>
+
+                    <li class="page-item active">
+                <% }
+                else{ %>
+                    <li class="page-item">
+
+                <% }
+
+                %>
+                
+                    <a class="page-link" href="/<%= i %>"><%= i %></a>
+                </li>
+                <% } 
+                
+                %>
+                
+
+            <li class="page-item <% if(currentPage==totalPages){ %>disabled<%} %>">
+                <a class="page-link" href="/<%= parseInt(currentPage)+1 %>">Next</a>
+            </li>
+        </ul>
+
+
+        <table class="table table-dark table-bordered table-striped">
+            <tr>
+                <th>S.No.</th>
+                <th>City Name</th>
+                <th>State Name</th>
+            </tr>
+            <% 
+            var n = sNo;
+            cities.forEach(function(x){ %>
+                <tr>
+                    <td><%= n+1 %></td>
+                    <td><%= x.city_name %></td>
+                    <td><%= x.city_state %></td>
+                </tr>
+            <% 
+            n++;
+        }) %>
+        </table>
+        </div>
+    </body>
+</html>

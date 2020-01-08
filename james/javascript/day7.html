@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script>
+       function demo1() {
+           document.getElementById("text1").style.backgroundColor="red";
+       }
+       function demo2() {
+            document.getElementById("text2").style.backgroundColor = "red";
+        }
+        function demo3() {
+                document.getElementById("text3").style.backgroundColor = "red";
+        }
+        function demo4() {
+                document.getElementById("text1").style.backgroundColor = "green";
+        }
+        function demo5() {
+                document.getElementById("text2").style.backgroundColor = "green";
+        }
+        function demo6() {
+                document.getElementById("text3").style.backgroundColor = "green";
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="Text" onfocus="demo1()" onblur="demo4()" id="text1"/>
+    <br />
+    <br />
+    <input type="Text" onfocus="demo2()" onblur="demo5()" id="text2"/>
+    <br />
+    <br />
+    <input type="Text" onfocus="demo3()" onblur="demo6()" id="text3"/>
+</body>
+
+</html>
