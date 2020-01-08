@@ -3,6 +3,7 @@ var routes = express.Router();
 var Category = require("../../models/category");
 var mongodb = require("mongodb");
 
+
 routes.get("/", function (req, res) {
     var pagedata = { title: "Category", pagename: "admin/category/index" };
     res.render("admin_layout", pagedata);
@@ -12,6 +13,7 @@ routes.post("/", function(req, res){
     // console.log(req.body);
     Category.save(req.body, function(err, result){
         res.redirect("/admin/category/view");
+        
     });
 });
 

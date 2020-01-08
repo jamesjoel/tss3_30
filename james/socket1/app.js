@@ -13,15 +13,11 @@ app.get("/", function(req, res){
 });
 
 io.on("connection", function(socket){
-    // console.log("------", socket.id);
-    // socket.on("disconnect", function(){
-    //     console.log("server disconnect with socket id", socket.id);
-    // });
-
-    socket.on("send", function(data){
-        io.emit("sendToClient", data);
-        
-    });
+           
+        socket.on("send", function(data){
+            io.emit("sendToClient", data);
+            
+        });
 });
 
 
