@@ -1,0 +1,41 @@
+<div class="col-md-9">
+    <h5>Item in Your Cart</h5>
+    <a href="/cart/clear">Clear Cart</a>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-dark table-hover table-striped">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Discounted Price</th>
+                    <th>Remove</th>
+                </tr>
+                <% 
+                var total = 0;
+                result.forEach(function(x, i){ 
+                    var d = (x.product_price * x.product_discount)/100;
+                    d = x.product_price - d;
+                    total += d;
+                    %>
+                    <tr>
+                        <td><%= i+1 %></td>
+                        <td><%= x.product_name %></td>
+                        <td><img src="/upload/<%= x.image %>" height="80" width="80"</td>
+                        <td><%= x.product_price %></td>
+                        <td><%= x.product_discount %>%</td>
+                        <td><%= d %></td>
+                        <td><a class="text-light" href="/cart/remove/<%= x._id %>"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    </tr>
+                <% }) %>
+                <tr>
+                    <td colspan="5" align="right">Total Price</td>
+                    <td><%= total %></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>

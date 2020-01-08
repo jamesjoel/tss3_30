@@ -1,0 +1,76 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h4 class="text-center">Form</h4>
+            <form action="/" method="post" >
+            <div class="card">
+                <div class="card-header">
+                    <h4>Enter Your Details</h4>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="u_name"/>
+                    </div>
+                   
+                  
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea class="form-control" name="u_address"></textarea>
+                    </div>
+
+
+                 <div class="form-group">
+                    <label>Hobby</label>
+                    <br>
+                      <div class="form-check-inline">
+                         <label class="form-check-label" for="check1">
+                         <input type="checkbox" class="form-check-input" id="check1" value="cricket" name="hobby" checked>cricket
+                         </label>
+                       </div>
+                      
+                       <div class="form-check-inline">
+                           <label class="form-check-label" for="check2">
+                           <input type="checkbox" class="form-check-input" id="check2" value="football" name="hobby">football
+                          </label>
+                      </div>
+                     <div class="form-check-inline">
+                         <label class="form-check-label" for="check2">
+                         <input type="checkbox" class="form-check-input" id="check2"value="basketball" name="hobby">basketball
+                         </label>
+                    </div>
+                    <div class="form-check-inline">
+                           <label class="form-check-label" for="check2">
+                               <input type="checkbox" class="form-check-input" id="check2" value="music" name="hobby">music
+                        </label>
+                      </div>
+
+                     <div class="form-check-inline">
+                           <label class="form-check-label" for="check2">
+                           <input type="checkbox" class="form-check-input" id="check2" value="other" name="hobby">Other
+                          </label>
+                      </div>
+<!--                      
+                     <% 
+                     
+                     function demo(){ %>
+                         var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    
+                      for (var i = 0; i < checkboxes.length; i++) {
+                        u.push(checkboxes[i].value)
+                      }
+                     <% } %>
+                        -->
+                   </div>
+                </div>
+
+
+                <div class="card-footer">
+                    <input type="submit" value="submit" class="btn btn-success" />
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+	

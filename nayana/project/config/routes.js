@@ -19,6 +19,7 @@ routes.use("/signup", require("../controllers/signup"));
 routes.use("/login", require("../controllers/login"));
 routes.use("/profile", require("../controllers/profile"));
 routes.use("/admin", require("./adminroutes"));
+routes.use("/cart", require("../controllers/cart"));
 
 routes.get("/logout", function(req, res){
     req.session.destroy();
