@@ -1,0 +1,138 @@
+.btn-outline-light {
+    border-radius: 110px;
+    padding: 2px 18px;
+}
+
+.bg-black {
+    background-color: #222222;
+}
+.badge-orange{
+    color: white;
+background-color: #d4550b;
+}
+.container a {
+    border: 0;
+}
+
+.text-gray {
+    color: #8D8D91;
+}
+
+.text-blue {
+    color: rgba(129, 139, 151, 0.527);
+    font-weight: 500;
+}
+
+.font-size-8 {
+    font-size: 0.8rem;
+}
+
+.font-size-9 {
+    font-size: 0.9rem;
+}
+
+a.navbar-brand.text-blue:hover {
+    color: #8D8D91;
+    font-size: 19px;
+}
+
+.active {
+    font-weight: bold;
+}
+
+a.nav-link {
+    color: #333 !important;
+}
+
+a.nav-link:hover {
+    color: #4dcb44 !important;
+}
+
+.bg-img {
+    background-image: url("../image/hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 500px;
+}
+
+.py-auto {
+    padding-top: 95px;
+    padding-bottom: 95px !important;
+}
+
+.main-footer {
+    padding-top: 80px;
+    background: #222;
+    color: #959595 !important;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.f-color {
+    color: #959595;
+}
+
+.px-auto {
+    padding-left: 33px;
+    padding-right: 33px;
+}
+
+a.f-color:hover {
+    color: #4dcb44;
+}
+
+p {
+    margin: 0;
+}
+
+.social-menu {
+    margin-top: 20px;
+}
+
+.f-a {
+    padding: 0 8px;
+    color: #32b956;
+}
+
+.copyrights {
+    padding: 30px;
+    background: #1d1d1d;
+    margin-top: 100px;
+}
+
+li.list-group-item:hover {
+    color: #fff !important;
+    background-color: #bad0c0;
+}
+
+a.nav-link.px-4:hover {
+    font-weight: bold;
+}
+
+a#cart:hover {
+    color: #FF6600 !important;
+    font-weight: bold !important;
+}
+.btn-square{
+text-decoration: none !important;
+border-radius: 0;
+}
+
+.Product-Detail {
+    display: block;
+    width: 165px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  #navbarr {
+    background-color: #333;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+  }
