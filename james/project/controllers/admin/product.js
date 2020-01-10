@@ -19,12 +19,22 @@ routes.get("/", function (req, res) {
         
     });
 });
-
+var n =1;
 
 
 routes.post("/", function(req, res){
+    var io = req.io;
+    io.on("connection", function (socket) {
+
+        socket.broadcast.emit("newproductadd", { name: n })
+        n++;
+    });
+    res.redirect("/admin/product");
     // "localhost:3000/admin/product" for getting form data 
     // console.log(req.files);
+   
+   
+   /*
     var image = req.files.image;
     var size = image.size;
 
@@ -73,7 +83,7 @@ routes.post("/", function(req, res){
     //     console.log("uploaeded .....");
     // });
 
-
+    */
     
 });
 
@@ -103,8 +113,15 @@ routes.get("/view", function(req, res){
     //     var pagedata = { title: "View Product", pagename: "admin/product/view", product: result, errorMsg: req.flash("msg") };
     //     res.render("admin_layout", pagedata); 
     // });
+    
+
+
+
+
+
+
     Product.lookupFind(function(err, result){
-        console.log(result);
+        
         var pagedata = { title: "View Product", pagename: "admin/product/view", product: result, errorMsg: req.flash("msg") };
         res.render("admin_layout", pagedata); 
     });
