@@ -3,8 +3,12 @@ var app = express();
 var server = require("http").Server(app);
 /*var socketIo = require("socket.io");
 var io = socketIo(server);*/
-
 var io = require("socket.io")(server);
+
+
+
+
+
 app.set("view engine", "ejs");
 
 app.use(express.static(__dirname+"/public"));
@@ -23,23 +27,6 @@ io.on("connection", function(socket){
         
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
