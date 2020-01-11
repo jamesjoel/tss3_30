@@ -7,6 +7,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HeaderComponent } from './shared/header/header.component';
     AboutComponent,
     ContactComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    TermsComponent
 
   ],
   imports: [
