@@ -17,20 +17,19 @@ app.get("/", function(req, res){
 });
 
 io.on("connection", function(socket){
-    // console.log("------", socket.id);
-    // socket.on("disconnect", function(){
-    //     console.log("server disconnect with socket id", socket.id);
-    // });
-
-    socket.on("send", function(data){
-        io.emit("sendToClient", data);
         
-    });
+        socket.on("send", function(data){
+            io.emit("sendToClient", data);
+            
+        });
 });
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 2f13a29878cbe187038a35ee581e049a1a854d91
 server.listen(3000, function(){
     console.log("server running");
 });

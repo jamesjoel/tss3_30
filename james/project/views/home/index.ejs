@@ -1,3 +1,10 @@
+<script src="socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect();
+    socket.on("newproductadd", function(obj){
+        console.log(obj);
+    });
+</script>
 
                 <div class="col-md-9">
                     <h5>Products</h5>
@@ -24,8 +31,5 @@
                         <% })%>
                         
                     </div>
-
-
-
 
         
