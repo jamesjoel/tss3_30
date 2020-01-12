@@ -13,33 +13,12 @@ app.get("/", function(req, res){
 });
 
 io.on("connection", function(socket){
-           
+        
         socket.on("send", function(data){
             io.emit("sendToClient", data);
             
         });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 server.listen(3000, function(){
     console.log("server running");
 });
