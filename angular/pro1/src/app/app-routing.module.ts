@@ -3,11 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
+import { TermsComponent } from './pages/terms/terms.component';
 
 const routes: Routes = [
   {
     path : "about", // localhost:4200/about
     component : AboutComponent
+  },
+  {
+    path : "terms",
+    component : TermsComponent
   },
   {
     path : "contact",

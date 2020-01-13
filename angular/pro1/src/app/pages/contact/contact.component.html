@@ -1,2 +1,27 @@
+<button (click)="demo()" class="btn btn-info">Click</button>
 <h1>Contact</h1>
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, nostrum eum nobis at aspernatur pariatur omnis reiciendis saepe? Delectus maxime iure atque unde vitae et assumenda praesentium iusto debitis id? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nihil corporis distinctio rerum optio? Voluptate explicabo nemo dolor qui, minima animi magnam ipsa, sunt, harum quisquam ducimus! Possimus, aliquam sapiente!</p>
+<!-- Method I -->
+<span *ngIf="x; then cond1 else cond2"></span>
+<ng-template #cond1>
+    <h2>WELCOME</h2>
+</ng-template>
+<ng-template #cond2>
+    <h2>HELLO</h2>
+</ng-template>
+
+<!-- Method II -->
+
+<ng-template [ngIf]="y" [ngIfElse]="abc">
+    <div class="bg-dark" style="height: 200px; width:200px">
+        
+    </div>
+</ng-template>
+<ng-template #abc>
+    <div class="bg-danger" style="height: 200px; width:200px">
+    
+    </div>
+</ng-template>
+
+
+
