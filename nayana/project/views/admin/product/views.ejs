@@ -1,0 +1,31 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h3>View All Products</h3>
+            <table class="table table-light table-bordered table-striped">
+                <tr>
+                    <th>S.No.</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+               <% product.forEach(function(x, n){ %>
+                <tr>
+                    <td><%= n+1 %></td>
+                    <td><%= x.product_name %></td>
+                    <td><%= x.product_price %></td>
+                    <td><%= x.product_discount %></td>
+                
+                  
+                   
+                    <td><a href="/admin/product/edit/<%= x._id %>" class="btn btn-sm btn-info">Edit</a></td>
+                    <!-- <td><a href="/admin/product/delete?id=<%= x._id %>" class="btn btn-sm btn-danger">Delete</a></td> -->
+                    <td><a href="/admin/product/delete/<%= x._id %>" class="btn btn-sm btn-danger">Delete</a></td>
+                </tr>
+               <% }) %>
+            </table>
+        </div>
+    </div>
+</div>
