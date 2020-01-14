@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  x= "naina";
   name = "rohit";
   arr = ["red","black","blue","yellow"];
   data = [
