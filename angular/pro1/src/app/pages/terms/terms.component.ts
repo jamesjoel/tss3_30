@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermsComponent implements OnInit {
 
+  arr = ["red", "green", "blue"];
+  color="";
+  
   constructor() { }
 
   ngOnInit() {
   }
-
+  add() {
+    this.arr.push(this.color);
+  }
 }

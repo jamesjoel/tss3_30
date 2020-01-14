@@ -79,7 +79,12 @@
 					<a href="#" class="dropdown-item">Services</a>
 				</div>
 			</li>
-		</ul>
+        </ul>
+        <ul class="navbar-nav nav ml-auto">
+            <li class="nav-item">
+                <a href="/cart/mycart" class="nav-link text-light">My Cart <span class="badge badge-pill badge-light"><%= totalItem %></span></a>
+            </li>
+        </ul>
 	</div>
 </nav>
             <%- include(pagename); %>

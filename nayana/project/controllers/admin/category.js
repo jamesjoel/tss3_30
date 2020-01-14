@@ -48,5 +48,17 @@ routes.post("/update", function(req, res){
     });
 });
 
+routes.get("/delete/:id", function(req, res) {
+    // console.log(req.query);
+    var a = req.params.id;
+    Category.delete({ _id: mongodb.ObjectId(a) }, function(err, result) {
+        
+
+            res.redirect("/admin/category/views");
+      
+    });
+
+});
+
 module.exports = routes;
 
