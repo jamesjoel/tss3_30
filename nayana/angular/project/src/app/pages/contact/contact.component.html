@@ -1,0 +1,45 @@
+<h1>Contact Us</h1>
+<br>
+<br>
+
+<h2>{{name}}</h2>
+<h2>{{name.length}}</h2>
+<h2>{{name.length==5 ? "correct" : "no"}}</h2>
+<h2>{{arr}}</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+      <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class=" table table-bordered table-dark table-stripped">
+                    <tr>
+                        <th>s.no.</th>
+                        <th>name</th>
+                        <th>age</th>
+                        <th>address</th>
+                    
+                    </tr>
+                    <tr *ngFor = "let x of data; let n= index">
+                       <td>{{n+1}}</td>
+                       <td>{{x.name}}</td>
+                       <td>{{x.age}}</td>
+                       <td>{{ x.address }}</td>
+                
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <div [ngSwitch]= "x">
+          <h2 *ngSwitchCase = "'biajsi55555'">this is 1 case</h2>
+          <h2 *ngSwitchCase = "'naina'">this is 2 case</h2>
+          <h2 *ngSwitchCase = "30">this is 3 case</h2>
+          <h2 *ngSwitchCase = "40">this is 4 case</h2>
+      </div>
