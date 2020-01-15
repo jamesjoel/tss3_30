@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../../model/student.interface';
+
+
 
 @Component({
   selector: 'app-student',
@@ -7,19 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  newStudent={
+  index:number;
+  newStudent : Student = {
     id : null,
     name : "",
     age : null,
     fee : null
   };
-  selectedStudent={
-    id: null,
-    name: "",
-    age: null,
-    fee: null
-  };
-  allStudent = [
+  selectedStudent:Student;
+
+  allStudent : Student[] = [
     {
       id : 1,
       name : "rohit",
@@ -45,10 +45,16 @@ export class StudentComponent implements OnInit {
   }
 
   add() {
-    // console.log(this.newStudent);
-    let n = this.allStudent.length;
-    this.newStudent.id = n+1;
-    this.allStudent.push(this.newStudent);
+    if(this.newStudent.id){ // when we have id in new student then update data
+      this.allStudent[this.index]=this.newStudent;
+    }
+    else{
+      // when we dont have id than add data
+      let n = this.allStudent.length;
+      this.newStudent.id = n+1;
+      this.allStudent.push(this.newStudent);
+      
+    }
   }
   askAdd() {
     this.newStudent={
@@ -58,10 +64,17 @@ export class StudentComponent implements OnInit {
       fee : null
     }
   }
-  askDelete(a) {
+  askDelete(a:Student) {
     console.log("-------", a);
     this.selectedStudent=a;
   }
+  askEdit(a : Student, n : number) {
+    this.newStudent = {... a};
+    this.index = n;
+  }
+
+
+
   delete() {
     let n = this.allStudent.indexOf(this.selectedStudent);
     this.allStudent.splice(n, 1);
