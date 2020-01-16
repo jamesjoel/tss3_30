@@ -12,6 +12,7 @@
                     <th>Age</th>
                     <th>Fee</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
                 <tr *ngFor="let student of allStudent; let n = index">
                     <td>{{ n+1 }}</td>
@@ -19,6 +20,7 @@
                     <td>{{ student.age }}</td>
                     <td>{{ student.fee }}</td>
                     <td><button class="btn btn-danger btn-sm" data-target="#delModal" data-toggle="modal" (click)="askDelete(student)">Delete</button></td>
+                    <td><button class="btn btn-info btn-sm" data-target="#addModal" data-toggle="modal" (click)="askEdit(student, n)">Edit</button></td>
                 </tr>
             </table>
         </div>
@@ -30,7 +32,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Add Student</h2>
+                <h2>{{ newStudent.id ? "Update" : "Add" }} Student</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -48,7 +50,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">Add</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">{{ newStudent.id ? "Update" : "Add" }}</button>
             </div>
         </div>
     </div>
@@ -61,7 +63,7 @@
                 <h2>Delete Student</h2>
             </div>
             <div class="modal-body">
-                <p>Are You sure want to Delete <b *ngIf="selectedStudent.name">{{ selectedStudent.name }}</b>  ?</p>
+                <p>Are You sure want to Delete <b *ngIf="selectedStudent">{{ selectedStudent.name }}</b>  ?</p>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-info" data-dismiss="modal">Close</button>
