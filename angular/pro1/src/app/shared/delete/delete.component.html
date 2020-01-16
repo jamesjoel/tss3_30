@@ -1,0 +1,16 @@
+<div id="delModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Student</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are You sure want to Delete <b *ngIf="cSelectedStudent">{{ cSelectedStudent.name }}</b> ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal">Close</button>
+                <button class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

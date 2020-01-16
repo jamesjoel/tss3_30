@@ -12,6 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { TermsComponent } from './pages/terms/terms.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { StudentComponent } from './pages/student/student.component';
+import { DeleteComponent } from './shared/delete/delete.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { StudentComponent } from './pages/student/student.component';
     HeaderComponent,
     TermsComponent,
     DemoComponent,
-    StudentComponent
+    StudentComponent,
+    DeleteComponent
 
   ],
   imports: [

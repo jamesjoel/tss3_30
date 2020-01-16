@@ -18,10 +18,12 @@ routes.get("/", function (req, res) {
 });
 
 routes.post("/", function (req, res) {
-    console.log(req.files);
+    
+    var image = req.files.image;
+    var size = image.size;
     var imgdata = changename(image.name);
     var exit = imgdata[1];
-    var newname=imagdata[0];
+    var newname=imgdata[0];
     
    
     var uploadPath = path.resolve() + "/public/upload/" + newname;
