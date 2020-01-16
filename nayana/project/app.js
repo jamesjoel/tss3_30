@@ -6,6 +6,8 @@ var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
 var caches = require("nocache");
+var fUpload = require("express-fileupload");
+// var random = require("randomstring");
 //var sha1 = require("sha1");
 
 
@@ -21,25 +23,38 @@ app.use(cookieParser());
 app.use(session({secret: "user"}));
 app.use(caches());
 app.use(flash());
+app.use(fUpload());
+// app.use(random());
 
 
 
 
 
 app.use(function(req, res, next){
-    
+    // console.log(typeof(res.locals));
 
     Category.search({}, function(err, result){
 
         res.locals.logo="Flipkart.com";
         res.locals.session = req.session;
         res.locals.allCategory = result;
+        if(req.cookies.cart)
+        {
+            var ids = req.cookies.cart;
+            var arr = ids.split("#");
+            res.locals.totalItem=arr.length;
+        }
+        else
+        {
+            res.locals.totalItem=0;
+        }
+
         next();
     });
 
     
 });
- 
+
 
 
 app.use(routes);

@@ -1,0 +1,70 @@
+<h1>this is my about page</h1>
+<br>
+<br>
+<div *ngIf = "y">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12  bg-light">
+                <h2>only if</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quae magnam illum. 
+                Eos beatae explicabo cupiditate fuga cum molestiae quasi, laboriosam saepe 
+                dolorum placeat quos. Minus veniam impedit eos dicta.
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<br>
+<br>
+ <span *ngIf = "x; then cond1 else cond2"></span>
+ <ng-template #cond1>
+     <div>
+         <h2>if *</h2>
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, libero repellendus 
+         officia perspiciatis ex omnis id quibusdam suscipit consequatur 
+         vel ipsam quas, quasi rem, culpa fugiat tempora excepturi rerum harum.
+     </div>
+ </ng-template>
+ <ng-template #cond2>
+     <div class="container bg-primary">
+         <h2>else *</h2>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci tenetur dolores 
+         ratione ipsam obcaecati perferendis soluta odit deserunt quis ab 
+         voluptate quos ipsum ipsa aspernatur magnam, doloribus, nam labore neque. Lorem ipsum 
+         dolor sit amet consectetur adipisicing elit. Expedita officia voluptates perferendis atque non illo, sed aut recusandae maxime harum
+          consectetur excepturi ut ea, voluptatem quasi vel quod officiis sit.
+
+     </div>
+
+ </ng-template>
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+
+
+ <ng-template [ngIf] = "new" [ngIfElse]="cond">
+   <div class="container bg-dark">
+       <div class="row">
+           <div class="col-md-10 bg-dark">
+       <h2>if condition</h2>
+           </div>
+       </div>
+   </div>
+ </ng-template>
+ <ng-template #cond>
+    <div>
+        <div class="row">
+            <div class="col-md-10 bg-danger">
+               <h2>else condition</h2>
+            </div>
+        </div>
+    </div>
+ </ng-template>
+
+ <br>
+ <br>
+ <button class="btn btn-info" (click)="demo()">OK</button>
