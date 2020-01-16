@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <table class="table table-dark table-hover table-bordered table-striped">
+                <thead>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Fee</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of allStudent; let n = index">
+                        <td>{{n+1}}</td>
+                        <td>{{student.name}}</td>
+                        <td>{{student.age}}</td>
+                        <td>{{student.fee}}</td>
+                        <td><button data-target="#delModal" data-toggle="modal" class="btn btn-danger btn-sm" style="border-radius: 0%;">Delete</button></td>
+                    </tr>
+            
+                </tbody>
+            </table>
+            <button class="btn btn-info btn-sm float-right" data-target="#addModal" data-toggle="modal" (click)="clearData()"  style="border-radius: 0%;">Add User</button>
+        </div>
+    </div>
+</div>
+
+<div id="addModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Student</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control"  [(ngModel)]="newStudent.name"/>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" [(ngModel)]="newStudent.age" />
+                </div>
+                <div class="form-group">
+                    <label>Fee</label>
+                    <input type="text" class="form-control" [(ngModel)]="newStudent.fee" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="delModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Student</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are You sure want to Delete <b ></b>  ?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info" data-dismiss="modal">Close</button>
+                <button class="btn btn-danger" data-dismiss="modal" >Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
