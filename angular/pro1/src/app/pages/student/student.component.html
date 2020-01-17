@@ -55,7 +55,10 @@
         </div>
     </div>
 </div>
-<app-delete [cSelectedStudent]="selectedStudent"></app-delete>
+<app-delete 
+    [cSelectedStudent]="selectedStudent"
+    (deleteEvent)="delete()"
+></app-delete>
 
 <!-- <div id="delModal" class="modal fade">
     <div class="modal-dialog">
