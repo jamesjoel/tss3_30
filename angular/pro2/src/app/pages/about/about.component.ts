@@ -10,7 +10,7 @@ export class AboutComponent implements OnInit {
   name:string="Rohit";
   fullName:string;
   email:string;
-  goEmail:string;
+  goEmail:string="INDORE";
   constructor() { }
 
   ngOnInit() {
