@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Input, Output, EventEmitter } from '@angular/core';
 import { Student } from '../../model/student.interface';
+
+
 
 
 
@@ -16,9 +18,13 @@ import { Student } from '../../model/student.interface';
 export class DeleteComponent implements OnInit {
 
   @Input() cSelectedStudent:Student;
+  @Output() deleteEvent = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+  delete() {
+    this.deleteEvent.emit();
   }
 
 }
