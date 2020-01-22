@@ -1,0 +1,28 @@
+{
+    "teacher" : [
+        {
+            "id" : 1,
+            "name" : "Rohit",
+            "age" : 25,
+            "city" : "indore"
+        },
+        {
+            "id": 2,
+            "name": "Raj",
+            "age": 27,
+            "city": "ujjain"
+        },
+        {
+            "id": 3,
+            "name": "Gaurav",
+            "age": 22,
+            "city": "indore"
+        },
+        {
+            "id": 4,
+            "name": "Amar",
+            "age": 20,
+            "city": "bhopal"
+        }
+    ]
+}

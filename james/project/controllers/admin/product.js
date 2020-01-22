@@ -9,6 +9,30 @@ var path = require("path");
 var changename = require("../../helpers/changename");
 var fs = require("fs");
 
+routes.get("/api", function(req, res){
+    Product.lookupFind(function (err, result) {
+        res.send(result);
+    });
+});
+routes.post("/api/add", function (req, res) {
+    console.log(req.body);
+    res.send({ message : "data saved"});
+    
+});
+
+routes.post("/api/save", function(req, res){
+    console.log(req.body);
+    res.send({ message : "data saved"});
+    
+});
+
+
+
+
+
+
+
+
 
 routes.get("/", function (req, res) {
     // "localhost:3000/admin/product" for show add product page
