@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Student  } from "../../model/student.interface";
 @Component({
   selector: 'app-student',
   templateUrl: './student.component.html',
   styleUrls: ['./student.component.scss']
 })
 export class StudentComponent implements OnInit {
-  newStudent={
+  index:number;
+  newStudent:Student={
     id : null,
     name : "",
     age : null,
     fee : null
   };
-
-  allStudent = [
+  selectedStudent:Student;
+  allStudent:Student[] = [
     {
       id : 1,
       name : "rohit",
       age : 25,
-      fee : 5000
+      fee : 5000  
     },
     {
       id: 2,
@@ -49,14 +50,29 @@ export class StudentComponent implements OnInit {
   }
 
   add() {
-    let a = this.allStudent.length;
-     this.newStudent.id = a+1;
-    this.allStudent.push(this.newStudent);
-  }
+    if(this.newStudent.id){
+      this.allStudent[this.index]=this.newStudent;
 
-  // confirmMsg(){
-  //   // confirm("Are You Sure Delete This User");
-  //   // alert("Are You Sure Del44ete This User");
-  // }
+    }else{
+
+      let a = this.allStudent.length;
+       this.newStudent.id = a+1;
+      this.allStudent.push(this.newStudent);
+    }
+  }
+askDelete(a:Student){
+  this.selectedStudent=a;
+}
+
+delete(){
+  let n = this.allStudent.indexOf(this.selectedStudent);
+  this.allStudent.splice(n,1);
+}
+
+ askEdit(a:Student,n:number){
+   this.newStudent = {... a};
+   this.index = n;
+ }
+
 
 }

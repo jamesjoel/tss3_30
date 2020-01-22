@@ -12,6 +12,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { StudentComponent } from './pages/student/student.component';
+import { DeleteComponent } from './shared/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { StudentComponent } from './pages/student/student.component';
     LoginComponent,
     SignupComponent,
     StudentComponent,
+    DeleteComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>Fee</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </thead>
                 <tbody>
@@ -15,7 +16,8 @@
                         <td>{{student.name}}</td>
                         <td>{{student.age}}</td>
                         <td>{{student.fee}}</td>
-                        <td><button data-target="#delModal" data-toggle="modal" class="btn btn-danger btn-sm" style="border-radius: 0%;">Delete</button></td>
+                        <td><button data-target="#addModal" data-toggle="modal" class="btn btn-info btn-sm" style="border-radius: 0%;" (click)="askEdit(student,n)">Edit</button></td>
+                        <td><button data-target="#delModal" data-toggle="modal" class="btn btn-danger btn-sm" style="border-radius: 0%;" (click)="askDelete(student)" >Delete</button></td>
                     </tr>
             
                 </tbody>
@@ -29,7 +31,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Add Student</h2>
+                <h2>{{newStudent.id?"Update User":"ADD User"}}</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -47,14 +49,18 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">Add</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">{{newStudent.id?"Update":"ADD"}}</button>
             </div>
         </div>
     </div>
 </div>
+<app-delete
+    [cSelectedStudent]="selectedStudent"
+    (deleteEvent)="delete()" 
+></app-delete
+    >
 
-
-<div id="delModal" class="modal fade">
+<!-- <div id="delModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -69,4 +75,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
