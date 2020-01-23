@@ -1,0 +1,62 @@
+<div  class="form-wrapper">
+
+    <form  class="form">
+        <h4 class="text-center text-muted">Create Your Account</h4>
+        <div class="form-group">
+            <label class="form-label" for="first">Fullname</label>
+            <input id="first" name="f_name" class="form-input" type="text" />
+        </div>
+        <div class="form-group ">
+            <label class="form-label" for="last">Username or Email</label>
+            <input id="last" name="email" class="form-input" type="text" />
+        </div>
+
+        <div class="form-group ">
+            <label class="form-label" for="last">Contact</label>
+            <input id="last" pattern="[0-9]{10}" name="contact" class="form-input" type="number" />
+        </div>
+
+        <div class="form-group ">
+            <label class="form-label" for="last">Password</label>
+            <input id="last" name="password" class="form-input" type="Password" />
+        </div>
+
+        <div class="form-group ">
+            <label class="form-label" for="last">Confirm Password</label>
+            <input id="last" class="form-input" type="Password" />
+        </div>
+
+        <div class="form-group">
+            <label>Address</label>
+            <textarea placeholder="(Optional)" name="address" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label class="text-muted">Gender</label>
+            <Br />
+
+            <input type="radio" value="male" name="gender" id="male" />
+            <label for="male" class="mr-3">Male</label>
+
+            <input type="radio" value="female" name="gender" id="female" />
+            <label for="female" class="mr-3">Female</label>
+
+
+        </div>
+
+        <div class="form-group">
+            <label>City</label>
+            <select name="city" class="form-control">
+                    <option value="" disabled selected>Choose your city</option>
+                    <option>Indore</option>
+                    <option>Mumbai</option>
+                    <option>Pune</option>
+                    <option>Delhi</option>
+                </select>
+        </div>
+
+        <div class="form-group submit-btn">
+            <input id="last" class="border-0 px-4 btn btn-primary" value="Registration" type="submit" />
+        </div>
+    </form>
+</div>

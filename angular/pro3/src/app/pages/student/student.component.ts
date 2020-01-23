@@ -30,5 +30,7 @@ export class StudentComponent implements OnInit {
    
 
   }
-  
+  test() {
+    this.a.demo();
+  }
 }
