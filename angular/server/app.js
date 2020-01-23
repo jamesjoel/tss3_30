@@ -4,9 +4,10 @@ var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017";
 var mongodb = require("mongodb");
 var bodyParser = require("body-parser");
-
+var cors = require("cors");
 
 app.use(bodyParser());
+app.use(cors());
 
 app.get("/api/teacher", function(req, res){
     MongoClient.connect(url, function(err, client){
