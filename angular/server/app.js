@@ -24,7 +24,7 @@ app.get("/api/teacher/:id", function (req, res) {
         var db = client.db("tss3");
         db.collection("teacher").find({_id : id}).toArray(function (err, result) {
             res.send(result[0]);
-        });
+        }); 
     });
 });
 
@@ -42,8 +42,8 @@ app.post("/api/teacher", function (req, res) {
 
 app.put("/api/teacher/:id", function(req, res){
     var id = req.params.id;
-    // console.log(req.params);
-    // console.log(req.body);
+    console.log(req.params);
+    console.log(req.body);
     id = mongodb.ObjectId(id);
     MongoClient.connect(url, function (err, client) {
         var db = client.db("tss3");
