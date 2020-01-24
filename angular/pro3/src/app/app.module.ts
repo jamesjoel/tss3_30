@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './pages/student/student.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { AddteacherComponent } from './shared/addteacher/addteacher.component';
+import { DelteacherComponent } from './shared/delteacher/delteacher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
     TeacherComponent,
-    AddteacherComponent
+    AddteacherComponent,
+    DelteacherComponent
   ],
   imports: [
     BrowserModule,
