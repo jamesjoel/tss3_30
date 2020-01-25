@@ -1,0 +1,43 @@
+{
+  "Student": [
+    {
+      "id": 1,
+      "name": "Gaurav",
+      "age": 22,
+      "fee": 22000
+    },
+    {
+      "id": 1,
+      "name": "Zishan",
+      "age": 26,
+      "fee": 43000
+    },
+    {
+      "id": 1,
+      "name": "Rahul",
+      "age": 24,
+      "fee": 23000
+    },
+    {
+      "id": 1,
+      "name": "Rohan",
+      "age": 32,
+      "fee": 13000
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": "22",
+      "name": "vivek",
+      "age": "33",
+      "fee": "8833"
+    },
+    {
+      "id": "112",
+      "name": "Anay",
+      "age": "23",
+      "fee": "883364222222"
+    }
+  ]
+}
