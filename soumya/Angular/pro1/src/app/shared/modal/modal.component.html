@@ -2,25 +2,25 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>{{newStudent.id?"Update User":"ADD User"}}</h2>
+                <h2>{{cnewStudent.id?"Update User":"ADD User"}}</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
                     <label>Full Name</label>
-                    <input type="text" class="form-control"  [(ngModel)]="newStudent.name"/>
+                    <input type="text" class="form-control"  [(ngModel)]="cnewStudent.name"/>
                 </div>
                 <div class="form-group">
                     <label>Age</label>
-                    <input type="text" class="form-control" [(ngModel)]="newStudent.age" />
+                    <input type="text" class="form-control" [(ngModel)]="cnewStudent.age" />
                 </div>
                 <div class="form-group">
                     <label>Fee</label>
-                    <input type="text" class="form-control" [(ngModel)]="newStudent.fee" />
+                    <input type="text" class="form-control" [(ngModel)]="cnewStudent.fee" />
                 </div>
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button class="btn btn-primary" data-dismiss="modal" (click)="hello()">{{newStudent.id?"Update":"ADD"}}</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="hello()">{{cnewStudent.id?"Update":"ADD"}}</button>
             </div>
         </div>
     </div>
