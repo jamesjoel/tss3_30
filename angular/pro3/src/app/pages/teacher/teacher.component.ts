@@ -30,27 +30,6 @@ export class TeacherComponent implements OnInit {
       this.teachers.splice(n, 1);
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
   add(obj) {
     this._teacher.addTeacher(obj).subscribe(result=>{
