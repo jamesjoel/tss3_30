@@ -6,7 +6,7 @@ import {ContactComponent} from './pages/contact/contact.component';
 import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {StudentComponent} from './pages/student/student.component';
-
+import { TeacherComponent} from './pages/teacher/teacher.component';
 
 const routes: Routes = [
   {
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: "student",
     component: StudentComponent
+  },
+  {
+    path: "teacher",
+    component: TeacherComponent
   }
 ];
 

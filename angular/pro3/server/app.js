@@ -5,17 +5,55 @@ var cors = require("cors");
 var jwt = require("jsonwebtoken");
 var MongoClient = require("mongodb").MongoClient;
 var sha1 = require("sha1");
+var mongodb = require("mongodb");
 
 app.use(bodyParser());
 app.use(cors());
 
-
-
-
+app.get("/api/verifytoken", function(req, res){
+    if(req.headers.authorization){
+        if(req.header.authorization != ""){
+            var token = req.headers.authorization;
+            var paylod = jwt.verify(token, "this is my secret key");
+            if(! payload){
+                res.status(401).send({
+                    success: false,
+                    msg: "Wrong Token"
+                })
+            }else {
+                res.status(200).send({
+                    success : true,
+                    msg : "Correct Token"      
+                })
+            }
+        }
+        else {
+            res.status(401).send({
+                success: false,
+                msg: "Wrong Token"
+            })
+        }
+    }
+    else{
+        res.status(401).send({
+            success : false,
+            msg : "Wrong Token"
+        })
+    }
+});
 
 
 app.get("/api/getuser", backdoor, function (req, res) {
-
+        // console.log(req.userData);
+        var id = req.userData.id;
+    MongoClient.connect("mongodb://localhost:27017", function(err, client){
+        var db = client.db('tss3');
+        db.collection("user").find({ _id : mongodb.ObjectId(id)}).toArray(function(err, result){
+            delete result[0].password;
+            
+            res.send(result[0]);
+        });
+    });
 });
 
 function backdoor(req, res, next) {
@@ -30,13 +68,13 @@ function backdoor(req, res, next) {
         }
         else {
             var token = req.headers.authorization;
-            var payload = jwt.verify(token, "this is my secret key");
-            if (!payload) {
+            var userInfo = jwt.verify(token, "this is my secret key");
+            if (!userInfo) {
                 res.status(401).send({ msg: "Unathorized User" });
 
             }
             else {
-                req.userData = payload;
+                req.userData = userInfo;
                 next();
             }
         }
