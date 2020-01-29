@@ -8,13 +8,19 @@ import { AppComponent } from './app.component';
 import { StudentComponent } from './pages/student/student.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { AddteacherComponent } from './shared/addteacher/addteacher.component';
+import { DelteacherComponent } from './shared/delteacher/delteacher.component';
+import { LoginComponent } from './pages/login/login.component';
+import { DashComponent } from './pages/dash/dash.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentComponent,
     TeacherComponent,
-    AddteacherComponent
+    AddteacherComponent,
+    DelteacherComponent,
+    LoginComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,

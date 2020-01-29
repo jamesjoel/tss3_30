@@ -7,10 +7,15 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 
 app.use(bodyParser());
+// for sharing APIs to another Domain/Port
 app.use(cors());
 
 app.get("/api/teacher", function(req, res){
     MongoClient.connect(url, function(err, client){
+        if(err){
+            console.log("-----", err);
+            return;
+        }
         var db = client.db("tss3");
         db.collection("teacher").find().toArray(function(err, result){
             res.send(result);

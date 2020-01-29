@@ -1,0 +1,16 @@
+<div id="delModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Delete Teacher</h2>
+            </div>
+            <div class="modal-body">
+                <p>Delete Teacher {{ cTeacher.name }}</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-info btn-sm" data-dismiss="modal">Close</button>
+                <button class="btn btn-danger btn-sm" data-dismiss="modal" (click)="delete()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

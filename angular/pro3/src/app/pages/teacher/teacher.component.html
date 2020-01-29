@@ -8,15 +8,18 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>City</th>
+                    <th>Delete</th>
                 </tr>
                 <tr *ngFor="let teacher of teachers; let n = index">
                     <td>{{ n+1 }}</td>
                     <td>{{ teacher.name }}</td>
                     <td>{{ teacher.age }}</td>
                     <td>{{ teacher.city }}</td>
+                    <td><button data-target="#delModal" data-toggle="modal" (click)="askDelete(teacher)" class="btn btn-danger">Delete</button></td>
                 </tr>
             </table>
         </div>
     </div>
 </div>
 <app-addteacher (teacherEvent)="add($event)"></app-addteacher>
+<app-delteacher [cTeacher]="teacher" (teacherEvent)="delete()"></app-delteacher>
