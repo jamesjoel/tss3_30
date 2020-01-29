@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
     password : ""
   };
   message:string;
-  constructor(private _login : LoginService, private _router : Router) { }
+  constructor(private _cookie : CookieService, private _login : LoginService, private _router : Router) { }
 
   ngOnInit() {
   }
@@ -31,5 +32,6 @@ export class LoginComponent implements OnInit {
       this.message=err.error.msg;
     });
   }
+  
 
 }

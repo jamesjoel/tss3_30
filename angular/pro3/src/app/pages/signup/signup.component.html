@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="user">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.f_name.errors }" formControlName="f_name" class="form-control"/>
+                    <div *ngIf="check && user.controls.f_name.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.f_name.errors.required">
+                            Insert Your Full Name
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.email.errors }" formControlName="email"
+                        class="form-control" />
+                    <div *ngIf="check && user.controls.email.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.email.errors.required">
+                            Insert Your Email
+                        </p>
+                        <p *ngIf="user.controls.email.errors.email">
+                            Correct Email Id
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <input type="submit" (click)="save()" value="Signup" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

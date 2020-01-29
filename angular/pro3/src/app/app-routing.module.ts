@@ -6,10 +6,19 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
-
+import { DemoComponent } from './pages/demo/demo.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 const routes: Routes = [
+  {
+    path : "signup",
+    component : SignupComponent
+  },
+  {
+    path : "demo",
+    component : DemoComponent
+  },
   {
     path : "profile",
     component : ProfileComponent,

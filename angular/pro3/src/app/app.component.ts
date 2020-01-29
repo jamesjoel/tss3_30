@@ -8,6 +8,8 @@ import { LoginService } from './services/login.service';
 })
 export class AppComponent {
   title = 'pro3';
-  constructor(private _login : LoginService) { }
+  constructor(private _login : LoginService) {
+    this._login.checkToken();
+   }
   
 }

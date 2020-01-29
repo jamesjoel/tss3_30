@@ -12,6 +12,11 @@ import { DelteacherComponent } from './shared/delteacher/delteacher.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DemoComponent } from './pages/demo/demo.component';
+import { SignupComponent } from './pages/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -22,15 +27,18 @@ import { ProfileComponent } from './pages/profile/profile.component';
     DelteacherComponent,
     LoginComponent,
     DashComponent,
-    ProfileComponent
+    ProfileComponent,
+    DemoComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
