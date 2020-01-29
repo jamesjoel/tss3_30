@@ -11,6 +11,7 @@ import { AddteacherComponent } from './shared/addteacher/addteacher.component';
 import { DelteacherComponent } from './shared/delteacher/delteacher.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashComponent } from './pages/dash/dash.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { DashComponent } from './pages/dash/dash.component';
     AddteacherComponent,
     DelteacherComponent,
     LoginComponent,
-    DashComponent
+    DashComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
