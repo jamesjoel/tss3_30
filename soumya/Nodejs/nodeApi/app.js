@@ -40,7 +40,7 @@ app.post("/api/teacher/",function(req,res){
 
 app.put("/api/teacher/:id",function(req,res){
     var id = req.params.id;
-    // console.log(id);
+    // console.log(req.params);
     // console.log(req.body);
     MongoClient.connect(url,function(err,client){
         var db = client.db("practice");
