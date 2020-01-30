@@ -18,9 +18,12 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login() {
+    // console.log("------", btoa("hello"));
+    // console.log("------", atob("aGVsbG8="));
     this._login.doLogin(this.user).subscribe(result=>{
       // console.log("------",result);
-      localStorage.setItem("token", result.token);
+      let newToken = btoa(result.token);
+      localStorage.setItem("token", newToken);
       this._router.navigate(["/dash"]);
     },
     err=>{

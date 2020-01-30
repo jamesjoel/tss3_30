@@ -5,7 +5,10 @@ var bodyParser = require("body-parser");
 var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017";
 var mongodb = require("mongodb");
+var cors = require("cors");
+
 app.use(bodyParser());
+app.use(cors());
 
 app.get("/api/teacher",function(req,res){
     MongoClient.connect(url,function(err,client){
@@ -37,8 +40,8 @@ app.post("/api/teacher/",function(req,res){
 
 app.put("/api/teacher/:id",function(req,res){
     var id = req.params.id;
-    console.log(id);
-    console.log(req.body);
+    // console.log(id);
+    // console.log(req.body);
     MongoClient.connect(url,function(err,client){
         var db = client.db("practice");
         db.collection("teacher").update({ _id : mongodb.ObjectId(id)},{ $set : req.body },function(err,result){
