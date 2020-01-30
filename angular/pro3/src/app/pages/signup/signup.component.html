@@ -29,6 +29,60 @@
 
 
                 <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" [ngClass]="{'is-invalid': check && user.controls.password.errors}" class="form-control" />
+                    <div *ngIf="check && user.controls.password.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.password.errors.required">
+                            Insert Your Password
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Re-Password</label>
+                    <input type="password" formControlName="rePassword" class="form-control" [ngClass]="{'is-invalid': check && user.controls.rePassword.errors}"/>
+                    <div *ngIf="check && user.controls.rePassword.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.rePassword.errors.required">
+                            Insert Your Re-Password
+                        </p>
+                        <p *ngIf="user.controls.rePassword.errors.myError">
+                            Password and Re-Password not matched !
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.f_name.errors }" formControlName="contact"
+                        class="form-control" />
+                    <div *ngIf="check && user.controls.f_name.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.f_name.errors.required">
+                            Insert Your Full Name
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="form-group">
                     <input type="submit" (click)="save()" value="Signup" class="btn btn-primary" />
                 </div>
             </form>
