@@ -7,7 +7,8 @@ import {LoginComponent} from './pages/login/login.component';
 import {SignupComponent} from './pages/signup/signup.component';
 import {StudentComponent} from './pages/student/student.component';
 import { TeacherComponent} from './pages/teacher/teacher.component';
-
+import { DashComponent} from './pages/dash/dash.component';
+import { LoginAuthGuard} from './guards/login-auth.guard';
 const routes: Routes = [
   {
     path : "",
@@ -33,12 +34,19 @@ const routes: Routes = [
   
   {
     path: "student",
-    component: StudentComponent
+    component: StudentComponent,
+    canActivate: [LoginAuthGuard]
   },
   {
     path: "teacher",
-    component: TeacherComponent
-  }
+    component: TeacherComponent,
+    canActivate: [LoginAuthGuard]
+  },
+  {
+    path : "dash",
+    component : DashComponent,
+    canActivate: [LoginAuthGuard]
+  },
 ];
 
 @NgModule({

@@ -1,20 +1,21 @@
 <div id="login" class="form-wrapper">
 
-    <form class="form">
+    <div class="form">
         <h4 class="text-center text-muted">Login</h4>
         <div class="form-group">
             <label class="form-label" for="first">Username or Email</label>
-            <input id="first" class="form-input" name="email" type="text" />
+            <input id="first" class="form-input" [(ngModel)]="user.username" type="text" />
         </div>
         <div class="form-group ">
             <label class="form-label" for="last">Password</label>
-            <input id="last" class="form-input" name="password" type="password" />
+            <input id="last" class="form-input" [(ngModel)]="user.password" type="password" />
         </div>
         <div class="form-group submit-btn">
 
-            <input id="last" class="border-0 px-4 btn btn-primary" value="Login" type="submit" />
+            <button  class="border-0 px-4 btn btn-primary" (click)="login()">Login</button>
         </div>
+        <p class="text-center text-danger">{{message}}</p> 
 
-    </form>
+    </div>
 </div>
 

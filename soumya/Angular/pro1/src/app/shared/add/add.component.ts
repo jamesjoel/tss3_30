@@ -14,7 +14,7 @@ export class AddComponent implements OnInit {
 constructor() { }
 
 ngOnInit() {
-  console.log("soumya-----xyz"+this.cteacher);
+  // console.log("soumya-----xyz"+this.cteacher);
   }
   add() {
       this.teacherEvent.emit();

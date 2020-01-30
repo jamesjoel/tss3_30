@@ -15,18 +15,32 @@
             <li class="nav-item">
                 <a routerLink="contact" class="nav-link">Contact</a>
             </li>
-            <li class="nav-item">
-                <a routerLink="login" class="nav-link">Login</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="signup" class="nav-link">Signup</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="student" class="nav-link">Student</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="teacher" class="nav-link">Teacher</a>
-            </li>
+
+            <ng-template [ngIf]="_login.isLoggedIn()" [ngIfElse]="beforeLogin">
+                <li class="nav-item">
+                    <a routerLink="student" class="nav-link">Student</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="teacher" class="nav-link">Teacher</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="dash" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a style="cursor: pointer;" (click)="_login.logout()" class="nav-link">Logout</a>
+                </li>
+            </ng-template>
+
+            <ng-template #beforeLogin>
+                <li class="nav-item">
+                    <a routerLink="login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="signup" class="nav-link">Signup</a>
+                </li>
+            </ng-template>
+            
+           
         </ul>
     </div>
 </nav>

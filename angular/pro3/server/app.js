@@ -14,18 +14,25 @@ app.get("/api/verifytoken", function(req, res){
     if(req.headers.authorization){
         if(req.header.authorization != ""){
             var token = req.headers.authorization;
-            var paylod = jwt.verify(token, "this is my secret key");
-            if(! payload){
-                res.status(401).send({
-                    success: false,
-                    msg: "Wrong Token"
-                })
-            }else {
+            
+            jwt.verify(token, "this is my secret key", (payload)=>{
+
+            
+
+                if (payload.message=="invalid token"){
+                    console.log("wrong");
+                    res.status(401).send({
+                        success: false,
+                        msg: "Wrong Token"
+                    })
+                }else {
+                    console.log("correct");
                 res.status(200).send({
                     success : true,
                     msg : "Correct Token"      
                 })
             }
+            });
         }
         else {
             res.status(401).send({
