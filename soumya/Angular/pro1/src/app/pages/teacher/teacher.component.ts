@@ -8,7 +8,7 @@ import { Teacher } from '../../model/teacher.interface';
 })
 
 export class TeacherComponent implements OnInit {
-teachers:any[];
+teachers:Teacher[];
 teacher:Teacher={
       _id:null,
       name:"",
@@ -17,17 +17,16 @@ teacher:Teacher={
 };
 index:number;
   constructor(private _teacher : TeacherService) { }
-
   ngOnInit() {
-    this._teacher.getTeacher().subscribe(result=>{
+    this._teacher.getTeacher().subscribe(result =>{
       // console.log(result);
-      this.teachers = result;
+      this.teachers= result;
     });
   }
   addTeacher(){
     // console.log(this.teacher);
     if(this.teacher._id){
-      console.log(this.teacher);
+      // console.log("-----",this.teacher);
 
       this._teacher.editTeacher(this.teacher._id,this.teacher).subscribe(result=>{
         this.teachers[this.index]=this.teacher;
@@ -57,8 +56,8 @@ index:number;
       city: ""
     }
   }
-  askEdit(obj,n){
-    this.teacher=obj;
+  askEdit(obj:Teacher,n){
+    this.teacher={...obj};
     this.index = n; 
   }
   

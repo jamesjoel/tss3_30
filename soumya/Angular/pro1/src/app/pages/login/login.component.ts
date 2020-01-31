@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../../Services/login.service'; 
+import { Router } from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-login',
@@ -6,8 +8,12 @@ declare var $: any;
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
+user={
+  username: "",
+  password: ""
+}
+message:string;
+  constructor(private _login: LoginService,private _router: Router) { }
 
   ngOnInit() {
     $('input').focus(function () {
@@ -24,5 +30,14 @@ export class LoginComponent implements OnInit {
       }
   })
   }
-
+  login(){
+    this._login.doLogin(this.user).subscribe(result =>{
+      // console.log(result);
+      localStorage.setItem("token",result.token);
+      this._router.navigate(["/dash"]);
+    },err =>{
+      // console.log("++++++",err);
+      this.message = err.error.msg;
+    });
+  }
 }

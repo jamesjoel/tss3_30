@@ -16,6 +16,8 @@ import { DeleteComponent } from './shared/delete/delete.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { TeacherComponent } from './pages/teacher/teacher.component';
 import { AddComponent } from './shared/add/add.component';
+import { DashComponent } from './pages/dash/dash.component';
+import { UserComponent } from './Services/user/user.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { AddComponent } from './shared/add/add.component';
     ModalComponent,
     TeacherComponent,
     AddComponent,
+    DashComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
