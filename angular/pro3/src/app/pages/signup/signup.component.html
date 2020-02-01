@@ -53,11 +53,14 @@
 
                 <div class="form-group">
                     <label>Contact</label>
-                    <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.f_name.errors }" formControlName="contact"
+                    <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.contact.errors }" formControlName="contact"
                         class="form-control" />
-                    <div *ngIf="check && user.controls.f_name.errors" class="invalid-feedback">
-                        <p *ngIf="user.controls.f_name.errors.required">
-                            Insert Your Full Name
+                    <div *ngIf="check && user.controls.contact.errors" class="invalid-feedback">
+                        <p *ngIf="user.controls.contact.errors.required">
+                            Insert Your Contact Number
+                        </p>
+                        <p *ngIf="user.controls.contact.errors.numErr">
+                            Insert Number Only
                         </p>
                     </div>
                 </div>
