@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Match } from '../../helpers/match.validation';
-
+import { NumMatch } from '../../helpers/number.validation';
 
 @Component({
   selector: 'app-signup',
@@ -21,9 +21,10 @@ export class SignupComponent implements OnInit {
       rePassword : ["", Validators.required],
       contact : ["", Validators.required]
     },
-    {
-     validator : Match('password', 'rePassword')
-    }
+      {
+        validator: [Match('password', 'rePassword'), NumMatch('contact')]
+
+      }
     );
 
 
