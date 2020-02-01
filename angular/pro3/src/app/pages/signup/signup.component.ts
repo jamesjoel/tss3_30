@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Match } from '../../helpers/match.validation';
+
 
 @Component({
   selector: 'app-signup',
@@ -14,8 +16,15 @@ export class SignupComponent implements OnInit {
 
     this.user = this._fb.group({
       f_name : ["", Validators.required],
-      email : ["", [Validators.required, Validators.email]]
-    });
+      email : ["", [Validators.required, Validators.email]],
+      password : ["", Validators.required],
+      rePassword : ["", Validators.required],
+      contact : ["", Validators.required]
+    },
+    {
+     validator : Match('password', 'rePassword')
+    }
+    );
 
 
    }
