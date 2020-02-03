@@ -1,62 +1,107 @@
 <div  class="form-wrapper">
 
-    <form  class="form">
+    <form  class="form" [formGroup]="user">
         <h4 class="text-center text-muted">Create Your Account</h4>
         <div class="form-group">
             <label class="form-label" for="first">Fullname</label>
-            <input id="first" name="f_name" class="form-input" type="text" />
+            <input id="first" formControlName="f_name" class="form-input" [ngClass]="{ 'is-invalid' : check && user.controls.f_name.errors }" type="text" />
+            <div *ngIf="check && user.controls.f_name.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.f_name.errors.required">
+                    Insert Your Full Name 
+                </p>
+            </div>
         </div>
         <div class="form-group ">
             <label class="form-label" for="last">Username or Email</label>
-            <input id="last" name="email" class="form-input" type="text" />
+            <input  formControlName="email" class="form-input" type="text" [ngClass]="{ 'is-invalid' : check && user.controls.email.errors }"/>
+            <div *ngIf="check && user.controls.email.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.email.errors.required">
+                    Insert Your email
+                </p>
+                <p *ngIf="user.controls.email.errors.email">
+                    Insert Your Correct email
+                </p>
+            </div>
         </div>
 
         <div class="form-group ">
             <label class="form-label" for="last">Contact</label>
-            <input id="last" pattern="[0-9]{10}" name="contact" class="form-input" type="number" />
+            <input   formControlName="contact" class="form-input" type="number" [ngClass]="{ 'is-invalid' : check && user.controls.contact.errors }" />
+            <div *ngIf="check && user.controls.contact.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.contact.errors.required">
+                    Insert Your contact 
+                </p>
+            </div>
         </div>
 
         <div class="form-group ">
             <label class="form-label" for="last">Password</label>
-            <input id="last" name="password" class="form-input" type="Password" />
+            <input  formControlName="password" class="form-input" type="Password" [ngClass]="{ 'is-invalid' : check && user.controls.password.errors }"/>
+            <div *ngIf="check && user.controls.password.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.password.errors.required">
+                    Insert Your  Password 
+                </p>
+            </div>
         </div>
 
         <div class="form-group ">
-            <label class="form-label" for="last">Confirm Password</label>
-            <input id="last" class="form-input" type="Password" />
+            <label class="form-label"  for="last">Confirm Password</label>
+            <input  class="form-input" formControlName="rePassword" type="Password" [ngClass]="{ 'is-invalid' : check && user.controls.rePassword.errors }"/>
+            <div *ngIf="check && user.controls.rePassword.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.rePassword.errors.required">
+                    Insert Your Confirm Password 
+                </p>
+                <p *ngIf="user.controls.rePassword.errors.myError">
+                    Password and Re-Password not matched !
+                </p>
+            </div>
         </div>
 
         <div class="form-group">
             <label>Address</label>
-            <textarea placeholder="(Optional)" name="address" class="form-control"></textarea>
+            <textarea placeholder="(Optional)" formControlName="address" class="form-control" [ngClass]="{ 'is-invalid' : check && user.controls.address.errors }"></textarea>
+            <div *ngIf="check && user.controls.address.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.address.errors.required">
+                    Insert Your Address
+                </p>
+            </div>
         </div>
 
         <div class="form-group">
             <label class="text-muted">Gender</label>
             <Br />
 
-            <input type="radio" value="male" name="gender" id="male" />
+            <input type="radio" value="male" formControlName="gender" id="male" [ngClass]="{ 'is-invalid' : check && user.controls.gender.errors }" />
             <label for="male" class="mr-3">Male</label>
 
-            <input type="radio" value="female" name="gender" id="female" />
+            <input type="radio" value="female" formControlName="gender" id="female" [ngClass]="{ 'is-invalid' : check && user.controls.gender.errors }"/>
             <label for="female" class="mr-3">Female</label>
-
+            <div *ngIf="check && user.controls.gender.errors" class="invalid-feedback">
+                <p *ngIf="user.controls.gender.errors.required">
+                    Insert Your Gender
+                </p>
+            </div>
 
         </div>
 
         <div class="form-group">
             <label>City</label>
-            <select name="city" class="form-control">
-                    <option value="" disabled selected>Choose your city</option>
-                    <option>Indore</option>
-                    <option>Mumbai</option>
-                    <option>Pune</option>
-                    <option>Delhi</option>
+            <select formControlName="city" class="form-control" [ngClass]="{ 'is-invalid' : check && user.controls.city.errors }">
+                    <option  disabled selected>Choose your city</option>
+                    <option value="indore">Indore</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="pune">Pune</option>
+                    <option value="delhi">Delhi</option>
                 </select>
+                <div *ngIf="check && user.controls.city.errors" class="invalid-feedback">
+                    <p *ngIf="user.controls.city.errors.required">
+                        Insert Your City Name 
+                    </p>
+                </div>
         </div>
 
         <div class="form-group submit-btn">
-            <input id="last" class="border-0 px-4 btn btn-primary" value="Registration" type="submit" />
+            <button id="last" (click)="submit()" class="border-0 px-4 btn btn-primary" >Registration</button>
         </div>
     </form>
 </div>

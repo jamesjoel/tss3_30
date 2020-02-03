@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { passMatch } from '../../helper/passMatch.validation';
 declare var $: any;
 
 @Component({
@@ -7,8 +9,24 @@ declare var $: any;
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-
-  constructor() { }
+user:FormGroup;
+check:boolean=false;
+  constructor(private _fb: FormBuilder) {
+    this.user = this._fb.group({
+      f_name : ["", Validators.required],
+      email : ["", [Validators.required, Validators.email]],
+      contact : ["", Validators.required],
+      password : ["", Validators.required],
+      rePassword : ["", Validators.required],
+      address : ["",[Validators.required]],
+      gender : ["",[Validators.required]],
+      city : ["",[Validators.required]]
+    },
+    {
+      validator : [passMatch("password","rePassword")]
+    }
+    );
+   }
 
   ngOnInit() {
     $('input').focus(function () {
@@ -23,7 +41,16 @@ export class SignupComponent implements OnInit {
       } else {
           $(this).addClass('filled');
       }
-  })
+  });
   }
+
+submit(){
+  this.check = true;
+  if(this.user.invalid){
+    return false;
+  }
+console.log(this.user.value);
+}
+
 
 }
