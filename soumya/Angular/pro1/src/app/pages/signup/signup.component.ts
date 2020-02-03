@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passMatch } from '../../helper/passMatch.validation';
+import { numValid } from '../../helper/numErr.validation';
 declare var $: any;
 
 @Component({
@@ -23,7 +24,7 @@ check:boolean=false;
       city : ["",[Validators.required]]
     },
     {
-      validator : [passMatch("password","rePassword")]
+      validator : [passMatch("password","rePassword"),numValid("contact")]
     }
     );
    }

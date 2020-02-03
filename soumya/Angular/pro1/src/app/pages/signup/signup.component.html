@@ -26,10 +26,13 @@
 
         <div class="form-group ">
             <label class="form-label" for="last">Contact</label>
-            <input   formControlName="contact" class="form-input" type="number" [ngClass]="{ 'is-invalid' : check && user.controls.contact.errors }" />
+            <input   formControlName="contact" class="form-input" type="text" [ngClass]="{ 'is-invalid' : check && user.controls.contact.errors }" />
             <div *ngIf="check && user.controls.contact.errors" class="invalid-feedback">
                 <p *ngIf="user.controls.contact.errors.required">
                     Insert Your contact 
+                </p>
+                <p *ngIf="user.controls.contact.errors.numErr">
+                    Insert Number Only
                 </p>
             </div>
         </div>
