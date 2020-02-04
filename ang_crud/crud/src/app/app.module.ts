@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { DeleteComponent } from './shared/delete/delete.component';
 import { AddEditComponent } from './shared/add-edit/add-edit.component';
+import { BoxComponent } from './shared/box/box.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AddEditComponent } from './shared/add-edit/add-edit.component';
     HomeComponent,
     EmployeeComponent,
     DeleteComponent,
-    AddEditComponent
+    AddEditComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,

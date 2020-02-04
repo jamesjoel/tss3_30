@@ -28,14 +28,12 @@ export class EmployeeComponent implements OnInit {
 
     if(obj._id){
       this._emp.editEmployee(obj, obj._id).subscribe(result=>{
-        // console.log(result);
         this.employees[this.index]=this.employee;
 
       });
     }
     else{
       this._emp.addEmployee(obj).subscribe(result => {
-        // console.log(result);
         this.employees.push(result);
       });
     }

@@ -1,6 +1,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-10 offset-md-1">
+            <pre>{{ index | json }}</pre>
             <button class="btn btn-primary" (click)="askAdd()" data-target="#addModal" data-toggle="modal">Add</button>
             <br />
             <br />
@@ -26,4 +27,11 @@
     </div>
 </div>
 <app-add-edit (addEditEvent)="addEdit($event)" [employee]="employee"></app-add-edit>
+
+
+
+
+
+
+
 <app-delete [employee]="employee" (deleteEvent)="delete()"></app-delete>
