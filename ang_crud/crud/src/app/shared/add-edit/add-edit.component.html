@@ -22,6 +22,16 @@
                         <option value="mumbai">Mumbai</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Salary</label>
+                    <input type="text" [(ngModel)]="employee.salary" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label>Gender</label>
+                    Male <input type="radio" [(ngModel)]="employee.gender" value="male" />
+                    Female <input type="radio" [(ngModel)]="employee.gender" value="female" />
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success" data-dismiss="modal" (click)="add()">{{ employee._id ? "Update" : "Add New" }}</button>

@@ -9,14 +9,23 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent implements OnInit {
+  x=false;
   employees : Employee[];
   employee : Employee={
     name : "",
     age : null,
-    city : ""
+    city : "",
+    salary : null,
+    gender : ""
   };
   index:number;
+
+  columnName='name';
+  defaultOrder = true;
+
   constructor(private _emp : EmployeeService) { }
+
+
 
   ngOnInit() {
     this._emp.getEmployee().subscribe(result=>{
@@ -60,8 +69,17 @@ export class EmployeeComponent implements OnInit {
     this.employee = {
       name : "",
       age : null,
-      city : ""
+      city : "",
+      salary : null,
+      gender : ""
     }
   }
+
+  sort(col, check){
+    this.columnName = col;
+    this.defaultOrder = !this.defaultOrder;
+  }
+
+  
 
 }
