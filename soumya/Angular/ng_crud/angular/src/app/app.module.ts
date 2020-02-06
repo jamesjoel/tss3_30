@@ -9,6 +9,9 @@ import { AddEditModalComponent } from './shared/add-edit-modal/add-edit-modal.co
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { NavigationBarComponent } from './shared/navigation-bar/navigation-bar.component';
 import { DelModalComponent } from './shared/del-modal/del-modal.component';
+import { BonusPipe } from './pipes/bonus.pipe';
+import { TotalSalaryPipe } from './pipes/total-salary.pipe';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { DelModalComponent } from './shared/del-modal/del-modal.component';
     AddEditModalComponent,
     EmployeeComponent,
     NavigationBarComponent,
-    DelModalComponent
+    DelModalComponent,
+    BonusPipe,
+    TotalSalaryPipe,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-8 offset-md-2">
             <button class="btn btn-info btn-sm" data-target="#addModal" (click)="askAdd()" data-toggle="modal">Add</button>
             <br><br>
             <table class="table table-hover table-bordered table-striped table-dark">
@@ -9,6 +9,10 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>City</th>
+                    <th>Salary</th>
+                    <th>Bonus</th>
+                    <th>Total Salary</th>
+                    <th>Gender</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr>
@@ -17,6 +21,10 @@
                     <td>{{ employee.name }}</td>
                     <td>{{ employee.age }}</td>
                     <td>{{ employee.city }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.gender | bonus : employee.age}}</td>
+                    <td>{{ employee.salary | totalSalary : employee.gender : employee.age }}</td>
+                    <td>{{ employee.gender }}</td>
                     <td><button class="btn btn-sm btn-info" data-target="#addModal" (click)="askEdit(employee,n)"
                             data-toggle="modal">Edit</button></td>
                     <td><button class="btn btn-sm btn-danger" data-target="#delModal" data-toggle="modal"
@@ -28,3 +36,4 @@
 </div>
 <app-add-edit-modal (addEditEvent)="addEdit($event)" [employee]="employee"> </app-add-edit-modal>
 <app-del-modal [deleteEmp]="employee" (delEvent)="delete()"></app-del-modal>
+<!-- {{ employee | json}} -->
