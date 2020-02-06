@@ -16,13 +16,16 @@ export class EmployeeComponent implements OnInit {
     city : ""
   };
   index:number;
-  constructor(private _emp : EmployeeService) { }
 
+  constructor(private _emp : EmployeeService) { }
   ngOnInit() {
     this._emp.getEmployee().subscribe(result=>{
       this.employees = result;
     })
   }
+
+
+
 
   addEdit(obj : Employee) {
 
@@ -39,7 +42,6 @@ export class EmployeeComponent implements OnInit {
         this.employees.push(result);
       });
     }
-
     
   }
   askDelete(obj:Employee) {
@@ -52,7 +54,6 @@ export class EmployeeComponent implements OnInit {
     });
   }
   
-
   askEdit(obj:Employee) {
     // this.employee = obj;
     this.index = this.employees.indexOf(obj);
