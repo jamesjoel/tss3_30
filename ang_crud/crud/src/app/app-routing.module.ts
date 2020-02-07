@@ -2,9 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 
 
 const routes: Routes = [
+  {
+    path : "fileupload",
+    component : FileuploadComponent
+  },
   {
     path : "",
     component : HomeComponent

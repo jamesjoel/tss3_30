@@ -6,8 +6,14 @@ var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017";
 var mongodb = require("mongodb");
 
+var fileupload = require("express-fileupload");
+
 app.use(bodyParser());
 app.use(cors());
+app.use(fileupload());
+
+
+app.use(express.static(__dirname+"/public"));
 
 app.get("/api/employee", (req, res)=>{
     console.log("----- GET CALL");
@@ -52,6 +58,18 @@ app.delete("/api/employee/:id", (req, res) => {
     })
 });
 
+
+
+
+app.post("/api/fileupload", (req, res)=>{
+    var file = req.files.image;
+    file.mv(__dirname+"/public/image/"+file.name, (err)=>{
+        if(err){
+            console.log(err);
+        }
+        res.send({ path : "http://localhost:3000/image/"+file.name });
+    })
+});
 
 
 
