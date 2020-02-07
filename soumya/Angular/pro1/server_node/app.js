@@ -54,7 +54,7 @@ app.post("/api/login", function (req, res) {
         var db = client.db("practice");
         db.collection("user").find({ email : u }).toArray(function(err, result){
             if(result.length>=1) {
-                if(result[0].password == sha1(p)){
+                if(result[0].password == p){
                     var token = jwt.sign({ id: result[0]._id, name: result[0].f_name }, "this is my secret key", { expiresIn: 3600 });
                     res.status(200).send({
                         success: true,

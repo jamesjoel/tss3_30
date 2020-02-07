@@ -4,8 +4,12 @@ var cors = require("cors");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var MongoClient = require("mongodb").MongoClient;
+var sha1 = require("sha1");
+const Cryptr = require('cryptr');
+const cryptr = new Cryptr('myTotalySecretKey');
+var jwt = require("jsonwebtoken");
 var url = "mongodb://localhost:27017/";
-var portNo = 3000;
+var portNo = 5000;
 
 app.use(bodyParser());
 app.use(cors());
@@ -22,6 +26,7 @@ app.post("/api/signup", (req, res) => {
     var d = new Date(year, month, date);
     delete req.body.birth;
     req.body.dob = d;
+    req.body.password = sha1(req.body.password);
     // console.log("METHOD__post", req.body);
 
     MongoClient.connect(url, (err, client) => {
@@ -31,6 +36,47 @@ app.post("/api/signup", (req, res) => {
         });
     });
 });
+
+
+app.post("/api/login", (req, res) => {
+    var u = req.body.email;
+    var p = req.body.password;
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("practice");
+        db.collection("user").find({ email: u }).toArray((err, result) => {
+            if (result.length >= 1) {
+                if (result[0].password == sha1(p)) {
+                    var token = jwt.sign({ id: result[0]._id, name: result[0].fullName }, "This Is Secret Key", { expiresIn: 3600 });
+                    // console.log(token);
+                    var encryptToken = cryptr.encrypt(token);
+                    // console.log(encryptToken);
+                    // var decryptToken = cryptr.decrypt(encryptToken);
+                    // console.log(decryptToken);
+                    res.status(200).send({
+                        status: true,
+                        encryptToken
+                    });
+
+                } else {
+                    res.status(401).send({
+                        status: false,
+                        msgType : "password"
+                    
+                    });
+                }
+            } else {
+                res.status(401).send({
+                    status: false,
+                    msgType : "username"
+                   
+                });
+            }
+        });
+    });
+
+});
+
+
 
 //Restful API
 
