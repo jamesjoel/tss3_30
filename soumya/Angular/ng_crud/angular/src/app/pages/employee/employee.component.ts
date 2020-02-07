@@ -12,7 +12,9 @@ export class EmployeeComponent implements OnInit {
   employee: Employee = {
     name: "",
     age: null,
-    city: ""
+    city: "",
+    salary: null,
+    gender: ""
   }
   index: number;
   constructor(private _emp: EmployeeService) { }
@@ -27,40 +29,42 @@ export class EmployeeComponent implements OnInit {
     this.employee = {
       name: "",
       age: null,
-      city: ""
+      city: "",
+      salary: null,
+      gender: ""
     }
   }
-    addEdit(obj: Employee) {
-      if (obj._id) {
-        this._emp.editEmployee(obj, obj._id).subscribe((result) => {
-          this.employees[this.index] = this.employee;
-        });
-      } else {
-        this._emp.addEmployee(obj).subscribe((result) => {
-          // console.log(result);
-          this.employees.push(result);
-        });
-
-      }
-    }
-
-
-    askEdit(obj: Employee, n: number) {
-      this.employee = { ...obj };
-      this.index = n;
-    }
-
-
-
-    askDelete(obj: Employee, n: number) {
-      this.employee = obj;
-      this.index = n;
-    }
-
-    delete () {
-      this._emp.deleteEmployee(this.employee._id).subscribe((result) => {
-        this.employees.splice(this.index, 1);
+  addEdit(obj: Employee) {
+    if (obj._id) {
+      this._emp.editEmployee(obj, obj._id).subscribe((result) => {
+        this.employees[this.index] = this.employee;
       });
-    }
+    } else {
+      this._emp.addEmployee(obj).subscribe((result) => {
+        // console.log(result);
+        this.employees.push(result);
+      });
 
+    }
   }
+
+
+  askEdit(obj: Employee, n: number) {
+    this.employee = { ...obj };
+    this.index = n;
+  }
+
+
+
+  askDelete(obj: Employee, n: number) {
+    this.employee = obj;
+    this.index = n;
+  }
+
+  delete() {
+    this._emp.deleteEmployee(this.employee._id).subscribe((result) => {
+      this.employees.splice(this.index, 1);
+    });
+  }
+
+}
