@@ -19,6 +19,7 @@ export class FileuploadComponent implements OnInit {
     let file = a.files[0];
     let form = new FormData();
     form.append("image", file);
+    
     this._upload.doUpload(form).subscribe(result=>{
         this.imgArr.push(result.path);
     });
