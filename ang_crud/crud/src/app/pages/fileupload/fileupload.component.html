@@ -1,0 +1,7 @@
+<br />
+<br />
+<input type="file" #my/>
+<!-- <input type="text" #my /> -->
+<button class="btn btn-success" (click)="upload(my)">Upload</button>
+<hr />
+<img *ngFor="let img of imgArr" src="{{ img }}" class="img-thumbnail" style="height: 200px; width : 200px" />
