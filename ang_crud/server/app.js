@@ -15,8 +15,8 @@ app.get("/api/employee", (req, res)=>{
         var db = client.db("tss3");
         db.collection("employee").find().toArray((err, result)=>{
             res.status(200).send(result);
-        })
-    })
+        });
+    });
 });
 
 app.post("/api/employee", (req, res) => {
