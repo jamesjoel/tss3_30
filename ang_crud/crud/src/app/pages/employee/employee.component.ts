@@ -9,14 +9,23 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent implements OnInit {
+  x=false;
   employees : Employee[];
   employee : Employee={
     name : "",
     age : null,
-    city : ""
+    city : "",
+    salary : null,
+    gender : ""
   };
   index:number;
+
+  columnName='name';
+  defaultOrder = true;
+
   constructor(private _emp : EmployeeService) { }
+
+
 
   ngOnInit() {
     this._emp.getEmployee().subscribe(result=>{
@@ -28,15 +37,19 @@ export class EmployeeComponent implements OnInit {
 
     if(obj._id){
       this._emp.editEmployee(obj, obj._id).subscribe(result=>{
-        // console.log(result);
         this.employees[this.index]=this.employee;
 
       });
     }
     else{
+<<<<<<< HEAD
       this._emp.addEmployee(obj).subscribe(result=> {
         // console.log(result);
         this.employees[this.index]=this.employee;
+=======
+      this._emp.addEmployee(obj).subscribe(result => {
+        this.employees.push(result);
+>>>>>>> dea440bcdc5686f94732af74c90434adca29b597
       });
     }
 
@@ -62,8 +75,17 @@ export class EmployeeComponent implements OnInit {
     this.employee = {
       name : "",
       age : null,
-      city : ""
+      city : "",
+      salary : null,
+      gender : ""
     }
   }
+
+  sort(col, check){
+    this.columnName = col;
+    this.defaultOrder = !this.defaultOrder;
+  }
+
+  
 
 }
