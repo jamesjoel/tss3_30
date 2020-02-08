@@ -5,11 +5,17 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from "./guards/auth.guard";
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "profile",
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {

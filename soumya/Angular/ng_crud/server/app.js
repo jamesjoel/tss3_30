@@ -30,14 +30,25 @@ app.post("/api/signup", (req, res) => {
     // console.log("METHOD__post", req.body);
 
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("user").insert(req.body, (err, result) => {
             res.status(200).send(result.ops[0]);
         });
     });
 });
 
+app.get("/api/getuser", backdoor, (req, res) => {
+    // console.log("GET___getuser",req.headers.authorization);
+    // console.log(req.userData);
+    id = req.userData.id;
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db("practice");
+        db.collection("user").find({_id : mongodb.ObjectId(id)}).toArray((err, result) => {
+            res.status(200).send(result[0]);
+        });
+    });
 
+})
 
 function backdoor(req, res, next) {
     if (!req.headers.authorization) {
@@ -69,7 +80,7 @@ app.post("/api/login", (req, res) => {
     var u = req.body.username;
     var p = req.body.password;
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("user").find({ email: u }).toArray((err, result) => {
             if (result.length >= 1) {
                 if (result[0].password == sha1(p)) {
@@ -110,7 +121,7 @@ app.post("/api/login", (req, res) => {
 app.get("/api/employee", (req, res) => {
     // console.log("METHOD__GET");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("employee").find().toArray((err, result) => {
             res.status(200).send(result);
         });
@@ -120,7 +131,7 @@ app.get("/api/employee", (req, res) => {
 app.post("/api/employee", (req, res) => {
     // console.log("METHOD__post");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("employee").insert(req.body, (err, result) => {
             res.status(200).send(result.ops[0]);
         });
@@ -133,7 +144,7 @@ app.put("/api/employee/:id", (req, res) => {
     var id = mongodb.ObjectId(req.params.id);
     delete req.body._id;
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("employee").update({ _id: id }, { $set: req.body }, (err, result) => {
             res.status(200).send(result);
         });
@@ -144,7 +155,7 @@ app.put("/api/employee/:id", (req, res) => {
 app.delete("/api/employee/:id", (req, res) => {
     // console.log("METHOD__delete");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("demo");
+        var db = client.db("practice");
         db.collection("employee").remove({ _id: mongodb.ObjectId(req.params.id) }, (err, result) => {
             res.status(200).send(result);
         });
