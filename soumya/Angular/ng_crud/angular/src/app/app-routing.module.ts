@@ -4,15 +4,18 @@ import { HomeComponent } from './pages/home/home.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from "./guards/auth.guard";
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path : "employee",
-    component : EmployeeComponent
+    component : EmployeeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "signup",

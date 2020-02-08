@@ -20,7 +20,7 @@ app.use(cors());
 
 app.post("/api/signup", (req, res) => {
     var date = req.body.birth.date;
-    var month = req.body.birth.month;
+    var month = req.body.birth.month - 1;
     var year = req.body.birth.year;
     // console.log("METHOD__post", date, month, year);
     var d = new Date(year, month, date);
@@ -30,7 +30,7 @@ app.post("/api/signup", (req, res) => {
     // console.log("METHOD__post", req.body);
 
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("user").insert(req.body, (err, result) => {
             res.status(200).send(result.ops[0]);
         });
@@ -38,11 +38,38 @@ app.post("/api/signup", (req, res) => {
 });
 
 
+
+function backdoor(req, res, next) {
+    if (!req.headers.authorization) {
+
+        res.status(401).send({ msg: "Unauthorized User" });
+
+    } else if (req.headers.authorization == "") {
+
+        res.status(401).send({ msg: "Unauthorized User" });
+
+    } else {
+
+        var encToken = req.headers.authorization;
+        var decToken = cryptr.decrypt(encToken);
+        var verifyToken = jwt.verify(decToken, "This Is Secret Key");
+
+        if (!verifyToken) {
+
+            res.status(401).send({ msg: "Unauthorized User" });
+
+        } else {
+            req.userData = verifyToken;
+            next();
+        }
+    }
+}
+
 app.post("/api/login", (req, res) => {
-    var u = req.body.email;
+    var u = req.body.username;
     var p = req.body.password;
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("user").find({ email: u }).toArray((err, result) => {
             if (result.length >= 1) {
                 if (result[0].password == sha1(p)) {
@@ -60,15 +87,15 @@ app.post("/api/login", (req, res) => {
                 } else {
                     res.status(401).send({
                         status: false,
-                        msgType : "password"
-                    
+                        msgType: "password"
+
                     });
                 }
             } else {
                 res.status(401).send({
                     status: false,
-                    msgType : "username"
-                   
+                    msgType: "username"
+
                 });
             }
         });
@@ -83,7 +110,7 @@ app.post("/api/login", (req, res) => {
 app.get("/api/employee", (req, res) => {
     // console.log("METHOD__GET");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("employee").find().toArray((err, result) => {
             res.status(200).send(result);
         });
@@ -93,7 +120,7 @@ app.get("/api/employee", (req, res) => {
 app.post("/api/employee", (req, res) => {
     // console.log("METHOD__post");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("employee").insert(req.body, (err, result) => {
             res.status(200).send(result.ops[0]);
         });
@@ -106,7 +133,7 @@ app.put("/api/employee/:id", (req, res) => {
     var id = mongodb.ObjectId(req.params.id);
     delete req.body._id;
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("employee").update({ _id: id }, { $set: req.body }, (err, result) => {
             res.status(200).send(result);
         });
@@ -117,7 +144,7 @@ app.put("/api/employee/:id", (req, res) => {
 app.delete("/api/employee/:id", (req, res) => {
     // console.log("METHOD__delete");
     MongoClient.connect(url, (err, client) => {
-        var db = client.db("practice");
+        var db = client.db("demo");
         db.collection("employee").remove({ _id: mongodb.ObjectId(req.params.id) }, (err, result) => {
             res.status(200).send(result);
         });
