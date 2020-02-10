@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Just Dial</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/lightslider.css">
+    <link rel="stylesheet" type="text/css" href="css/just.css">
+</head>
+<body>
+	<div class="container-fluid first-container-fluid">
+		<div class="container">
+			<nav class="navbar navbar-expand-sm bg-light navbar-light">
+        <a href="#" class="navbar-brand">Crud System</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+        <div id="mymenu" class="collapse navbar-collapse justify-content-end nav-style">
+            <ul class="nav navbar-nav navbar-style">
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link free-style">Free Listing</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link text-dark-color">Advertise</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link mr-5 text-dark-color">English</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link loging-style text-dark-color" >Login  </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link sing-style text-dark-color">Singup</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- Body Section Start -->
+    <div class="container m-0 slider-style">
+		<div class="row">
+			<div class="col-md-12 col-sm-12" style="padding: 0px;">
+				<div class="item">
+            		<ul id="first-slider" class="first-slider">
+		                <li>
+		                    <img src="images/malang_banner.jpg" class="slider-img-width">
+		                </li>
+		                <li>
+		                    <img src="images/1469767653274.jpg" class="slider-img-width">
+		                </li>
+		                <li>
+		                    <img src="images/Recharge.jpg" class="slider-img-width">
+		                </li>
+		                <li>
+		                    <img src="images/pharmeasy-banner.jpg" class="slider-img-width">
+		                </li>
+            		</ul>
+       			 </div>
+			</div>
+		</div>
+	</div>
+
+		<div class="container first-container-style">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="side-nav-style">
+						<ul>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd Social</a>
+							</li>
+							<li>
+								<a href="#">Apply For Loans</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							</li>
+							<li>
+								<a href="#">Apply For Loans</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							</li>
+							<li>
+								<a href="#">Apply For Loans</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+							<li>
+								<a href="#">Jd News</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-9">
+					<div class="search-style">
+						<input type="text" class="form-control"><i class="fa fa-search" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Body Section End -->
+
+</body>
+<script src="js/jquery.js "></script>
+<script src="js/bootstrap.bundle.js "></script>
+<script src="js/lightslider.js "></script>
+<script>
+	$(document).ready(function() {
+			$(".first-slider").lightSlider({
+                loop:true,
+                item: 1,
+                auto: true,
+                pager: false,
+                slideMargin: 20,
+                keyPress:true,
+                responsive: [
+                {
+                    breakpoint: 800,
+                    settings: {
+                        item: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        item: 1
+                    }
+                }
+            ]
+            });
+		});
+</script>
+
+</html>

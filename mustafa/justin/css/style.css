@@ -1,0 +1,19 @@
+.top-nav li a{
+	color: #DC3545 !important;
+	font-size: 14px;
+}
+.navbar-brand p{
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 12px;
+}
+.jumbotron{
+	height: 300px !important;
+}
+.btn-curve{
+	border-radius: 22px;
+
+	font-size: 14px;
+	padding-left: 25px !important;
+	padding-right: 25px !important;
+}
