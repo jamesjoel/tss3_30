@@ -14,23 +14,22 @@ app.get("/api/verifytoken", function(req, res){
     if(req.headers.authorization){
         if(req.header.authorization != ""){
             var token = req.headers.authorization;
-            
             jwt.verify(token, "this is my secret key", (payload)=>{
 
-            
+                if (payload){
+                    console.log("correct");
+                    res.status(200).send({
+                        success: true,
+                        msg: "Correct Token"
+                    });
+                }else {
+                    
 
-                if (payload.message=="invalid token"){
                     console.log("wrong");
                     res.status(401).send({
                         success: false,
                         msg: "Wrong Token"
                     })
-                }else {
-                    console.log("correct");
-                res.status(200).send({
-                    success : true,
-                    msg : "Correct Token"      
-                })
             }
             });
         }
@@ -95,6 +94,7 @@ function backdoor(req, res, next) {
 app.post("/api/login", function (req, res) {
     var u = req.body.username;
     var p = req.body.password;
+    console.log(req.body);
     MongoClient.connect("mongodb://localhost:27017", function(err, client){
         var db = client.db("tss3");
         db.collection("user").find({ email : u }).toArray(function(err, result){

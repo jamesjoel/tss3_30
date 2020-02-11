@@ -13,6 +13,10 @@ import { BonusPipe } from './pipes/bonus.pipe';
 import { TotalSalaryPipe } from './pipes/total-salary.pipe';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { SliderComponent } from './pages/slider/slider.component';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +29,17 @@ import { LoginComponent } from './pages/login/login.component';
     BonusPipe,
     TotalSalaryPipe,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    SliderComponent,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

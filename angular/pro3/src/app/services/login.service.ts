@@ -16,16 +16,17 @@ export class LoginService {
     return this._http.post<any>("http://localhost:3000/api/login", obj);
   }
   checkToken() {
-    let newToken = atob(localStorage.getItem("token"));
+    // let newToken = atob(localStorage.getItem("token"));
 
     this._http.get<any>("http://localhost:3000/api/verifytoken", {
-      headers: { Authorization: newToken }
+      headers: { Authorization: this.getToken() }
     }).subscribe(result => {
-      console.log("------yes");
+      console.log(result);
       return true;
     },
       err => {
-        console.log("-----");
+        // console.log("-----");
+        localStorage.removeItem("token");
         this._router.navigate(["/login"]);
         return false;
 
@@ -42,8 +43,9 @@ export class LoginService {
   }
   getToken() {
     if (localStorage.getItem("token")) {
-    let newToken = atob(localStorage.getItem("token"));
-    return newToken;
+    // let newToken = atob(localStorage.getItem("token"));
+    // return newToken;
+    return localStorage.getItem("token");
     }
   }
   logout() {

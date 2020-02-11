@@ -27,8 +27,12 @@ export class DemoPipe implements PipeTransform {
     else{
       type ='desc';
     }
-    arr.sort(this.compareValues(col, type));
-    return arr;
+    if(arr){
+
+      arr.sort(this.compareValues(col, type));
+      return arr;
+    }
+    return [];
   }
 
 
