@@ -6,6 +6,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from "./guards/auth.guard";
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SliderComponent } from './pages/slider/slider.component';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path : "employee",
-    component : EmployeeComponent,
+    path: "slider",
+    component: SliderComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "fileupload",
+    component: FileuploadComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "employee",
+    component: EmployeeComponent,
     canActivate: [AuthGuard]
   },
   {
