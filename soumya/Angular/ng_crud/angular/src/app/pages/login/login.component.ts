@@ -20,13 +20,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     this._login.doLogin(this.user).subscribe(result => {
       localStorage.setItem("token", result.encryptToken);
       this._router.navigate(["/employee"]);
     }, err => {
-      if (err.error.type == "username") {
+      // console.log(err);
+      if (err.error.msgType == "username") {
         this.message = "This Username and Password is Incorrect";
-      } else if (err.error.type == "password") {
+      } else {
         this.message = "This Password is Incorrect";
       }
     });

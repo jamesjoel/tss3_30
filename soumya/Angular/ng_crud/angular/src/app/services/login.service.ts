@@ -8,29 +8,30 @@ import { Router } from "@angular/router";
   providedIn: 'root'
 })
 export class LoginService {
-api_url = environment.api_url;
-  constructor(private _http : HttpClient , private _router : Router) { }
+  api_url = environment.api_url;
+  constructor(private _http: HttpClient, private _router: Router) { }
 
-  doLogin(obj : Login){
-    return this._http.post<any>(this.api_url+'login',obj); 
+  doLogin(obj: Login) {
+    // console.log(obj);
+    return this._http.post<any>(this.api_url + 'login', obj);
   }
 
-  getToken(){
-    if(localStorage.getItem("token")){
+  getToken() {
+    if (localStorage.getItem("token")) {
       let token = localStorage.getItem("token");
       return token;
     }
   }
 
-  isLoggedIn(){
-    if(localStorage.getItem("token")){
+  isLoggedIn() {
+    if (localStorage.getItem("token")) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 
-  Logout(){
+  Logout() {
     localStorage.removeItem("token");
     this._router.navigate(["/login"]);
   }

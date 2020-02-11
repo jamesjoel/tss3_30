@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <input type="file" #my><br> <br>
+            <button class="btn btn-sm btn-info rounded-0" (click)="upload(my)"> Upload </button>
+            <p class="text-center text-danger">{{ errMsg }}</p>
+        </div> <br>
+        <div class="col-md-8 offset-md-2">
+            <img *ngFor="let img of imgArr" src="{{ img.image }}" alt="Image" style="height: 200px; width : 200px"> 
+
+        </div>
+    </div>
+</div>
