@@ -21,16 +21,16 @@ export class LoginComponent implements OnInit {
   login() {
     // console.log("------", btoa("hello"));
     // console.log("------", atob("aGVsbG8="));
-    // this._login.doLogin(this.user).subscribe(result=>{
-    //   // console.log("------",result);
-    //   let newToken = btoa(result.token);
-    //   localStorage.setItem("token", newToken);
-    //   this._router.navigate(["/dash"]);
-    // },
-    // err=>{
-    //   // console.log("++++++",err);
-    //   this.message=err.error.msg;
-    // });
+    this._login.doLogin(this.user).subscribe(result=>{
+      // console.log("------",result);
+      // let newToken = btoa(result.token);
+      localStorage.setItem("token", result.token);
+      this._router.navigate(["/dash"]);
+    },
+    err=>{
+      // console.log("++++++",err);
+      this.message=err.error.msg;
+    });
   }
   
 
