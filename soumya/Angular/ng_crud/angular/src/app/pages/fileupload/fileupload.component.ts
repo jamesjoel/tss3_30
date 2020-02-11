@@ -12,8 +12,8 @@ export class FileuploadComponent implements OnInit {
 
   ngOnInit() {
     this._file.getImage().subscribe(result => {
+      console.log(result);
       this.imgArr = result;
-      // console.log(result);
       // console.log(this.imgArr);
     });
   }
@@ -24,8 +24,8 @@ export class FileuploadComponent implements OnInit {
     form.append("image", file);
 
     this._file.doUpload(form).subscribe(result => {
-      // console.log(result.path);
-      this.imgArr.push(result.path);
+      console.log(result);
+      this.imgArr.push(result);
     }, err => {
       if (err.error.msg == "extErr") {
         this.errMsg = "This Extension is Not Allow!";

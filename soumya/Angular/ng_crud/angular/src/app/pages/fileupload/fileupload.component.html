@@ -6,7 +6,7 @@
             <p class="text-center text-danger">{{ errMsg }}</p>
         </div> <br>
         <div class="col-md-8 offset-md-2">
-            <img *ngFor="let img of imgArr.path" src="{{ img }}" alt="Image" style="height: 200px; width : 200px"> 
+            <img *ngFor="let img of imgArr" src="{{ img.image }}" alt="Image" style="height: 200px; width : 200px"> 
 
         </div>
     </div>
