@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
       year: null,
     }
   }
-  User:any;
+  userData:any;
 
   constructor(private _signup: SignupService, private router: Router) { }
 
@@ -33,9 +33,9 @@ export class SignupComponent implements OnInit {
   signup() {
     // console.log(this.user);
     this._signup.addUser(this.user).subscribe(result => {
-      this.User = result;
-      console.log(this.User);
-      this.router.navigate([""]);
+      this.userData = result;
+      // console.log(this.userData);
+      this.router.navigate(["/login"]);
     });
   }
 }

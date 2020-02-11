@@ -1,49 +1,52 @@
-<div class="container ">
+<div class="container mt-4">
     <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center text-white mb-4">Bootstrap 4 Login Form</h2>
-            <div class="row">
-                <div class="col-md-6 mx-auto">
+        <div class="col-md-8 mx-auto">
 
-                    <!-- form card login -->
-                    <div class="card rounded-0">
-                        <div class="card-header">
-                            <h3 class="mb-0">Sign Up</h3>
-                        </div>
-                        <div class="card-body">
+            <!-- form card login -->
+            <div class="card rounded-0">
+                <div class="card-header bg-dark text-light">
+                    <h3 class="mb-0">Sign Up</h3>
+                </div>
+                <div class="card-body bg-secondary">
+                    <div class="row">
 
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label> <b><i> Full Name </i></b> </label>
                                 <input type="text" [(ngModel)]="user.fullName" class="form-control  rounded-0">
                             </div>
+                        </div>
 
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label> <b><i> Email</i></b></label>
                                 <input type="text" [(ngModel)]="user.email" class="form-control  rounded-0">
                             </div>
+                        </div>
+
+                        <div class="col-md-6">
 
                             <div class="form-group">
                                 <label> <b><i> password</i></b></label>
                                 <input type="password" [(ngModel)]="user.password" class="form-control  rounded-0">
                             </div>
+                        </div>
 
-
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label> <b><i> Contact </i></b> </label>
                                 <input type="text" [(ngModel)]="user.contact" class="form-control  rounded-0">
                             </div>
+                        </div>
 
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label> <b><i>Age </i></b> </label>
                                 <input type="text" [(ngModel)]="user.age" class="form-control  rounded-0">
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <label> <b><i> Gender </i></b> </label> <br>
-                                <input type="radio" [(ngModel)]="user.gender" value="male"> Male
-                                <input type="radio" [(ngModel)]="user.gender" value="female"> Female
-                            </div>
-
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label> <b><i>City </i></b> </label>
                                 <select [(ngModel)]="user.city" class="form-control rounded-0">
@@ -55,6 +58,11 @@
                                 </select>
                             </div>
 
+
+                        </div>
+
+
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label> <b><i>Date Of Birth</i></b> </label> <br>
                                 <div class="container">
@@ -66,20 +74,21 @@
                                         <div class="col-md-4">
                                             <label class="mb-0">Month</label>
                                             <!-- <input type="text"  style="width: inherit;"> -->
-                                            <select class="browser-default custom-select rounded-0 mt-1" [(ngModel)]="user.birth.month" >
-                                                <option value="" >--Select Month--</option>
-                                                <option value='0'>Janaury</option>
-                                                <option value='1'>February</option>
-                                                <option value='2'>March</option>
-                                                <option value='3'>April</option>
-                                                <option value='4'>May</option>
-                                                <option value='5'>June</option>
-                                                <option value='6'>July</option>
-                                                <option value='7'>August</option>
-                                                <option value='8'>September</option>
-                                                <option value='9'>October</option>
-                                                <option value='10'>November</option>
-                                                <option value='11'>December</option>
+                                            <select class="browser-default custom-select rounded-0 mt-1"
+                                                [(ngModel)]="user.birth.month">
+                                                <option value=''>--Select Month--</option>
+                                                <option value='1'>Janaury</option>
+                                                <option value='2'>February</option>
+                                                <option value='3'>March</option>
+                                                <option value='4'>April</option>
+                                                <option value='5'>May</option>
+                                                <option value='6'>June</option>
+                                                <option value='7'>July</option>
+                                                <option value='8'>August</option>
+                                                <option value='9'>September</option>
+                                                <option value='10'>October</option>
+                                                <option value='11'>November</option>
+                                                <option value='12'>December</option>
                                             </select>
                                         </div>
                                         <div class="col-md-4">
@@ -90,19 +99,32 @@
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn  btn-success  float-right" (click)="signup()">Sign Up</button>
-
                         </div>
-                        <!--/card-block-->
+
+
+                        <div class="col-md-12 col text-center">
+                            <div class="form-group">
+                                <label> <b><i> Gender </i></b> </label> <br>
+                                <input type="radio" [(ngModel)]="user.gender" value="male"> Male
+                                <input type="radio" [(ngModel)]="user.gender" value="female"> Female
+                            </div>
+                        </div>
                     </div>
-                    <!-- /form card login -->
+
+
 
                 </div>
-
-
+                <div class="card-footer bg-secondary col text-center">
+                    <button type="submit" class="btn btn-info rounded-0" (click)="signup()">Sign Up</button>
+                </div>
+                <!--/card-block-->
             </div>
-            <!--/row-->
+            <!-- /form card login -->
 
         </div>
+
+
+
+
         <!--/col-->
-        <p>{{    User.dob | date }}</p>
+        <!-- <p>{{   userData?( userData.dob | date ) : "no date " }}</p> -->

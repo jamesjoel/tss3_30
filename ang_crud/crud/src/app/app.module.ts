@@ -12,6 +12,10 @@ import { AddEditComponent } from './shared/add-edit/add-edit.component';
 import { BoxComponent } from './shared/box/box.component';
 import { BonusPipe } from './pipes/bonus.pipe';
 import { DemoPipe } from './pipes/demo.pipe';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
+import { SliderComponent } from './pages/slider/slider.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 @NgModule({
   declarations: [
@@ -22,13 +26,17 @@ import { DemoPipe } from './pipes/demo.pipe';
     AddEditComponent,
     BoxComponent,
     BonusPipe,
-    DemoPipe
+    DemoPipe,
+    FileuploadComponent,
+    SliderComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

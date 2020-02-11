@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3 class="text-center">User Profile </h3>
+            <table *ngIf="userData" class="table table-dark table-hover table-striped table-bordered">
+                <tr >
+                    <th>Name</th>
+                    <td>{{ userData.fullName }}</td>
+                </tr>
+                <tr >
+                    <th>City</th>
+                    <td>{{ userData.city }}</td>
+                </tr>
+                <tr >
+                    <th>Age</th>
+                    <td>{{ userData.age }}</td>
+                </tr>
+                <tr >
+                    <th>Contact</th>
+                    <td>{{ userData.contact }}</td>
+                </tr>
+                <tr >
+                    <th>Email</th>
+                    <td>{{ userData.email }}</td>
+                </tr>
+                <tr >
+                    <th>Gender</th>
+                    <td>{{ userData.gender | uppercase }}</td>
+                </tr>
+                <tr >
+                    <th>Date Of Birth</th>
+                    <td>{{ userData.dob | date  }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

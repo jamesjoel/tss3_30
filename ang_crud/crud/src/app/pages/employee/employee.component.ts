@@ -42,18 +42,17 @@ export class EmployeeComponent implements OnInit {
       });
     }
     else{
-<<<<<<< HEAD
+
       this._emp.addEmployee(obj).subscribe(result=> {
         // console.log(result);
         this.employees[this.index]=this.employee;
-=======
+
       this._emp.addEmployee(obj).subscribe(result => {
         this.employees.push(result);
->>>>>>> dea440bcdc5686f94732af74c90434adca29b597
+ 
       });
-    }
-
-    
+    });
+  }
   }
   askDelete(obj:Employee) {
     this.employee = obj;

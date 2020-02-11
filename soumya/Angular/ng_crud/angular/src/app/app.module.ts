@@ -12,6 +12,8 @@ import { DelModalComponent } from './shared/del-modal/del-modal.component';
 import { BonusPipe } from './pipes/bonus.pipe';
 import { TotalSalaryPipe } from './pipes/total-salary.pipe';
 import { SignupComponent } from './pages/signup/signup.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SignupComponent } from './pages/signup/signup.component';
     DelModalComponent,
     BonusPipe,
     TotalSalaryPipe,
-    SignupComponent
+    SignupComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
