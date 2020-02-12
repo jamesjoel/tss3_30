@@ -1,0 +1,265 @@
+<html>
+
+<head>
+    <title>
+        <%= title   %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/3.png">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <!-- <link rel="stylesheet" href="/css/font-awesome-5.1.0.css"> -->
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid bg-black">
+        <div class="container ">
+
+            <div class="d-flex justify-content-between">
+
+                <div class="py-2 d-flex">
+                    <p class="text-gray px-4 m-0 float-left"><i class="fa fa-envelope-o mr-1 text-success"
+                            style="font-size: 0.9rem;" aria-hidden="true"></i> <span
+                            class="font-size-8 d-none d-md-inline"> Example123@gmail.com </span></p>
+                    <p class="text-gray  m-0 float-left"><i class="fa fa-phone mr-1 text-success"
+                            style="font-size: 0.9rem;" aria-hidden="true"></i> <span
+                            class="font-size-8 d-none d-md-inline">020 123-456-789 </span></p>
+                </div>
+                <% if(session.is_user_logged_in){ 
+                    if(session.image){ %>
+
+                <div class="py-2 ">
+                    <a class="btn btn-outline-light float-left text-gray" href="#"><img
+                            src="/profilePicture/<%= session.image %>" class="rounded-circle mr-2" width="30"
+                            height="30" alt=""><span class="d-none d-md-inline"><%= session.name %></span> </a>
+                    <a class="btn btn-outline-light float-left text-gray" href="/profile"><i class="fa fa-user mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">My Profile</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/myorders">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i> <span class="d-none d-md-inline">My
+                            Orders</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/Logout"><i class="fa fa-sign-in mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">Logout</span> </a>
+                </div>
+                <% } else if(session.gender == "male"){ %>
+                <div class="py-2 ">
+                    <a class="btn btn-outline-light float-left text-gray" href="#"><img src="/image/user.png"
+                            class="rounded-circle mr-2" width="30" height="30" alt=""><span
+                            class="d-none d-md-inline"><%= session.name %></span> </a>
+                    <a class="btn btn-outline-light float-left text-gray" href="/profile"><i class="fa fa-user mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">My Profile</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/myorders">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i> <span class="d-none d-md-inline">My
+                            Orders</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/Logout"><i class="fa fa-sign-in mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">Logout</span> </a>
+                </div>
+                <%  } else{ %>
+                <div class="py-2 ">
+                    <a class="btn btn-outline-light float-left text-gray" href="#"><img src="/image/female.jpg"
+                            class="rounded-circle mr-2" width="30" height="30" alt=""><span
+                            class="d-none d-md-inline"><%= session.name %></span> </a>
+                    <a class="btn btn-outline-light float-left text-gray" href="/profile"><i class="fa fa-user mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">My Profile</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/myorders">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i> <span class="d-none d-md-inline">My
+                            Orders</span> </a>
+
+                    <a class="btn btn-outline-light float-left text-gray" href="/Logout"><i class="fa fa-sign-in mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">Logout</span> </a>
+                </div>
+                <% } %>
+
+                <%  } else { %>
+                <div class="py-2 ">
+                    <a class="btn btn-outline-light float-left text-gray" href="/login"><i class="fa fa-sign-in mr-1"
+                            aria-hidden="true"></i> <span class="d-none d-md-inline">Login</span> </a>
+                    <a class="btn btn-outline-light float-right text-gray" href="/Signup"><i
+                            class="fa fa-user-plus mr-1" aria-hidden="true"></i> <span class="d-none d-md-inline">Sign
+                            Up</span> </a>
+                </div>
+
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+    <nav id="navbarr" class="navbar bg-white navbar-expand-md navbar-light   py-4">
+
+        <div class="container">
+            <a href="/" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success"
+                    aria-hidden="true" style="font-size: 15px;"></i><%= logo %></a>
+            <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu"
+                data-toggle="collapse">
+                <span>Menu</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navmenu" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link px-4 active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/About" id="a" class="nav-link px-4 ">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Contact" class="nav-link  px-4">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Help" class="nav-link px-4">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/cart/mycart" id="cart" class="nav-link px-4"><i
+                                class="fa fa-shopping-cart text-success mr-2" aria-hidden="true"></i>Cart <span
+                                class="badge badge-pill badge-orange"><%= totalitem %></span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="jumbotron jumbotron-fluid bg-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-center py-auto">
+                        <h1 class="text-light">Best Shopping Site</h1>
+                        <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form action="#" class="py-auto">
+                        <div class="form-group">
+                            <label for="Search" class="text-light">Search Item</label>
+                            <input id="Search" type="search" placeholder="Search Anything" class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbarr").style.top = "0";
+            } else {
+                document.getElementById("navbarr").style.top = "-88px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+    <%- include(pagename);%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-4  col-md-5 col-sm-7 col-7">
+                    <div class="logo">
+                        <h2 class="text-light">ShoppingMall.com</h2>
+                    </div>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem quas quae quia eaque repellat!
+                        Minus commodi laudantium, repudiandae fuga harum ea et nesciunt quia enim ducimus? Minima non
+                        sed est.</p>
+                </div>
+                <div class=" col-lg-4  col-md-4 col-sm-5 col-5">
+                    <h2 class="text-light logo">Useful links</h2>
+                    <div class="float-left px-auto">
+                        <ul class="list-unstyled ">
+                            <li class="py-2">
+                                <a href="/" class="f-color">Home Page</a>
+                            </li>
+                            <li class="py-2">
+                                <a href="/About" class="f-color">About Us</a>
+                            </li>
+                            <li class="py-2">
+                                <a href="/Contact" class="f-color">Contact Us</a>
+                            </li>
+                            <li class=" py-2">
+                                <a href="/Help" class="f-color">Help</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class=" col-lg-4 col-md-3 col-sm-12 col-12">
+                    <h2 class="text-light logo">Contact Us</h2>
+                    <div>
+                        <p>53 Broadway, Broklyn, NY 11249</p>
+                        <p>Phone: (020) 123 456 789</p>
+
+                        <a href="#" style="color: #959595; text-decoration: none;">Email: <span class="text-success">
+                                Info@Company.com
+                            </span> </a>
+
+                        <ul class="social-menu lisy-inline p-0">
+                            <li class="list-inline-item"><a class="f-a" href="#" target="_blank" title="Facebook"><i
+                                        class="fa fa-facebook"> </i></a></li>
+                            <li class="list-inline-item"><a class="f-a" href="#" target="_blank" title="Twitter"><i
+                                        class="fa fa-twitter"> </i></a></li>
+                            <li class="list-inline-item"><a class="f-a" href="#" target="_blank" title="Pinterest"><i
+                                        class="fa fa-pinterest"> </i></a></li>
+                            <li class="list-inline-item"><a class="f-a" href="#" target="_blank" title="Instagram"><i
+                                        class="fa fa-instagram"> </i></a></li>
+                            <li class="list-inline-item"><a class="f-a" href="#" target="_blank" title="Vimeo"><i
+                                        class="fa fa-vimeo"> </i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="copyrights text-center">
+            <p class="text-light">© 2019 - 2021<span class="text-success">Places.</span> All Rights Reserved.</p>
+        </div>
+
+
+
+    </footer>
+
+
+</body>
+
+</html>
