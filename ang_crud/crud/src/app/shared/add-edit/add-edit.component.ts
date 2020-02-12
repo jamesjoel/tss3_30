@@ -6,6 +6,10 @@ import { Employee } from '../../models/employee.interface';
   templateUrl: './add-edit.component.html',
   styleUrls: ['./add-edit.component.scss']
 })
+
+
+
+
 export class AddEditComponent implements OnInit {
  @Input() employee:Employee;
   @Output() addEditEvent = new EventEmitter();

@@ -6,6 +6,8 @@ import { Output, EventEmitter } from '@angular/core';
   styleUrls: ['./addteacher.component.scss']
 })
 export class AddteacherComponent implements OnInit {
+
+
   
   @Output() teacherEvent = new EventEmitter();
 
