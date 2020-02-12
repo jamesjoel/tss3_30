@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path : "employee",
     component : EmployeeComponent
+  },
+  {
+    path : "admin",
+    loadChildren: './admin/admin.module#AdminModule'
   }
 ];
 

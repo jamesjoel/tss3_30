@@ -19,6 +19,9 @@ import { HelloDirective } from './directives/hello.directive';
 import { LoaderDirective } from './directives/loader.directive';
 
 
+import { AdminModule } from './admin/admin.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { LoaderDirective } from './directives/loader.directive';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
