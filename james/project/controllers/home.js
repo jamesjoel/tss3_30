@@ -11,6 +11,9 @@ routes.get("/", function(req, res){
     });
     
 
+    // var pagedata = { pagename: "home/index", title: "Home", product: [] };
+    // res.render("layout", pagedata);
+
 });
 
 module.exports=routes;

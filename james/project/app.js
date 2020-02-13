@@ -4,6 +4,7 @@ var server = require("http").Server(app);
 var io = require("socket.io")(server);
 
 
+
 var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
@@ -11,6 +12,18 @@ var flash = require("express-flash");
 var cache = require("nocache");
 var upload = require("express-fileupload");
 // var sha1 = require("sha1");
+var MongoClient = require("mongodb").MongoClient;
+
+MongoClient.connect("mongodb://james:james123@ds243295.mlab.com:43295/tss3", function(err, client){
+    var db = client.db("tss3");
+
+    db.collection("demo").find().toArray(function(err, result){
+        console.log(result);
+    });
+});
+
+
+
 
 
 var routes = require("./config/routes");
@@ -39,6 +52,7 @@ app.use(function(req, res, next){
         res.locals.logo="Flipkart.com";
         res.locals.session = req.session;
         res.locals.allCategory = result;
+        // res.locals.allCategory = [];
         if(req.cookies.cart)
         {
             var ids = req.cookies.cart;
@@ -65,7 +79,13 @@ app.use(function(req, res, next){
 
 
 app.use(routes);
-server.listen(3000, function(){
+
+var port = process.env.PORT || 3000;
+
+server.listen(port, function(){
+    // console.log("------", process.env.PORT);
+
+
     console.log("server running");
 });
 
