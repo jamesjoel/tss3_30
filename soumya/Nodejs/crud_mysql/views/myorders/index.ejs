@@ -1,0 +1,34 @@
+<div id="myorders" class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-hover table-stripped table-dark table-bordered">
+                <thead>
+                    <th>Product Id</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </thead>
+                <tbody>
+                   <% orders.forEach(function(x){ %>
+
+                    <tr>
+                        <td><%= x.product_id %></td>
+                        <td><%= x.date %></td>
+                        <td><%= x.time %></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function(){ 
+         
+        $('html, body').animate({
+            scrollTop: $('#myorders').offset().top
+        }, 'slow');
+        
+    }
+        
+        </script>
