@@ -15,6 +15,11 @@ import { DemoPipe } from './pipes/demo.pipe';
 import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 import { SliderComponent } from './pages/slider/slider.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { HelloDirective } from './directives/hello.directive';
+import { LoaderDirective } from './directives/loader.directive';
+
+
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -28,7 +33,9 @@ import { NgImageSliderModule } from 'ng-image-slider';
     BonusPipe,
     DemoPipe,
     FileuploadComponent,
-    SliderComponent
+    SliderComponent,
+    HelloDirective,
+    LoaderDirective
 
   ],
   imports: [
@@ -36,7 +43,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

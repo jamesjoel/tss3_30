@@ -1,0 +1,456 @@
+body{
+	font-family: sans-serif;
+	background-color: #E2E4E7!important;
+	overflow-x: hidden;
+	margin: 0px;	
+}
+/*Header css Start*/
+.bg-header-color{
+    background-color: blue;
+}
+.h-width-20 {
+    width: 20%;
+    text-align: right;
+    color: white;
+    float: left;
+    line-height: 2;
+}
+
+.h-width-40 {
+    width: 40%;
+    display: inline-block;
+}
+.h-width-40 form {position: relative;padding: 5px 0px 8px 5px;border-radius: 0px;
+}
+input.form-control {
+    border-radius: 0px;
+}
+i.fa.fa-search {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    color: blue;
+}
+.hl-width-20 {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+}
+
+.hl-width-20 a {color: white;font-size: 14px;text-decoration: none;
+}
+.color{color: black;
+}
+.w-cart-20 {
+    display: inline-block;
+}
+.w-cart-20 a {
+    color: white;
+    text-decoration: none;
+}
+
+i.fa.fa-cart-plus {padding-right: 8px;}
+/*Header css End*/
+.container-fluid.container-fluid-brand {
+    background-color: white;
+    margin: 6px 0px 0px 8px;
+}
+.brand h3 {
+    display: inline-block;
+}
+
+.brand button {
+    float: right;
+    margin-top: 6px;
+}
+.col-md-4.container-fluid-margin {
+    padding-left: 8px !important;
+}
+.col-md-4.container-fluid-margin img {
+    margin-top: 8px;
+}
+.col-md-4.col-sm-4 {
+    padding-left: 8px!important;
+}
+.col-md-4.col-sm-4 img {
+    margin-top: 8px;
+}
+.col-md-12.col-sm-12-p {
+    padding: 0px;
+}
+.col-md-12.col-sm-12.padding-0 {
+    padding: 0px;
+}
+hr{
+    margin-top: 0px;
+}
+.brand h3 {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 23px;
+}
+.brand button {
+    float: right;
+    margin-top: 6px;
+    padding: 5px 17px;
+    margin-right: 10px;
+    background: #2874f0;
+    color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    border: none;
+}
+.fachion {
+    /*padding-left: 35px;*/
+    /*padding-top: 13px;*/
+    font-size: 14px;
+    font-weight: 700;
+}
+.fachion-offer {
+    /*padding-left: 20px;*/
+    /*padding-top: 2px;*/
+    white-space: nowrap;
+    font-size: 17px;
+    color: green;
+    cursor: pointer;
+}
+.fachion-m {
+    /*padding-top: 5px;*/
+    font-size: 14px;
+    /*padding-left: 35px;*/
+}
+a.lSPrev {
+    background: #fff;
+    opacity: 1;
+    margin: -10px;
+    height: 70px;
+}
+
+a.lSNext {
+    background: #fff;
+    opacity: 1;
+    margin: -10px;
+    height: 70px;
+}
+
+a.lSPrev:before {
+    content: "\f104";
+    font-family: FontAwesome;
+    font-size: 20px;
+    text-align: center;
+    height: 32px;
+    line-height: 66px;
+    width: 100%;
+    display: block;
+}
+a.lSNext:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 20px;
+    text-align: center;
+    height: 32px;
+    line-height: 66px;
+    width: 100%;
+    display: block;
+}
+.card-header h3 {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.card {
+    margin-top: 8px;
+    height: 230px;
+}
+
+.catagory-link ul {
+    padding: 0px 0px 0px 12px;
+    list-style: none;
+}
+
+.catagory-link ul li {
+    margin: 10px;
+}
+
+.catagory-link ul li a {
+    color: black;
+    font-size: 16px;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+}
+
+.catagory-link ul li a:hover {
+    color: blue;
+}
+.second-img img{
+    display: block;
+    margin: 0px auto;
+}
+.m-name {
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.m-cemera {
+    trex: cnter;
+    text-align: center;
+    font-size: 12px;
+    color: #388e3c;
+    padding-top: -2px;
+}
+
+.m-price {
+    text-align: center;
+}
+.m-price span {
+    padding-left: 8px;
+    font-size: 12px;
+    display: inline-block;
+    text-decoration: line-through;
+    color: #535353;
+    opacity: .5;
+}
+#third-slider li img {
+    padding: 0px;
+    width: auto;
+    display: block;
+    margin: 0px auto 10px;
+}
+#second-slider li img {
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px;
+}
+#third-slider li {
+    text-align: center;
+}
+#fourth-slider li img {
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px;
+}
+.f-name {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 0px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f-price {
+    color: #388e3c;
+    padding-top: 0px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    white-space: nowrap;
+}
+.f-more {
+    font-size: 11px;
+    text-align: center;
+    padding-top: 0px;
+    opacity: .5;
+    color: #535353;
+}
+.col-md-4.col-sm-4.img-hover {
+    transition: all 500ms ease 0s;
+}
+
+.col-md-4.col-sm-4.img-hover:hover img {
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,.5);
+    background: #fff;
+}
+.col-md-4.col-sm-4.container-fluid-margin {
+    transition: all 500ms ease 0s;
+}
+
+.col-md-4.col-sm-4.container-fluid-margin:hover img {
+    box-shadow: 0px 0px 11px 0px rgba(0,0,0,.5);
+    background: #FFF;
+}
+
+/*.col-md-4.col-sm-4.mt-2 {
+    transition: all 500ms ease 0s;
+}*/
+/*body css end*/
+/*Footer css Start*/
+.col-md-12.footer-discription h6 {
+    color: #4581d1;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.p-style p {
+    color: #4581d1;
+    font-size: 11px;
+    padding: 0px 10px 0px 10px;
+}
+.main-footer-bg{
+    background-color: #172337;
+}
+._3qd5C5 {
+    flex: 1 1 0%;
+}
+.main-about {
+    color: rgb(135, 135, 135);
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+.about-footer {
+    color: white;
+    display: block;
+    font-size: 12px;
+    line-height: 2;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+}
+.about-footer:hover{
+    color: rgb(135, 135, 135);
+   
+}
+/*Footer css End*/
+/*Electronies css Start*/
+.mobile_phone h4 {
+    padding: 5px 20px 5px 0px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.col-md-4.col-sm-4 img {
+    margin-top: 1px;
+}
+.p-container {
+    padding-left: 10px;
+}
+
+.mobile_phone p {
+    font-size: 12px;
+    padding-right: 17px;
+}
+.first-slider-padding {
+    padding: 8px 0px 0px 8px;
+}
+.col-md-4.col-sm-4.img-mt img {
+    margin-top: 8px;
+}
+#electronecs-first-slider li img {
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px;
+}
+#electronecs-second-slider li img {
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px;
+}
+#electronecs-third-slider li img {
+    display: block;
+    padding: 0px;
+    margin: 0px auto 0px;
+}
+ul.dropdown-menu.show {
+    padding-left: 14px;
+}
+
+ul.dropdown-menu.show li a {color: black;font-size: 15px;text-decoration: none;}
+
+ul.dropdown-menu.show {
+    background-color: #F8F9FA;
+}
+/*Electronies css End*/
+
+/*Login css Start*/
+.col-md-4.offset-md-4 h2 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 29px;
+    padding-bottom: 11px;
+}
+
+.log-forgot {
+    text-align: end;
+    padding-right: 9px;
+    padding-top: 2px;
+}
+button.btn.btn-block {
+    background-color: blue;
+    border-radius: 0px;
+    color: white;
+}
+
+.log-p {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+.log-sing {
+    text-align: center;
+}
+/*login css End*/
+/*Cricket css Start*/
+/*.row-style{
+    background-color: white;
+    margin-left: -5px;
+    margin-top: 11px;
+}
+
+.col-md-3.offset-md-3 img {margin: 23px 0px 0px 0px;}
+.container-fluid bg-white{
+    background-color: white;
+    margin-left: 9px;
+}*/
+.bg-white {
+    background-color: #fff!important;
+    margin: 8px 0px 0px 8px;
+}
+.img-style {
+    text-align: center;
+}
+.img-style img {
+    height: 174px;
+    margin-top: 32px;
+    margin-left: 15px;
+}
+.c-title {
+    font-size: 12px;
+    margin-top: 5px;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+}
+
+.c-title:hover {
+    color: blue;
+}
+span.c-price {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+span.c-discount {
+    font-size: 14px;
+    color: #878787;
+    margin-left: 6px;
+}
+
+span.c-off {
+    font-size: 13px;
+    color: #388e3c;
+    margin-left: 7px;
+    letter-spacing: -.2px;
+    font-weight: 500;
+}
+.text-align-left{
+    text-align: left;
+}
+.p-10 {
+    padding: 0px 30px 0px 49px;
+    margin-top: 8px;
+}
+/*Cricket css Start*/

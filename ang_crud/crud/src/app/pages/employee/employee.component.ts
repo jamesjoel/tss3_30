@@ -19,6 +19,10 @@ export class EmployeeComponent implements OnInit {
     gender : ""
   };
   index:number;
+<<<<<<< HEAD
+
+  constructor(private _emp : EmployeeService) { }
+=======
 
   columnName='name';
   defaultOrder = true;
@@ -27,11 +31,15 @@ export class EmployeeComponent implements OnInit {
 
 
 
+>>>>>>> 9e8acdf22476c638507ea57555087763eacecfc0
   ngOnInit() {
     this._emp.getEmployee().subscribe(result=>{
       this.employees = result;
     })
   }
+
+
+
 
   addEdit(obj : Employee) {
 
@@ -51,8 +59,13 @@ export class EmployeeComponent implements OnInit {
         this.employees.push(result);
  
       });
+<<<<<<< HEAD
     });
   }
+=======
+    }
+    
+>>>>>>> 312d91e32ad239f5873a3f463e07c3908fcd742c
   }
   askDelete(obj:Employee) {
     this.employee = obj;
@@ -64,7 +77,6 @@ export class EmployeeComponent implements OnInit {
     });
   }
   
-
   askEdit(obj:Employee) {
     // this.employee = obj;
     this.index = this.employees.indexOf(obj);
