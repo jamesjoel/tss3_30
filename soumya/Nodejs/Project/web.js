@@ -8,7 +8,7 @@ var flash = require("express-flash");
 var cache = require("nocache");
 var Category = require("./models/category");
 var upload = require("express-fileupload");
-
+var MongoClient = require("mongodb").MongoClient;
 // var Product = require("./models/product");
 // d033e22ae348aeb5660fc2140aec35850c4da997
 web.set("view engine", "ejs");
@@ -38,10 +38,19 @@ web.use(function(req, res, returns) {
     });
 });
 
+// MongoClient.connect("mongodb+srv://soumya:soumya1234@cluster0-lashj.mongodb.net/test?retryWrites=true&w=majority", function(err, client){
+//     var db = client.db("practice");
+
+//     db.collection("admin").find().toArray(function(err, result){
+//         console.log(result);
+//     });
+// });
 
 
 web.use(routes);
 
-web.listen(3000, function() {
+const port = process.env.port || 3000; 
+
+web.listen(port, function() {
     console.log("Server running");
 });
