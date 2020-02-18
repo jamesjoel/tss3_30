@@ -47,18 +47,18 @@ var n =1;
 
 
 routes.post("/", function(req, res){
-    var io = req.io;
-    io.on("connection", function (socket) {
+    // var io = req.io;
+    // io.on("connection", function (socket) {
 
-        socket.broadcast.emit("newproductadd", { name: n })
-        n++;
-    });
-    res.redirect("/admin/product");
+    //     socket.broadcast.emit("newproductadd", { name: n })
+    //     n++;
+    // });
+    // res.redirect("/admin/product");
     // "localhost:3000/admin/product" for getting form data 
     // console.log(req.files);
    
    
-   /*
+   
     var image = req.files.image;
     var size = image.size;
 
@@ -107,7 +107,7 @@ routes.post("/", function(req, res){
     //     console.log("uploaeded .....");
     // });
 
-    */
+    
     
 });
 
