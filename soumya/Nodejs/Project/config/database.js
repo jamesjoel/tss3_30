@@ -1,5 +1,5 @@
 module.exports = {
     dbName: "practice",
-    dbUrl: "mongodb+srv://soumya:soumya1234@cluster0-lashj.mongodb.net/test?retryWrites=true&w=majority",
+    dbUrl: "mongodb://soumya:soumya123@ds215910.mlab.com:15910/practice",
     status: 1
 }

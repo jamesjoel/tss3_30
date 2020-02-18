@@ -4,10 +4,11 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 var MongoClient = require("mongodb").MongoClient;
 var mongodb = require("mongodb");
+var jwt = require("jsonwebtoken");
 var url = "mongodb://localhost:27017";
 const DbName = "module";
 var sha1 = require("sha1");
-var portNO = 6000;
+var portNO = 2000;
 
 
 app.use(bodyParser());
@@ -54,12 +55,51 @@ function backdoor(req, res, next) {
 }
 
 
-app.post("/api/login", (req, res) => {
-    var u = req.body.username;
+app.post("/api/user/login", (req, res) => {
+    var u = req.body.email;
     var p = req.body.password;
     MongoClient.connect(url, (err, client) => {
         var db = client.db(DbName);
         db.collection("user").find({ email: u }).toArray((err, result) => {
+            if (result.length >= 1) {
+                if (result[0].password == sha1(p)) {
+                    var token = jwt.sign({ id: result[0]._id, name: result[0].fullName }, "This Is Secret Key", { expiresIn: 3600 });
+                    // console.log(token);
+                    // var encryptToken = cryptr.encrypt(token);
+                    // console.log(encryptToken);
+                    // var decryptToken = cryptr.decrypt(encryptToken);
+                    // console.log(decryptToken);
+                    res.status(200).send({
+                        status: true,
+                        token
+                    });
+
+                } else {
+                    res.status(401).send({
+                        status: false,
+                        msgType: "password"
+
+                    });
+                }
+            } else {
+                res.status(401).send({
+                    status: false,
+                    msgType: "username"
+
+                });
+            }
+        });
+    });
+
+});
+
+app.post("/api/admin/login", (req, res) => {
+    console.log(req.body);
+    var u = req.body.email;
+    var p = req.body.password;
+    MongoClient.connect(url, (err, client) => {
+        var db = client.db(DbName);
+        db.collection("admin").find({ username : u }).toArray((err, result) => {
             if (result.length >= 1) {
                 if (result[0].password == sha1(p)) {
                     var token = jwt.sign({ id: result[0]._id, name: result[0].fullName }, "This Is Secret Key", { expiresIn: 3600 });

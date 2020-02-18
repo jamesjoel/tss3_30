@@ -27,6 +27,7 @@ web.use(function(req, res, returns) {
         res.locals.logo = "ShoppingMall.com";
         res.locals.session = req.session;
         res.locals.allcategory = result;
+        // res.locals.allcategory = [];
         if(req.cookies.cart){
             var ids = req.cookies.cart;
             var arr = ids.split("#");
@@ -38,7 +39,7 @@ web.use(function(req, res, returns) {
     });
 });
 
-// MongoClient.connect("mongodb+srv://soumya:soumya1234@cluster0-lashj.mongodb.net/test?retryWrites=true&w=majority", function(err, client){
+// MongoClient.connect("mongodb://soumya:soumya123@ds215910.mlab.com:15910/practice", function(err, client){
 //     var db = client.db("practice");
 
 //     db.collection("admin").find().toArray(function(err, result){
@@ -49,7 +50,7 @@ web.use(function(req, res, returns) {
 
 web.use(routes);
 
-const port = process.env.port || 3000; 
+var port = process.env.PORT || 3000; 
 
 web.listen(port, function() {
     console.log("Server running");

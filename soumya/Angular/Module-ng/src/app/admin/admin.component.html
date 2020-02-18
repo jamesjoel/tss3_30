@@ -1,23 +1,22 @@
+<nav class="navbar bg-light navbar-expand-md navbar-light  sticky-top py-4">
 
-    <nav class="navbar bg-light navbar-expand-md navbar-light  sticky-top py-4">
+    <div class="container">
+        <a href="#" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true"
+                style="font-size: 15px;"></i>Admin Panel</a>
 
-        <div class="container">
-            <a href="#" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true" style="font-size: 15px;"></i>Admin Panel</a>
-
-            <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu" data-toggle="collapse">
-                    <span>Menu</span>
-                    <span class="navbar-toggler-icon" ></span>
-                </button>
-
-            
+        <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu" data-toggle="collapse">
+            <span>Menu</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
 
 
-                <!-- <div id="navmenu" class="collapse navbar-collapse">
+        <ng-template [ngIf]="_login.isAdminLoggedIn()" [ngIfElse]="beforeLogin">
+            <div id="navmenu" class="collapse navbar-collapse">
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link px-4 active">Dashboard</a>
+                            <a href="#" routerLink="admin" class="nav-link px-4 active">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link px-4 ">Slider</a>
@@ -43,14 +42,21 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link px-4">Logout</a>
+                            <a  (click)="_login.Logout()" class="nav-link px-4">Logout</a>
                         </li>
                     </ul>
-                </div> -->
-          
-        </div>
+                </div>
+        </ng-template>
 
-    </nav>
+        <ng-template #beforeLogin>
+
+        </ng-template>
+
+
+
+    </div>
+
+</nav>
 
 
 <router-outlet></router-outlet>
