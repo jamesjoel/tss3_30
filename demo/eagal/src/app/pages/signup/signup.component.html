@@ -94,6 +94,7 @@
                                     </p>
                                 </div>
                         </div>
+                        <pre>{{ user.value.industry | json }}</pre>
                         <div class="form-group col-lg-12 has-feedback">
                             <p>Select Your Industry</p>
                             <input type="text" list="industry" name="industry" formControlName="industry" [ngClass]="{ 'is-invalid' : check && user.controls.industry.errors }"class="form-control">
@@ -106,8 +107,9 @@
                                 <option value="Marketing">
                                 <option value="BPO">
                                 <option value="Other" id="indo">
-                                    <!-- <input type="text" list="indo" name="indo"> -->
+                                    
                               </datalist>
+                              <input type="text" list="indo" *ngIf="user.value.industry=='Other'" name="indo">
                               <!-- <input type="submit" value="Add Here"> -->
                               <div *ngIf="check && user.controls.industry.errors" class="invalid-feedback">
                                 <p *ngIf="user.controls.industry.errors.required">
