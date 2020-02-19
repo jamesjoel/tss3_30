@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EagleConferencing | Free Conferencing registration </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://portal.eagleconferencing.in/images/favicon.png" type="img/x-icon">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="https://portal.eagleconferencing.in/dist/css/layout.css">
+    <link rel="stylesheet" href="https://portal.eagleconferencing.in/dist/css/style.css">
+
+    <link rel="stylesheet" href="https://portal.eagleconferencing.in/plugins/iCheck/square/pink.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition register-page">
+    <div class="container register-wide">
+        <div class="register-logo">
+            <a href="https://portal.eagleconferencing.in/login"><img
+                    src="../../../assets/image/logo.jpg" class="img-fluid" style="height: 90px;
+                    width: 174px;"></a>
+        </div>
+        <div class="flash-message">
+        </div>
+        <div class="card">
+            <div class="card-body register-card-body">
+                <p class="login-box-msg">Registration For Services</p>
+                
+                <div class="info text-right"> * For <a href="https://eagleconferencing.in/packages/">Paid package</a>
+                    Please register here and <a
+                        href="/cdn-cgi/l/email-protection#725201131e1701321713151e17111d1c141700171c111b1c155c1b1c">Email: jcm.com.rtm@gmail.com</a> <br>
+                    / <a href="https://eagleconferencing.in/contact-us/">Contact us</a> at +91-8305738787
+                    </div>
+                <br>
+                <form id="register-form" method="POST" action="https://portal.eagleconferencing.in/verify"  [formGroup]="user">
+                    <input type="hidden" name="_token" value="w3MdjODcB6JbXXbsLsv5VLv3vAlnko7x9hWK3ReD">
+                    <div class="row">
+                        <div class="form-group col-lg-6 has-feedback">
+                            <label for="first_name">First Name</label>
+                            <input type="text" formControlName="first_name"   class="form-control" name="first_name" autofocus id="first_name"
+                                maxlength="15" value="" tabindex="1" [ngClass]="{ 'is-invalid' : check && user.controls.first_name.errors }" >
+                                <div *ngIf="check && user.controls.first_name.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.first_name.errors.required">
+                                        Insert Your First Name
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" [ngClass]="{ 'is-invalid' : check && user.controls.last_name.errors }" formControlName="last_name"  maxlength="15"
+                                value="" tabindex="2">
+                                <div *ngIf="check && user.controls.last_name.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.last_name.errors.required">
+                                        Insert Your Last Name
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback">
+                            <label>Contact Number</label>
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn">+91</button>
+                                </div>
+                                <input type="text" [ngClass]="{ 'is-invalid' : check && user.controls.contact.errors }" formControlName="contact" class="form-control" 
+                                     tabindex="3">
+                                     <div *ngIf="check && user.controls.contact.errors" class="invalid-feedback">
+                                        <p *ngIf="user.controls.contact.errors.required">
+                                            Insert Your Contact Number
+                                        </p>
+                                        <p *ngIf="user.controls.contact.errors.numErr">
+                                            Insert Number Only
+                                        </p>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback">
+                            <label for="email">Email</label>
+                            <input type="text"  [ngClass]="{ 'is-invalid' : check && user.controls.email.errors }" formControlName="email" class="form-control"
+                                tabindex="4">
+                                <div *ngIf="check && user.controls.email.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.email.errors.required">
+                                        Insert Your Email
+                                    </p>
+                                    <p *ngIf="user.controls.email.errors.email">
+                                        Correct Email Id
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-12 has-feedback">
+                            <p>Select Your Industry</p>
+                            <input type="text" list="industry" name="industry" formControlName="industry" [ngClass]="{ 'is-invalid' : check && user.controls.industry.errors }"class="form-control">
+                            <datalist id="industry">
+                                <option value="Agriculture">
+                                <option value="Manufacturing">
+                                <option value="Trading">
+                                <option value="Stock Broking">
+                                <option value="Banking">
+                                <option value="Marketing">
+                                <option value="BPO">
+                                <option value="Other" id="indo">
+                                    <!-- <input type="text" list="indo" name="indo"> -->
+                              </datalist>
+                              <!-- <input type="submit" value="Add Here"> -->
+                              <div *ngIf="check && user.controls.industry.errors" class="invalid-feedback">
+                                <p *ngIf="user.controls.industry.errors.required">
+                                    Insert Your industry
+                                </p>
+                            </div>
+                            
+
+                        </div>
+        
+                        <div class="form-group col-lg-6 has-feedback">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control"[ngClass]="{'is-invalid': check && user.controls.password.errors}" formControlName="password"  maxlength="15"
+                                tabindex="5">
+                                <div *ngIf="check && user.controls.password.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.password.errors.required">
+                                        Insert Your Password
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback has-error">
+                            <label for="company">Company Name</label>
+                            <input type="text" class="form-control"  [ngClass]="{'is-invalid' :check && user.controls.company.errors}"  formControlName="company"  name="company" id="company" maxlength="250" value=""
+                                tabindex="6">
+                                <div *ngIf="check && user.controls.company.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.company.errors.required">
+                                        Insert Your Company
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-12 has-feedback has-error">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control"  [ngClass]="{'is-invalid' :check && user.controls.address.errors}" formControlName="address" maxlength="100" value=""
+                                tabindex="7">
+                                <div *ngIf="check && user.controls.address.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.address.errors.required">
+                                        Insert Your Address
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback has-error">
+                            <label for="city">City</label>
+                            <input type="text" class="form-control alpha"  [ngClass]="{'is-invalid' :check && user.controls.city.errors}" formControlName="city" maxlength="25" value=""
+                                tabindex="8">
+                                <div *ngIf="check && user.controls.city.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.city.errors.required">
+                                        Insert Your City
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback has-error">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control alpha"  maxlength="25"
+                                placeholder="India" tabindex="10" value="India" disabled>        
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback has-error">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control alpha" [ngClass]="{'is-invalid' :check && user.controls.state.errors}" formControlName="state" maxlength="25"
+                             tabindex="9" class="form-control" name="state" list="state">
+                                <datalist id="state">
+                                    <option value="Madhya Pradesh (MP)">
+                                    <option value="Andhra Pradesh (AP)">
+                                    <option value="Arunachal Pradesh (AR)">
+                                    <option value="Assam (AS)">
+                                    <option value="Bihar (BR)">
+                                    <option value="Chhattisgarh(CG)">
+                                    <option value="Goa (GA)">
+                                    <option value="Gujarat (GJ)">
+                                    <option value="Haryana (HR)">
+                                    <option value="Himachal Pradesh (HP)">
+                                    <option value="Jammu and Kashmir (JK)">
+                                    <option value="Jharkhand (JK)">
+                                    <option value="Karnataka (KA)">
+                                    <option value="Kerala (KL)">
+                                    <option value="Maharashtra (MH)">
+                                    <option value="Meghalaya (ML)">
+                                    <option value="Mizoram (MZ)">
+                                    <option value="Nagaland (NL)">
+                                    <option value="Odisha (OR)">
+                                    <option value="Punjab (PB)">
+                                    <option value="Rajasthan (RJ)">
+                                    <option value="Sikkim (SK)">
+                                    <option value="Tamil Nadu (TN)">
+                                    <option value="Telangana (TS)">
+                                    <option value="Tripura (TR)">
+                                    <option value="Uttar Pradesh (UP)">
+                                    <option value="Uttarakhand (UK)">
+                                    <option value="West Bengal (WB)">
+                                  </datalist>
+                                <div *ngIf="check && user.controls.state.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.state.errors.required">
+                                        Insert Your State
+                                    </p>
+                                </div>
+                        </div>
+                        <div class="form-group col-lg-6 has-feedback has-error">
+                            <label for="pin">PIN</label>
+                            <input type="text" class="form-control" [ngClass]="{'is-invalid' :check && user.controls.pin.errors}"  formControlName="pin"  maxlength="10" value=""
+                                tabindex="11">
+                                <div *ngIf="check && user.controls.pin.errors" class="invalid-feedback">
+                                    <p *ngIf="user.controls.pin.errors.required">
+                                        Insert Your Pin
+                                    </p>
+                                </div>
+                        </div>
+                        <input type="hidden" name="bridge" id="bridge" value="MUM">
+                        <div class="text-danger text-right"> * All fields are mandatory</div>
+                        <div class="col-lg-6">
+                            <div class="checkbox icheck check-hold">
+                                <label>
+                                    <input name="agree" id="i_agree" type="checkbox" value="1"> <span class="agree">I
+                                        agree terms and condition <a href="https://eagleconferencing.in/terms-and-conditions"
+                                            target="_blank">terms</a></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 my-3">
+                            <button type="submit" (click)="save()" value="Signup" class="btn btn-danger btn-block btn-flat main-btn">Next</button>
+                        </div>
+
+                    </div>
+                </form>
+                <div class="col-md-12">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="cloud-flare-wrapper">
+            <div class="text-center">This portal is safe & secure</div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://portal.eagleconferencing.in/plugins/jQuery/jquery-2.2.3.min.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/js/jquery.validate.min.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/bootstrap/js/bootstrap.min.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/plugins/bootstrap/js/bootstrap.bundle.min.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/plugins/iCheck/icheck.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/js/bootbox.min.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+    <script src="https://portal.eagleconferencing.in/js/main.js"
+        type="765031ccc70838761f7377b9-text/javascript"></script>
+
+</body>
+
+</html>
