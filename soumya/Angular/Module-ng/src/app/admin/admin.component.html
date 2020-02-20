@@ -1,0 +1,62 @@
+<nav class="navbar bg-light navbar-expand-md navbar-light  sticky-top py-4">
+
+    <div class="container">
+        <a href="#" class="navbar-brand text-blue"><i class="fa fa-shopping-bag mr-3 text-success" aria-hidden="true"
+                style="font-size: 15px;"></i>Admin Panel</a>
+
+        <button class="navbar-toggler btn btn-success" style="border: 0;" data-target="#navmenu" data-toggle="collapse">
+            <span>Menu</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+
+        <ng-template [ngIf]="_login.isAdminLoggedIn()" [ngIfElse]="beforeLogin">
+            <div id="navmenu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+
+                        <li class="nav-item">
+                            <a href="#" routerLink="admin" class="nav-link px-4 active">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-4 ">Slider</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link px-4 ">User</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" id="a" class="nav-link px-4 dropdown-toggle">Product</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-header">Product</div>
+                                <a href="#" class="dropdown-item">Add</a>
+                                <a href="#" class="dropdown-item">view</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle  px-4">Category</a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-header">Categories</div>
+                                <a href="#" class="dropdown-item">Add</a>
+                                <a href="#" class="dropdown-item">view</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a  (click)="_login.Logout()" class="nav-link px-4">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+        </ng-template>
+
+        <ng-template #beforeLogin>
+
+        </ng-template>
+
+
+
+    </div>
+
+</nav>
+
+
+<router-outlet></router-outlet>

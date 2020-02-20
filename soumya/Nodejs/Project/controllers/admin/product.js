@@ -81,7 +81,7 @@ routes.post("/", function (req, res) {
 
     if (extention == "jpg" || extention == "jpeg" || extention == "png" || extention4r == "gif") {
 
-        if (size <= 1024 * 1024) {
+        if (size <= 1024 * 1024 * 5) {
 
             image.mv(UploadPath, function (err) {
                 req.body.product_price = parseInt(req.body.product_price);

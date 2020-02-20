@@ -128,6 +128,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angularmod"
+    }
+  },
+  "defaultProject": "angularmod",
+  "cli": {
+    "analytics": "ed24bb50-78e7-4f4d-9627-97cac911e053"
+  }
 }

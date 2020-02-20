@@ -8,7 +8,7 @@ var flash = require("express-flash");
 var cache = require("nocache");
 var Category = require("./models/category");
 var upload = require("express-fileupload");
-
+var MongoClient = require("mongodb").MongoClient;
 // var Product = require("./models/product");
 // d033e22ae348aeb5660fc2140aec35850c4da997
 web.set("view engine", "ejs");
@@ -27,6 +27,7 @@ web.use(function(req, res, returns) {
         res.locals.logo = "ShoppingMall.com";
         res.locals.session = req.session;
         res.locals.allcategory = result;
+        // res.locals.allcategory = [];
         if(req.cookies.cart){
             var ids = req.cookies.cart;
             var arr = ids.split("#");
@@ -38,10 +39,19 @@ web.use(function(req, res, returns) {
     });
 });
 
+// MongoClient.connect("mongodb://soumya:soumya123@ds215910.mlab.com:15910/practice", function(err, client){
+//     var db = client.db("practice");
+
+//     db.collection("admin").find().toArray(function(err, result){
+//         console.log(result);
+//     });
+// });
 
 
 web.use(routes);
 
-web.listen(3000, function() {
+var port = process.env.PORT || 3000; 
+
+web.listen(port, function() {
     console.log("Server running");
 });
