@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
+import { FileuploadComponent } from './pages/fileupload/fileupload.component';
 
 
 
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path : "about",
         component : AboutComponent
+      },
+      {
+        path : "upload",
+        component : FileuploadComponent
       }
     ]
   }
