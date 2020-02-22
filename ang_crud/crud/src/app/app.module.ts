@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,8 +18,11 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { HelloDirective } from './directives/hello.directive';
 import { LoaderDirective } from './directives/loader.directive';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AdminModule } from './admin/admin.module';
+import { EditempComponent } from './pages/editemp/editemp.component';
+import { ChomeComponent } from './shared/chome/chome.component';
 
 
 @NgModule({
@@ -35,7 +38,9 @@ import { AdminModule } from './admin/admin.module';
     FileuploadComponent,
     SliderComponent,
     HelloDirective,
-    LoaderDirective
+    LoaderDirective,
+    EditempComponent,
+    ChomeComponent
 
   ],
   imports: [
@@ -44,9 +49,10 @@ import { AdminModule } from './admin/admin.module';
     FormsModule,
     HttpClientModule,
     NgImageSliderModule,
-    AdminModule
+    AdminModule,
+    Ng2SearchPipeModule
   ],
-  providers: [],
+  providers: [ Title ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

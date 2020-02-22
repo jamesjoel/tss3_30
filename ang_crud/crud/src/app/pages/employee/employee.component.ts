@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee.interface';
 import { EmployeeService } from '../../services/employee.service';
-
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-employee',
@@ -19,19 +19,17 @@ export class EmployeeComponent implements OnInit {
     gender : ""
   };
   index:number;
-<<<<<<< HEAD
 
-  constructor(private _emp : EmployeeService) { }
-=======
 
   columnName='name';
   defaultOrder = true;
 
-  constructor(private _emp : EmployeeService) { }
+
+  constructor(private _emp : EmployeeService, private _title : Title) { 
+    this._title.setTitle("Employee Page");
+  }
 
 
-
->>>>>>> 9e8acdf22476c638507ea57555087763eacecfc0
   ngOnInit() {
     this._emp.getEmployee().subscribe(result=>{
       this.employees = result;

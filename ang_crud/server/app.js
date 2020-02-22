@@ -79,3 +79,29 @@ app.listen(3000, ()=>{
     console.log("server running");
 
 })
+/*
+1. What is Angular CLI, Installation, Basic of TypeScript
+2. Component (create and call form another Component --- Shared Component)
+3. Databinding (ngModel)
+4. Interpolation ( {{ }} )
+5. Event Binding ( ----- (click), (dblclick), etc. )
+6. 2 way data Binding
+7. Complete Routing Module
+7. Data Passing 
+    a. Parent to Child (@Input)
+    b. Child to Parent (@Output)
+    c. Child to Parent (@ViewChild)
+8. what is Service, In-Built Services and Custome Services
+9. HttpClient (RESt Full Api Calling - get, post, put, delete) Service, Router
+10. Login Auth with JWT
+11. Auth Guard
+12. What is Directives, In-Built Dir, Types of Dir, Custome Dir
+13. What is Pipes, In-Build Pipes, Custome Pipes
+14. Reactive Form Validation
+15. Template Reffrence Variable
+16. Parameterized URL, Datapassing By URL
+17. What is Module, In-Built Module, Custome Module(Feature Module)
+18. Lazy Loading
+19. File Upload
+20. Slider, Callender, other APIs
+*/
