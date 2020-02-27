@@ -5,6 +5,26 @@
         </div>
     </div>
 </div>
+<Hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            
+            <pre>{{ hobby | json }}</pre>
+
+
+            Hobby 
+            <input type="checkbox" (click)="demo('cricket', $event)" value="cricket"/>
+            <br />
+            <input type="checkbox" (click)="demo('football', $event)" value="football"/>
+            <br />
+            <input type="checkbox" (click)="demo('music', $event)" value="music"/>
+            <br />
+            <Hr />
+            <button>OK</button>
+        </div>
+    </div>
+</div>
 
 
 	

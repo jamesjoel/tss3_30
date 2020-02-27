@@ -57,13 +57,10 @@ export class EmployeeComponent implements OnInit {
         this.employees.push(result);
  
       });
-<<<<<<< HEAD
+
     });
   }
-=======
-    }
-    
->>>>>>> 312d91e32ad239f5873a3f463e07c3908fcd742c
+
   }
   askDelete(obj:Employee) {
     this.employee = obj;

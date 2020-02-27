@@ -12,6 +12,14 @@ export class SliderComponent implements OnInit {
     height : 300,
     width : 400
   }
+  hobby=[];
+  /*
+  public toggles = [
+    { value: 'toggled', display: 'Toggled' },
+    { value: 'untoggled', display: 'UnToggled' },
+];
+
+  */
 
   imageObject = [
     {
@@ -44,6 +52,17 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  demo(value, event){
+    
+    if(event.target.checked){
+      this.hobby.push(value);
+    }
+    else{
+      let n = this.hobby.indexOf(value);
+      this.hobby.splice(n, 1);
+    }
   }
 
 }
